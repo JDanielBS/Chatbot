@@ -6,7 +6,7 @@ Incluye sistema de logging para monitorear el rendimiento, uso de tokens y costo
 ## Requisitos
 
 - Python 3.11
-- Archivo `.env` con la API key de Gemini
+- Archivo `.env` con la API key de Gemini, puesta como `GEMINI_API_KEY=clave_numérica`
 
 ## Instalación
 
