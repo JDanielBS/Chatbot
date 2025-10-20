@@ -1,0 +1,2 @@
+timestamp,latency_ms,input_tokens,output_tokens,total_tokens,estimated_cost_usd,anonymized_question_len,anonymized_response_len
+2025-10-19T23:01:47.319986,1317.93,113,25,138,0.00002130,7,120
