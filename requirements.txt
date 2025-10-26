@@ -4,3 +4,18 @@ langchain-google-genai
 tavily-python
 google-generativeai
 langgraph-cli[inmem]
+
+# === NUEVAS DEPENDENCIAS PARA RAG ===
+
+# Base de datos vectorial Chroma (RECOMENDADA - 100% Gratuita)
+chromadb>=0.4.22
+
+# LangChain Community para loaders de documentos y vectorstores
+langchain-community>=0.0.20
+
+# Procesamiento de documentos
+pypdf>=4.0.0              # Para leer archivos PDF
+python-docx>=1.1.0        # Para leer archivos Word (opcional)
+
+# Utilidades para procesamiento de texto
+tiktoken>=0.5.0           # Para conteo eficiente de tokens

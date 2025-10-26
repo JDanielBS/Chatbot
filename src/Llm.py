@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
+from langchain_core.messages import AIMessage
 
 from src.Monitoring import monitor_performance
 
@@ -51,22 +52,19 @@ class IAExpertLLM:
         self.pipeline = self.prompt | self.llm
 
     @monitor_performance
-    def process_question(self, question: str) -> str:
+    def process_question(self, question: str) -> AIMessage:
         """
-        Procesa una pregunta sobre IA y retorna la respuesta generada.
-
+        Procesa una pregunta y retorna un mensaje del asistente.
+        
         Args:
-            question (str): Pregunta del usuario sobre IA que se desea procesar
-
+            question (str): Pregunta del usuario
+            
         Returns:
-            str: Respuesta generada por el modelo a la pregunta formulada
-
-        Note:
-            Este método está decorado con @monitor_performance para seguimiento de métricas
+            AIMessage: Mensaje formateado con la respuesta del modelo
         """
         inputs = {"user_input": question}
         result = self.pipeline.invoke(inputs)
-        return result
+        return AIMessage(content=result.content)
 
     def get_prompt_template(self) -> str:
         """
