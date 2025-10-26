@@ -116,6 +116,7 @@ def monitor_performance(func):
             # 2. Calcular Tokens (requiere acceso a self.llm y self.prompt)
             # Formatea el prompt completo tal como lo ve el LLM
             prompt_text = self.prompt.format(user_input=question)
+            print()
             
             try:
                 response_text = result_obj.content.strip()
