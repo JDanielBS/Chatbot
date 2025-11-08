@@ -1,3 +1,4 @@
+from src.RAG_manager import RAGManager
 from src.Llm import IAExpertLLM
 from src.Chain import IAChain
 from langchain_core.messages import HumanMessage
@@ -6,7 +7,8 @@ import uuid
 def main():
     # Inicializar el LLM y la cadena
     ia_llm = IAExpertLLM()
-    chain = IAChain(ia_llm)
+    rag = RAGManager()
+    chain = IAChain(ia_llm, rag)
     # Generar un ID único para la conversación
     thread_id = str(uuid.uuid4())
     
