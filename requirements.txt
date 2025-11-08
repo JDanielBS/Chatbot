@@ -23,6 +23,8 @@ tiktoken>=0.5.0           # Para conteo eficiente de tokens
 # Embeddings (opcional, dependiendo del modelo que uses)
 sentence-transformers
 
+icecream
+
 # FastAPI y servidor
 fastapi>=0.104.0          # Framework web para API REST
 uvicorn[standard]>=0.24.0 # Servidor ASGI para FastAPI

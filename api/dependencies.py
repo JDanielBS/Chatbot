@@ -110,8 +110,9 @@ def get_chain() -> IAChain:
         try:
             print("Inicializando Chain con LangGraph...")
             llm = get_llm_gemini()
-            _chain = IAChain(llm)
-            print("Chain listo con memoria persistente")
+            rag = get_rag_manager()
+            _chain = IAChain(llm, rag)
+            print("Chain listo con memoria persistente y RAG")
         except Exception as e:
             print(f"Error al inicializar Chain: {e}")
             raise RuntimeError(f"No se pudo inicializar Chain: {e}")
