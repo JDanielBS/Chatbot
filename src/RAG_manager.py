@@ -1,6 +1,6 @@
 import os
 from typing import List, Optional
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_community.document_loaders import (
     PyPDFLoader,
@@ -26,7 +26,7 @@ class RAGManager:
     - Mantener estadísticas de la base de conocimiento
     
     Attributes:
-        embeddings (GoogleGenerativeAIEmbeddings): Modelo de embeddings de Google
+        embeddings (GoogleGenerativeAIEmbeddin gs): Modelo de embeddings de Google
         vector_store (Chroma): Base de datos vectorial Chroma
         persist_directory (str): Directorio donde se persiste la BD vectorial
         chunk_size (int): Tamaño de los chunks de texto
@@ -35,7 +35,7 @@ class RAGManager:
     
     def __init__(
         self, 
-        persist_directory: str = "./chroma_db",
+        persist_directory: str = "./data/chroma_db",
         chunk_size: int = 1000,
         chunk_overlap: int = 200
     ):
@@ -51,12 +51,8 @@ class RAGManager:
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
         
-        # Inicializar embeddings de Google
-        self.embeddings = GoogleGenerativeAIEmbeddings(
-            model="models/embedding-001",
-            google_api_key=os.getenv("GEMINI_API_KEY")
-        )
-        
+        # Inicializar embeddings
+        self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
         # Cargar o crear la base de datos vectorial
         self.vector_store = None
         self._load_or_create_vectorstore()
@@ -213,6 +209,10 @@ class RAGManager:
         Returns:
             List[Document]: Lista de documentos relevantes encontrados
         """
+
+        if self.is_empty():
+            return []
+
         if score_threshold is not None:
             # Búsqueda con threshold de similitud
             results = self.vector_store.similarity_search_with_score(query, k=k)

@@ -19,3 +19,6 @@ python-docx>=1.1.0        # Para leer archivos Word (opcional)
 
 # Utilidades para procesamiento de texto
 tiktoken>=0.5.0           # Para conteo eficiente de tokens
+
+# Embeddings (opcional, dependiendo del modelo que uses)
+sentence-transformers
