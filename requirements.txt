@@ -19,3 +19,11 @@ python-docx>=1.1.0        # Para leer archivos Word (opcional)
 
 # Utilidades para procesamiento de texto
 tiktoken>=0.5.0           # Para conteo eficiente de tokens
+
+# FastAPI y servidor
+fastapi>=0.104.0          # Framework web para API REST
+uvicorn[standard]>=0.24.0 # Servidor ASGI para FastAPI
+pydantic>=2.0.0           # Validación de datos 
+
+# Utilidades para API
+python-multipart>=0.0.6   # Para manejar form-data y file uploads
