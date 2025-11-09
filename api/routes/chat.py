@@ -67,24 +67,46 @@ async def chat(request: ChatRequest):
         
         sources_list = []
         context = ""
+        sources_with_scores = []
         
         # Si usa RAG, buscar documentos relevantes
         if request.use_rag:
             try:
-                docs = rag.search_similar_documents(request.message, k=4)
+                # Usar retrieve_documents para obtener documentos completos con scores
+                retrieved_docs = rag.retrieve_documents(request.message, k=6, include_scores=True)
                 
-                if docs:
-                    sources_list = format_sources_from_docs(docs)
+                if retrieved_docs:
+                    # Convertir documentos a formato de fuentes con excerpts
+                    for i, (doc, score) in enumerate(retrieved_docs, 1):
+                        source_name = doc.metadata.get("original_filename") or doc.metadata.get("source", "Desconocido")
+                        page = doc.metadata.get("page", None)
+                        
+                        # Crear excerpt truncado del contenido (primeros 150 caracteres)
+                        excerpt = doc.page_content[:150] + "..." if len(doc.page_content) > 150 else doc.page_content
+                        
+                        sources_list.append({
+                            "document": source_name,
+                            "page": page,
+                            "relevance_score": round(score, 4),
+                            "excerpt": excerpt
+                        })
+                        sources_with_scores.append((source_name, score))
                     
-                    context = "\n\n".join([
-                        f"[Fuente: {doc.metadata.get('source', 'Desconocido')}]\n{doc.page_content}"
-                        for doc in docs
-                    ])
+                    # Construir contexto para el prompt
+                    context_parts = []
+                    for i, (doc, score) in enumerate(retrieved_docs, 1):
+                        source = doc.metadata.get("original_filename") or doc.metadata.get("source", "Desconocido")
+                        context_parts.append(f"[Fuente {i}: {source} | score={score:.4f}]\n{doc.page_content}")
+                    context = "\n\n".join(context_parts)
+                    
+                    print(f"{len(sources_list)} fuentes encontradas con scores")
                 else:
                     print("No se encontraron documentos relevantes")
                     
             except Exception as e:
                 print(f"Error en búsqueda RAG: {e}")
+                import traceback
+                traceback.print_exc()
         
         mode_instructions = {
             "brief": "Responde de forma breve y concisa (máximo 2-3 párrafos cortos).",
@@ -131,7 +153,7 @@ pero puedes responder basándote en tu conocimiento general sobre IA.
         # En una futura actualización, deberíamos usar el chain completo
         response_text = llm.process_question(enhanced_prompt)
         
-        # Construir respuesta
+        # Construir respuesta con métricas mejoradas
         chat_response = ChatResponse(
             response=response_text,
             sources=[Source(**s) for s in sources_list],
@@ -142,7 +164,8 @@ pero puedes responder basándote en tu conocimiento general sobre IA.
                 "query_number": query_count,
                 "context_used": len(context) > 0,
                 "sources_found": len(sources_list),
-                "mode": request.mode
+                "mode": request.mode,
+                "avg_relevance_score": round(sum(score for _, score in sources_with_scores) / len(sources_with_scores), 4) if sources_with_scores else 0.0
             }
         )
         

@@ -1,7 +1,7 @@
 import os
-from typing import List, Optional
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from typing import List, Optional, Tuple
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_chroma import Chroma
 from langchain_community.document_loaders import (
     PyPDFLoader,
     TextLoader,
@@ -51,8 +51,11 @@ class RAGManager:
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
         
-        # Inicializar embeddings
-        self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+        # Inicializar embeddings (modelo multilingüe para mejorar recall cross-lingual)
+        # Elegimos un modelo multilingual pequeño que soporta búsqueda entre ES/EN
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+        )
         # Cargar o crear la base de datos vectorial
         self.vector_store = None
         self._load_or_create_vectorstore()
@@ -61,18 +64,10 @@ class RAGManager:
         """
         Carga la base de datos vectorial si existe, o crea una nueva.
         """
-        if os.path.exists(self.persist_directory):
-            print(f"📂 Cargando base de datos vectorial desde {self.persist_directory}")
-            self.vector_store = Chroma(
-                persist_directory=self.persist_directory,
-                embedding_function=self.embeddings
-            )
-        else:
-            print(f"🆕 Creando nueva base de datos vectorial en {self.persist_directory}")
-            self.vector_store = Chroma(
-                persist_directory=self.persist_directory,
-                embedding_function=self.embeddings
-            )
+        self.vector_store = Chroma(
+            persist_directory=self.persist_directory,
+            embedding_function=self.embeddings
+        )
     
     def load_documents_from_directory(
         self, 
@@ -93,7 +88,7 @@ class RAGManager:
             ValueError: Si el directorio no existe
         """
         if not os.path.exists(directory_path):
-            raise ValueError(f"❌ El directorio {directory_path} no existe")
+            raise ValueError(f"El directorio {directory_path} no existe")
         
         documents = []
         
@@ -108,9 +103,9 @@ class RAGManager:
                 )
                 pdf_docs = pdf_loader.load()
                 documents.extend(pdf_docs)
-                print(f"📄 Cargados {len(pdf_docs)} archivos PDF")
+                print(f"Cargados {len(pdf_docs)} archivos PDF")
             except Exception as e:
-                print(f"⚠️ Error cargando PDFs: {e}")
+                print(f"Error cargando PDFs: {e}")
         
         # Cargar archivos de texto
         if "txt" in file_types:
@@ -122,16 +117,14 @@ class RAGManager:
                 )
                 txt_docs = txt_loader.load()
                 documents.extend(txt_docs)
-                print(f"📝 Cargados {len(txt_docs)} archivos TXT")
+                print(f"Cargados {len(txt_docs)} archivos TXT")
             except Exception as e:
-                print(f"⚠️ Error cargando TXTs: {e}")
+                print(f"Error cargando TXTs: {e}")
         
         if documents:
             self._process_and_store_documents(documents)
-            print(f"✅ Total: {len(documents)} documentos cargados desde {directory_path}")
             return len(documents)
         else:
-            print("⚠️ No se encontraron documentos para cargar")
             return 0
     
     def load_single_document(self, file_path: str) -> bool:
@@ -145,7 +138,7 @@ class RAGManager:
             bool: True si se cargó exitosamente, False en caso contrario
         """
         if not os.path.exists(file_path):
-            print(f"❌ El archivo {file_path} no existe")
+            print(f"El archivo {file_path} no existe")
             return False
         
         try:
@@ -155,16 +148,16 @@ class RAGManager:
             elif file_path.endswith('.txt'):
                 loader = TextLoader(file_path)
             else:
-                print(f"❌ Tipo de archivo no soportado: {file_path}")
+                print(f"Tipo de archivo no soportado: {file_path}")
                 return False
             
             documents = loader.load()
             self._process_and_store_documents(documents)
-            print(f"✅ Documento cargado exitosamente: {file_path}")
+            print(f"Documento cargado exitosamente: {file_path}")
             return True
             
         except Exception as e:
-            print(f"❌ Error al cargar {file_path}: {e}")
+            print(f"Error al cargar {file_path}: {e}")
             return False
     
     def _process_and_store_documents(self, documents: List[Document]):
@@ -183,63 +176,107 @@ class RAGManager:
         )
         
         splits = text_splitter.split_documents(documents)
-        
-        # Agregar a la base de datos vectorial
-        self.vector_store.add_documents(splits)
-        
-        # Persistir los cambios
-        self.vector_store.persist()
-        
-        print(f"💾 Procesados y almacenados {len(splits)} chunks")
-    
-    def search_similar_documents(
-        self, 
-        query: str, 
-        k: int = 4,
-        score_threshold: Optional[float] = None
-    ) -> List[Document]:
-        """
-        Busca documentos similares a la consulta.
-        
-        Args:
-            query (str): Consulta de búsqueda
-            k (int): Número de documentos a retornar (por defecto 4)
-            score_threshold (float, optional): Umbral mínimo de similitud
-        
-        Returns:
-            List[Document]: Lista de documentos relevantes encontrados
-        """
 
+        # Enriquecer metadata para trazabilidad y auditoría
+        total = len(splits)
+        for idx, doc in enumerate(splits):
+            meta = doc.metadata or {}
+            meta["chunk_index"] = idx
+            meta["total_chunks"] = total
+            meta["chunk_size"] = len(doc.page_content)
+            if "source" in meta:
+                meta["original_filename"] = os.path.basename(meta["source"])
+            meta["embedding_model"] = self.embeddings.model_name
+            doc.metadata = meta
+
+        # Insertar documentos enriquecidos
+        self.vector_store.add_documents(splits)
+
+    # ========================= NUEVO MÉTODO PRINCIPAL DE RECUPERACIÓN =========================
+    def retrieve_documents(
+        self,
+        query: str,
+        k: int = 6,
+        fetch_k: int = 20,
+        diversity_lambda: float = 0.5,
+        score_threshold: Optional[float] = None,
+        include_scores: bool = True,
+    ) -> List[Tuple[Document, float]]:
+        """Recupera documentos relevantes usando MMR para mayor diversidad.
+
+        Prioriza diversidad y relevancia simultáneamente, permitiendo reducir
+        alucinaciones y aumentar cobertura de distintas fuentes.
+
+        Args:
+            query (str): Consulta del usuario.
+            k (int): Número de documentos finales.
+            fetch_k (int): Número de candidatos iniciales antes de MMR.
+            diversity_lambda (float): Parámetro de diversidad (0 más diversidad, 1 más similitud pura).
+            score_threshold (Optional[float]): Filtro de score mínimo (0-1 si vectorstore lo normaliza).
+            include_scores (bool): Si True, retorna tuplas (Document, score).
+
+        Returns:
+            List[Tuple[Document, float]] | List[Document]: Lista de documentos con o sin score.
+        """
         if self.is_empty():
             return []
 
+        # Usamos búsqueda MMR para diversidad; Chroma expone max_marginal_relevance_search
+        # NOTA: Esta búsqueda no retorna scores directamente, por lo que realizamos
+        # una segunda pasada para obtener scores de similitud de cada documento recuperado.
+        mmr_docs = self.vector_store.max_marginal_relevance_search(
+            query=query,
+            k=k,
+            fetch_k=fetch_k,
+            lambda_mult=diversity_lambda,
+        )
+
+        # Obtener scores para cada documento (similarity_search_with_score)
+        # Realizamos embedding de la query una sola vez (ya optimizado internamente por Chroma)
+        scored = self.vector_store.similarity_search_with_score(query, k=fetch_k)
+        # Crear índice por contenido para asociar score (simplificación; en producción usar IDs)
+        score_map = {}
+        for doc, score in scored:
+            score_map.setdefault(doc.page_content, score)
+
+        result: List[Tuple[Document, float]] = []
+        for d in mmr_docs:
+            sc = score_map.get(d.page_content, 0.0)
+            result.append((d, sc))
+
+        # Aplicar threshold si se solicita
         if score_threshold is not None:
-            # Búsqueda con threshold de similitud
-            results = self.vector_store.similarity_search_with_score(query, k=k)
-            filtered_results = [
-                doc for doc, score in results if score >= score_threshold
-            ]
-            return filtered_results
+            result = [pair for pair in result if pair[1] >= score_threshold]
+
+        # Ordenar por score descendente para priorizar mejor evidencia
+        result.sort(key=lambda x: x[1], reverse=True)
+
+        if include_scores:
+            return result[:k]
         else:
-            # Búsqueda simple
-            return self.vector_store.similarity_search(query, k=k)
-    
-    def search_with_scores(
-        self,
-        query: str,
-        k: int = 4
-    ) -> List[tuple[Document, float]]:
-        """
-        Busca documentos similares y retorna con sus scores de similitud.
-        
+            return [doc for doc, _ in result[:k]]
+
+    def build_context(self, query: str, k: int = 6) -> Tuple[str, List[Tuple[str, float]]]:
+        """Construye contexto formateado y lista de fuentes con scores.
+
         Args:
-            query (str): Consulta de búsqueda
-            k (int): Número de documentos a retornar
-        
+            query (str): Consulta del usuario.
+            k (int): Número de documentos a incluir.
+
         Returns:
-            List[tuple[Document, float]]: Lista de tuplas (documento, score)
+            Tuple[str, List[Tuple[str, float]]]: Contexto concatenado y lista (fuente, score).
         """
-        return self.vector_store.similarity_search_with_score(query, k=k)
+        retrieved = self.retrieve_documents(query=query, k=k, include_scores=True)
+        if not retrieved:
+            return "No se encontró información relevante en la base de conocimiento.", []
+
+        parts = []
+        sources: List[Tuple[str, float]] = []
+        for i, (doc, score) in enumerate(retrieved, 1):
+            source = doc.metadata.get("original_filename") or doc.metadata.get("source", "Desconocido")
+            parts.append(f"[Fuente {i}: {source} | score={score:.4f} | chunk={doc.metadata.get('chunk_index')}/{doc.metadata.get('total_chunks')}]\n{doc.page_content}\n")
+            sources.append((source, score))
+        return "\n".join(parts), sources
     
     def get_retriever(self, k: int = 4, search_type: str = "similarity"):
         """
@@ -257,34 +294,16 @@ class RAGManager:
             search_kwargs={"k": k}
         )
     
-    def get_relevant_context(self, query: str, k: int = 4) -> str:
-        """
-        Obtiene el contexto relevante como una cadena de texto formateada.
-        
-        Args:
-            query (str): Consulta para buscar contexto
-            k (int): Número de documentos a recuperar
-        
-        Returns:
-            str: Contexto formateado listo para incluir en un prompt
-        """
-        docs = self.search_similar_documents(query, k=k)
-        
-        if not docs:
-            return "No se encontró información relevante en la base de conocimiento."
-        
-        context_parts = []
-        for i, doc in enumerate(docs, 1):
-            source = doc.metadata.get('source', 'Desconocido')
-            context_parts.append(f"[Fuente {i}: {source}]\n{doc.page_content}\n")
-        
-        return "\n".join(context_parts)
+    def get_relevant_context(self, query: str, k: int = 6) -> str:
+        """Devuelve el contexto enriquecido usando MMR y metadatos de trazabilidad."""
+        context, _ = self.build_context(query=query, k=k)
+        return context
     
     def clear_database(self):
         """
         Elimina todos los documentos de la base de datos vectorial.
         
-        ⚠️ ADVERTENCIA: Esta operación es irreversible.
+        ADVERTENCIA: Esta operación es irreversible.
         """
         import shutil
         if os.path.exists(self.persist_directory):
