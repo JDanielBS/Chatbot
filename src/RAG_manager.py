@@ -309,13 +309,13 @@ class RAGManager:
                 "persist_directory": self.persist_directory,
                 "chunk_size": self.chunk_size,
                 "chunk_overlap": self.chunk_overlap,
-                "status": "✅ Operacional"
+                "status": "operacional"
             }
         except Exception as e:
             return {
                 "error": str(e),
                 "persist_directory": self.persist_directory,
-                "status": "❌ Error"
+                "status": "error"
             }
     
     def is_empty(self) -> bool:

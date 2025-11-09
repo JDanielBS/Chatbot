@@ -26,15 +26,15 @@ router = APIRouter(prefix="/chat", tags=["Chat"])
     description="""
     Envía un mensaje al chatbot y recibe una respuesta con RAG.
     
-    **Características:**
+    Características:
     - Usa RAG para buscar información en documentos indexados
     - Mantiene contexto de conversación con thread_id
     - Cita fuentes utilizadas
     - Registra métricas de rendimiento
     
-    **Modos:**
-    - `brief`: Respuestas cortas y concisas
-    - `extended`: Respuestas detalladas con explicaciones
+    Modos:
+    - brief: Respuestas cortas y concisas
+    - extended: Respuestas detalladas con explicaciones
     """,
     responses={
         200: {"description": "Respuesta exitosa con fuentes citadas"},
@@ -71,14 +71,11 @@ async def chat(request: ChatRequest):
         # Si usa RAG, buscar documentos relevantes
         if request.use_rag:
             try:
-                # Buscar documentos relevantes
                 docs = rag.search_similar_documents(request.message, k=4)
                 
                 if docs:
-                    # Formatear fuentes
                     sources_list = format_sources_from_docs(docs)
                     
-                    # Construir contexto
                     context = "\n\n".join([
                         f"[Fuente: {doc.metadata.get('source', 'Desconocido')}]\n{doc.page_content}"
                         for doc in docs
@@ -88,9 +85,7 @@ async def chat(request: ChatRequest):
                     
             except Exception as e:
                 print(f"Error en búsqueda RAG: {e}")
-                # Continuar sin RAG si falla
         
-        # Construir prompt según el modo
         mode_instructions = {
             "brief": "Responde de forma breve y concisa (máximo 2-3 párrafos cortos).",
             "extended": "Proporciona una respuesta detallada y explicativa."
@@ -98,7 +93,6 @@ async def chat(request: ChatRequest):
         
         mode_instruction = mode_instructions.get(request.mode, mode_instructions["extended"])
         
-        # Construir prompt completo
         if context:
             enhanced_prompt = f"""Eres un asistente experto en Inteligencia Artificial.
 
