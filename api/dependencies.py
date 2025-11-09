@@ -50,7 +50,7 @@ def get_rag_manager() -> RAGManager:
         try:
             print("Inicializando RAG Manager...")
             _rag_manager = RAGManager(
-                persist_directory="./chroma_db",
+                persist_directory="./data/chroma_db",
                 chunk_size=1000,
                 chunk_overlap=200
             )
