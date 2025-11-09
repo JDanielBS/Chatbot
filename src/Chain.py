@@ -64,37 +64,28 @@ class IAChain():
         
         if not question:
             return {"messages": [AIMessage(content="No se encontró pregunta en el estado.", additional_kwargs={})]}
-
-        # 2. Recuperar documentos/contexto relevante vía RAGManager usando el método correcto
-        relevant_docs_with_scores = self.rag.search_with_scores(question, k=4)
         
-        # Separar documentos y scores
-        relevant_docs = [doc for doc, score in relevant_docs_with_scores]
-        scores = [score for doc, score in relevant_docs_with_scores]
-        
-        # Construir contexto
-        context = "\n".join([doc.page_content for doc in relevant_docs])
-        ic(context)
+        # 2. Recuperar contexto y fuentes mediante el nuevo método MMR
+        context, sources_with_scores = self.rag.build_context(question, k=6)
 
-        # 3. Extraer metadatos de las fuentes recuperadas
-        sources = [doc.metadata.get("source", "") for doc in relevant_docs]
-        doc_ids = [doc.metadata.get("id", idx) for idx, doc in enumerate(relevant_docs)]
+        # 3. Extraer metadatos estructurados
+        sources = [s for s, _ in sources_with_scores]
+        scores = [sc for _, sc in sources_with_scores]
+        doc_ids = list(range(len(sources)))
 
-        # 4. Construir el prompt e invocar el LLM usando el método correcto
+        # 4. Construir el prompt e invocar el LLM
         prompt_text = self.rag_prompt.format(context=context, question=question)
-        
-        # Usar el método correcto del LLM (ajusta según tu clase Llm.py)
         response_text = self.llm.process_question(prompt_text)
 
-        # 5. Preparar el mensaje con contenido y metadatos útiles para métricas
+        # 5. Empaquetar metadatos para trazabilidad y métricas
         metadata = {
             "sources": sources,
             "doc_ids": doc_ids,
             "similarity_scores": scores,
             "context_size": len(context),
-            "num_retrieved_docs": len(relevant_docs)
+            "num_retrieved_docs": len(sources)
         }
-        
+
         return {"messages": [AIMessage(content=response_text, additional_kwargs=metadata)]}
 
     
