@@ -6,12 +6,11 @@ from fastapi import APIRouter, HTTPException, status
 from datetime import datetime
 
 from api.models import ChatRequest, ChatResponse, Source
-from api.dependencies import (
+from api.dependencies import (  
     get_rag_manager,
     get_llm_gemini,
     get_chain,
     increment_query_counter,
-    format_sources_from_docs,
     get_timestamp
 )
 
@@ -65,6 +64,16 @@ async def chat(request: ChatRequest):
         llm = get_llm_gemini()
         chain = get_chain()
         
+        # Llamar al chain: dejar que el chain decida si hace RAG según request.use_rag
+        # Pedimos metadata para construir la lista de fuentes en la respuesta
+        response_text, metadata = chain.invoke(
+            request.message,
+            request.thread_id,
+            use_rag=request.use_rag,
+            return_metadata=True
+        )
+
+        # Reconstruir lista de fuentes desde metadata (si existe)
         sources_list = []
         context = ""
         sources_with_scores = []
@@ -162,7 +171,7 @@ pero puedes responder basándote en tu conocimiento general sobre IA.
             timestamp=get_timestamp(),
             metrics={
                 "query_number": query_count,
-                "context_used": len(context) > 0,
+                "context_used": (metadata.get("context_size", 0) > 0) if metadata else False,
                 "sources_found": len(sources_list),
                 "mode": request.mode,
                 "avg_relevance_score": round(sum(score for _, score in sources_with_scores) / len(sources_with_scores), 4) if sources_with_scores else 0.0
@@ -178,41 +187,4 @@ pero puedes responder basándote en tu conocimiento general sobre IA.
             detail=f"Error procesando el mensaje: {str(e)}"
         )
 
-
-@router.get(
-    "/history/{thread_id}",
-    summary="Obtener historial de conversación",
-    description="Obtiene el historial de mensajes de una conversación específica",
-    tags=["Chat"]
-)
-async def get_history(thread_id: str):
-    """
-    Obtiene el historial de una conversación.
-    
-    TODO: Implementar en Fase 2 cuando se agregue persistencia de conversaciones.
-    """
-    return {
-        "message": "Endpoint en desarrollo",
-        "thread_id": thread_id,
-        "history": []
-    }
-
-
-@router.delete(
-    "/history/{thread_id}",
-    summary="Eliminar historial de conversación",
-    description="Elimina el historial de una conversación específica",
-    tags=["Chat"]
-)
-async def delete_history(thread_id: str):
-    """
-    Elimina el historial de una conversación.
-    
-    TODO: Implementar luego
-    """
-    return {
-        "message": "Endpoint en desarrollo",
-        "thread_id": thread_id,
-        "deleted": False
-    }
 

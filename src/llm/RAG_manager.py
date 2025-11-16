@@ -2,6 +2,7 @@ import os
 from typing import List, Optional, Tuple
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
+from langchain_chroma.vectorstores import maximal_marginal_relevance
 from langchain_community.document_loaders import (
     PyPDFLoader,
     TextLoader,
@@ -10,6 +11,8 @@ from langchain_community.document_loaders import (
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
 from dotenv import load_dotenv
+
+import numpy as np
 
 load_dotenv()
 
@@ -36,8 +39,8 @@ class RAGManager:
     def __init__(
         self, 
         persist_directory: str = "./data/chroma_db",
-        chunk_size: int = 1000,
-        chunk_overlap: int = 200
+        chunk_size: int = 1500,
+        chunk_overlap: int = 300
     ):
         """
         Inicializa el gestor de RAG.
@@ -51,10 +54,13 @@ class RAGManager:
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
         
-        # Inicializar embeddings (modelo multilingüe para mejorar recall cross-lingual)
-        # Elegimos un modelo multilingual pequeño que soporta búsqueda entre ES/EN
+        # Inicializar embeddings con modelo más potente para mejor semántica
+        # all-MiniLM-L6-v2 tiene mejor rendimiento en búsqueda semántica general
+        # y es más rápido que el modelo anterior manteniendo buena calidad
         self.embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+            model_name="intfloat/multilingual-e5-large",
+            model_kwargs={'device': 'cpu'},
+            encode_kwargs={'normalize_embeddings': True}  # Mejora la similitud coseno
         )
         # Cargar o crear la base de datos vectorial
         self.vector_store = None
@@ -167,12 +173,14 @@ class RAGManager:
         Args:
             documents (List[Document]): Lista de documentos a procesar
         """
-        # Dividir documentos en chunks más pequeños
+        # Dividir documentos con separadores optimizados para contexto semántico
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=self.chunk_size,
             chunk_overlap=self.chunk_overlap,
             length_function=len,
-            separators=["\n\n", "\n", " ", ""]
+            # Separadores priorizados: párrafos > saltos de línea > puntos > espacios
+            separators=["\n\n\n", "\n\n", "\n", ". ", " ", ""],
+            keep_separator=True  # Mantiene separadores para mejor contexto
         )
         
         splits = text_splitter.split_documents(documents)
@@ -187,32 +195,35 @@ class RAGManager:
             if "source" in meta:
                 meta["original_filename"] = os.path.basename(meta["source"])
             meta["embedding_model"] = self.embeddings.model_name
+            
             doc.metadata = meta
 
         # Insertar documentos enriquecidos
         self.vector_store.add_documents(splits)
 
-    # ========================= NUEVO MÉTODO PRINCIPAL DE RECUPERACIÓN =========================
     def retrieve_documents(
         self,
         query: str,
-        k: int = 6,
-        fetch_k: int = 20,
-        diversity_lambda: float = 0.5,
+        k: int = 5,
+        fetch_k: int = 15,
+        diversity_lambda: float = 0.6,
         score_threshold: Optional[float] = None,
         include_scores: bool = True,
     ) -> List[Tuple[Document, float]]:
-        """Recupera documentos relevantes usando MMR para mayor diversidad.
+        """Recupera documentos relevantes usando búsqueda híbrida optimizada.
 
-        Prioriza diversidad y relevancia simultáneamente, permitiendo reducir
-        alucinaciones y aumentar cobertura de distintas fuentes.
+        Estrategia mejorada:
+        1. Primero obtiene candidatos con scores (fetch_k documentos)
+        2. Filtra por score_threshold si se especifica
+        3. Aplica MMR solo a los mejores candidatos para balance relevancia/diversidad
+        4. Retorna los k mejores documentos con sus scores reales
 
         Args:
             query (str): Consulta del usuario.
-            k (int): Número de documentos finales.
-            fetch_k (int): Número de candidatos iniciales antes de MMR.
-            diversity_lambda (float): Parámetro de diversidad (0 más diversidad, 1 más similitud pura).
-            score_threshold (Optional[float]): Filtro de score mínimo (0-1 si vectorstore lo normaliza).
+            k (int): Número de documentos finales (default: 5, reducido para mejor calidad).
+            fetch_k (int): Número de candidatos iniciales (default: 15, optimizado).
+            diversity_lambda (float): Balance diversidad/relevancia (0.6 = 60% relevancia, 40% diversidad).
+            score_threshold (Optional[float]): Filtro de score mínimo. None = sin filtro.
             include_scores (bool): Si True, retorna tuplas (Document, score).
 
         Returns:
@@ -221,47 +232,65 @@ class RAGManager:
         if self.is_empty():
             return []
 
-        # Usamos búsqueda MMR para diversidad; Chroma expone max_marginal_relevance_search
-        # NOTA: Esta búsqueda no retorna scores directamente, por lo que realizamos
-        # una segunda pasada para obtener scores de similitud de cada documento recuperado.
-        mmr_docs = self.vector_store.max_marginal_relevance_search(
-            query=query,
-            k=k,
-            fetch_k=fetch_k,
-            lambda_mult=diversity_lambda,
+        # PASO 1: Obtener candidatos iniciales CON SCORES
+        candidates_with_scores = self.vector_store.similarity_search_with_score(
+            query=query, 
+            k=fetch_k
         )
-
-        # Obtener scores para cada documento (similarity_search_with_score)
-        # Realizamos embedding de la query una sola vez (ya optimizado internamente por Chroma)
-        scored = self.vector_store.similarity_search_with_score(query, k=fetch_k)
-        # Crear índice por contenido para asociar score (simplificación; en producción usar IDs)
-        score_map = {}
-        for doc, score in scored:
-            score_map.setdefault(doc.page_content, score)
-
-        result: List[Tuple[Document, float]] = []
-        for d in mmr_docs:
-            sc = score_map.get(d.page_content, 0.0)
-            result.append((d, sc))
-
-        # Aplicar threshold si se solicita
+        
+        # PASO 2: Filtrar por threshold si se especifica (Chroma usa distancia L2, menor = mejor)
         if score_threshold is not None:
-            result = [pair for pair in result if pair[1] >= score_threshold]
-
-        # Ordenar por score descendente para priorizar mejor evidencia
-        result.sort(key=lambda x: x[1], reverse=True)
-
+            # Nota: Chroma retorna distancias, no similitudes. 
+            # Distancia menor = más similar. Threshold debería ser distancia máxima aceptable.
+            candidates_with_scores = [
+                (doc, score) for doc, score in candidates_with_scores 
+                if score <= score_threshold  # Invertido: menor distancia es mejor
+            ]
+        
+        if not candidates_with_scores:
+            return []
+        
+        # PASO 3: Extraer embeddings de candidatos para aplicar MMR manualmente
+        # Obtenemos el embedding de la query
+        query_embedding = self.embeddings.embed_query(query)
+        
+        # Extraer documentos candidatos
+        candidate_docs = [doc for doc, _ in candidates_with_scores]
+        
+        # Obtener embeddings de los documentos candidatos
+        candidate_texts = [doc.page_content for doc in candidate_docs]
+        candidate_embeddings = self.embeddings.embed_documents(candidate_texts)
+        
+        # PASO 4: Aplicar MMR usando la función de Chroma
+        mmr_indices = maximal_marginal_relevance(
+            query_embedding=np.array(query_embedding, dtype=np.float32),
+            embedding_list=candidate_embeddings,
+            lambda_mult=diversity_lambda,
+            k=min(k, len(candidate_docs))
+        )
+        
+        # PASO 5: Construir resultado final con documentos seleccionados y sus scores originales
+        result: List[Tuple[Document, float]] = []
+        for idx in mmr_indices:
+            doc = candidate_docs[idx]
+            # Buscar el score original
+            original_score = next(
+                score for d, score in candidates_with_scores 
+                if d.page_content == doc.page_content
+            )
+            result.append((doc, original_score))
+        
         if include_scores:
-            return result[:k]
+            return result
         else:
-            return [doc for doc, _ in result[:k]]
+            return [doc for doc, _ in result]
 
-    def build_context(self, query: str, k: int = 6) -> Tuple[str, List[Tuple[str, float]]]:
+    def build_context(self, query: str, k: int = 5) -> Tuple[str, List[Tuple[str, float]]]:
         """Construye contexto formateado y lista de fuentes con scores.
 
         Args:
             query (str): Consulta del usuario.
-            k (int): Número de documentos a incluir.
+            k (int): Número de documentos a incluir (default: 5, optimizado para calidad).
 
         Returns:
             Tuple[str, List[Tuple[str, float]]]: Contexto concatenado y lista (fuente, score).
@@ -272,11 +301,27 @@ class RAGManager:
 
         parts = []
         sources: List[Tuple[str, float]] = []
+        seen_sources = set()  # Para evitar duplicados de la misma fuente
+        
         for i, (doc, score) in enumerate(retrieved, 1):
             source = doc.metadata.get("original_filename") or doc.metadata.get("source", "Desconocido")
-            parts.append(f"[Fuente {i}: {source} | score={score:.4f} | chunk={doc.metadata.get('chunk_index')}/{doc.metadata.get('total_chunks')}]\n{doc.page_content}\n")
+            
+            # Marcar fuente como vista
+            if source not in seen_sources:
+                seen_sources.add(source)
+            
+            # Formatear con información de relevancia
+            relevance = "Alta" if score < 0.5 else "Media" if score < 1.0 else "Baja"
+            parts.append(
+                f"[Fuente {i}: {source} | Relevancia: {relevance} (distancia={score:.4f})]\n"
+                f"{doc.page_content}\n"
+            )
             sources.append((source, score))
-        return "\n".join(parts), sources
+        
+        # Agregar resumen de diversidad de fuentes
+        diversity_info = f"\n[INFO: Se consultaron {len(seen_sources)} fuentes distintas de {len(retrieved)} fragmentos]\n"
+        
+        return "\n".join(parts) + diversity_info, sources
     
     def get_retriever(self, k: int = 4, search_type: str = "similarity"):
         """
@@ -294,8 +339,16 @@ class RAGManager:
             search_kwargs={"k": k}
         )
     
-    def get_relevant_context(self, query: str, k: int = 6) -> str:
-        """Devuelve el contexto enriquecido usando MMR y metadatos de trazabilidad."""
+    def get_relevant_context(self, query: str, k: int = 5) -> str:
+        """Devuelve el contexto enriquecido usando búsqueda híbrida optimizada.
+        
+        Args:
+            query (str): Consulta del usuario.
+            k (int): Número de documentos a incluir (default: 5, optimizado).
+        
+        Returns:
+            str: Contexto formateado con información de fuentes y relevancia.
+        """
         context, _ = self.build_context(query=query, k=k)
         return context
     

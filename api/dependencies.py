@@ -14,9 +14,9 @@ from typing import Optional
 from datetime import datetime
 from functools import lru_cache
 
-from src.RAG_manager import RAGManager
-from src.Llm import IAExpertLLM
-from src.Chain import IAChain
+from src.llm.RAG_manager import RAGManager
+from src.llm.Llm import IAExpertLLM
+from src.chain.Chain import IAChain
 
 
 # ============================================================================
@@ -222,7 +222,7 @@ def check_component_health() -> dict:
     
     # Verificar sistema de monitoreo
     try:
-        from src.Monitoring import logger
+        from metrics.Monitoring import logger
         components["monitoring"] = "operational"
     except Exception as e:
         components["monitoring"] = f"error: {str(e)[:50]}"
