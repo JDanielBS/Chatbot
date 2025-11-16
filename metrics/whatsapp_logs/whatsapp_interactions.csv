@@ -1,0 +1,5 @@
+timestamp,session_hash,message_length,response_length,mode,query_number,sources_found
+2025-11-15T16:47:59.925572,643e2fa9fe19b3c9,12,3167,extended,1,6
+2025-11-15T16:49:41.316775,643e2fa9fe19b3c9,12,1356,brief,2,6
+2025-11-15T17:41:59.677722,643e2fa9fe19b3c9,36,107,brief,1,6
+2025-11-15T17:47:59.876380,643e2fa9fe19b3c9,4,829,brief,2,6

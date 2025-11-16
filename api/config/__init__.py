@@ -1,0 +1,4 @@
+"""
+Configuración de la API.
+"""
+
