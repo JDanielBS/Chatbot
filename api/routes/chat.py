@@ -65,77 +65,35 @@ async def chat(request: ChatRequest):
         llm = get_llm_gemini()
         chain = get_chain()
         
+        # Llamar al chain: dejar que el chain decida si hace RAG según request.use_rag
+        # Pedimos metadata para construir la lista de fuentes en la respuesta
+        response_text, metadata = chain.invoke(
+            request.message,
+            request.thread_id,
+            use_rag=request.use_rag,
+            return_metadata=True
+        )
+
+        # Reconstruir lista de fuentes desde metadata (si existe)
         sources_list = []
-        context = ""
-        
-        # Si usa RAG, buscar documentos relevantes
-        if request.use_rag:
-            try:
-                # Buscar documentos relevantes
-                docs = rag.search_similar_documents(request.message, k=4)
-                
-                if docs:
-                    # Formatear fuentes
-                    sources_list = format_sources_from_docs(docs)
-                    
-                    # Construir contexto
-                    context = "\n\n".join([
-                        f"[Fuente: {doc.metadata.get('source', 'Desconocido')}]\n{doc.page_content}"
-                        for doc in docs
-                    ])
-                else:
-                    print("No se encontraron documentos relevantes")
-                    
-            except Exception as e:
-                print(f"Error en búsqueda RAG: {e}")
-                # Continuar sin RAG si falla
-        
-        # Construir prompt según el modo
-        mode_instructions = {
-            "brief": "Responde de forma breve y concisa (máximo 2-3 párrafos cortos).",
-            "extended": "Proporciona una respuesta detallada y explicativa."
-        }
-        
-        mode_instruction = mode_instructions.get(request.mode, mode_instructions["extended"])
-        
-        # Construir prompt completo
-        if context:
-            enhanced_prompt = f"""Eres un asistente experto en Inteligencia Artificial.
-
-{mode_instruction}
-
-Usa la siguiente información de documentos confiables para responder la pregunta. 
-Si la información no está en los documentos, indícalo claramente.
-SIEMPRE cita las fuentes cuando uses información de los documentos.
-
-CONTEXTO DE DOCUMENTOS:
-{context}
-
-PREGUNTA DEL USUARIO:
-{request.message}
-
-INSTRUCCIONES:
-- Responde de forma precisa basándote en el contexto
-- Cita las fuentes mencionando el documento
-- Si algo no está en los documentos, puedes usar tu conocimiento pero indícalo
-- Sé claro, educativo y preciso
-"""
-        else:
-            enhanced_prompt = f"""Eres un asistente experto en Inteligencia Artificial.
-
-{mode_instruction}
-
-PREGUNTA DEL USUARIO:
-{request.message}
-
-Nota: No se encontró información específica en los documentos indexados, 
-pero puedes responder basándote en tu conocimiento general sobre IA.
-"""
-        
-        # Procesar con el LLM
-        # Nota: Aquí usamos process_question directamente porque chain.invoke tiene un bug
-        # En una futura actualización, deberíamos usar el chain completo
-        response_text = llm.process_question(enhanced_prompt)
+        for item in metadata.get("sources_with_scores", []) if metadata else []:
+            if isinstance(item, (list, tuple)) and len(item) >= 2:
+                doc_name, score = item[0], item[1]
+                sources_list.append({
+                    "document": doc_name,
+                    "page": None,
+                    "relevance_score": score,
+                    "excerpt": ""
+                })
+            elif isinstance(item, dict):
+                sources_list.append({
+                    "document": item.get("document") or item.get("source"),
+                    "page": item.get("page"),
+                    "relevance_score": item.get("relevance_score") or item.get("score"),
+                    "excerpt": item.get("excerpt", "")
+                })
+            else:
+                sources_list.append({"document": str(item), "page": None, "relevance_score": None, "excerpt": ""})
         
         # Construir respuesta
         chat_response = ChatResponse(
@@ -146,7 +104,7 @@ pero puedes responder basándote en tu conocimiento general sobre IA.
             timestamp=get_timestamp(),
             metrics={
                 "query_number": query_count,
-                "context_used": len(context) > 0,
+                "context_used": (metadata.get("context_size", 0) > 0) if metadata else False,
                 "sources_found": len(sources_list),
                 "mode": request.mode
             }
