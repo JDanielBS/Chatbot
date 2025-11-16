@@ -21,7 +21,7 @@ from contextlib import asynccontextmanager
 import time
 
 from api.models import ErrorResponse
-from api.routes import chat, system
+from api.routes import chat, system, whatsapp, telegram
 from api.dependencies import (
     get_settings,
     get_rag_manager,
@@ -226,11 +226,8 @@ async def root():
 # Incluir routers
 app.include_router(chat.router, prefix=settings["api_prefix"])
 app.include_router(system.router, prefix=settings["api_prefix"])
-
-
-# ============================================================================
-# MAIN 
-# ============================================================================
+app.include_router(whatsapp.router)  # WhatsApp sin prefix para webhook directo
+app.include_router(telegram.router)  # Telegram sin prefix para webhook directo  
 
 if __name__ == "__main__":
     import uvicorn
