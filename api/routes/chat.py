@@ -26,15 +26,15 @@ router = APIRouter(prefix="/chat", tags=["Chat"])
     description="""
     Envía un mensaje al chatbot y recibe una respuesta con RAG.
     
-    **Características:**
+    Características:
     - Usa RAG para buscar información en documentos indexados
     - Mantiene contexto de conversación con thread_id
     - Cita fuentes utilizadas
     - Registra métricas de rendimiento
     
-    **Modos:**
-    - `brief`: Respuestas cortas y concisas
-    - `extended`: Respuestas detalladas con explicaciones
+    Modos:
+    - brief: Respuestas cortas y concisas
+    - extended: Respuestas detalladas con explicaciones
     """,
     responses={
         200: {"description": "Respuesta exitosa con fuentes citadas"},
@@ -76,26 +76,94 @@ async def chat(request: ChatRequest):
 
         # Reconstruir lista de fuentes desde metadata (si existe)
         sources_list = []
-        for item in metadata.get("sources_with_scores", []) if metadata else []:
-            if isinstance(item, (list, tuple)) and len(item) >= 2:
-                doc_name, score = item[0], item[1]
-                sources_list.append({
-                    "document": doc_name,
-                    "page": None,
-                    "relevance_score": score,
-                    "excerpt": ""
-                })
-            elif isinstance(item, dict):
-                sources_list.append({
-                    "document": item.get("document") or item.get("source"),
-                    "page": item.get("page"),
-                    "relevance_score": item.get("relevance_score") or item.get("score"),
-                    "excerpt": item.get("excerpt", "")
-                })
-            else:
-                sources_list.append({"document": str(item), "page": None, "relevance_score": None, "excerpt": ""})
+        context = ""
+        sources_with_scores = []
         
-        # Construir respuesta
+        # Si usa RAG, buscar documentos relevantes
+        if request.use_rag:
+            try:
+                # Usar retrieve_documents para obtener documentos completos con scores
+                retrieved_docs = rag.retrieve_documents(request.message, k=6, include_scores=True)
+                
+                if retrieved_docs:
+                    # Convertir documentos a formato de fuentes con excerpts
+                    for i, (doc, score) in enumerate(retrieved_docs, 1):
+                        source_name = doc.metadata.get("original_filename") or doc.metadata.get("source", "Desconocido")
+                        page = doc.metadata.get("page", None)
+                        
+                        # Crear excerpt truncado del contenido (primeros 150 caracteres)
+                        excerpt = doc.page_content[:150] + "..." if len(doc.page_content) > 150 else doc.page_content
+                        
+                        sources_list.append({
+                            "document": source_name,
+                            "page": page,
+                            "relevance_score": round(score, 4),
+                            "excerpt": excerpt
+                        })
+                        sources_with_scores.append((source_name, score))
+                    
+                    # Construir contexto para el prompt
+                    context_parts = []
+                    for i, (doc, score) in enumerate(retrieved_docs, 1):
+                        source = doc.metadata.get("original_filename") or doc.metadata.get("source", "Desconocido")
+                        context_parts.append(f"[Fuente {i}: {source} | score={score:.4f}]\n{doc.page_content}")
+                    context = "\n\n".join(context_parts)
+                    
+                    print(f"{len(sources_list)} fuentes encontradas con scores")
+                else:
+                    print("No se encontraron documentos relevantes")
+                    
+            except Exception as e:
+                print(f"Error en búsqueda RAG: {e}")
+                import traceback
+                traceback.print_exc()
+        
+        mode_instructions = {
+            "brief": "Responde de forma breve y concisa (máximo 2-3 párrafos cortos).",
+            "extended": "Proporciona una respuesta detallada y explicativa."
+        }
+        
+        mode_instruction = mode_instructions.get(request.mode, mode_instructions["extended"])
+        
+        if context:
+            enhanced_prompt = f"""Eres un asistente experto en Inteligencia Artificial.
+
+{mode_instruction}
+
+Usa la siguiente información de documentos confiables para responder la pregunta. 
+Si la información no está en los documentos, indícalo claramente.
+SIEMPRE cita las fuentes cuando uses información de los documentos.
+
+CONTEXTO DE DOCUMENTOS:
+{context}
+
+PREGUNTA DEL USUARIO:
+{request.message}
+
+INSTRUCCIONES:
+- Responde de forma precisa basándote en el contexto
+- Cita las fuentes mencionando el documento
+- Si algo no está en los documentos, puedes usar tu conocimiento pero indícalo
+- Sé claro, educativo y preciso
+"""
+        else:
+            enhanced_prompt = f"""Eres un asistente experto en Inteligencia Artificial.
+
+{mode_instruction}
+
+PREGUNTA DEL USUARIO:
+{request.message}
+
+Nota: No se encontró información específica en los documentos indexados, 
+pero puedes responder basándote en tu conocimiento general sobre IA.
+"""
+        
+        # Procesar con el LLM
+        # Nota: Aquí usamos process_question directamente porque chain.invoke tiene un bug
+        # En una futura actualización, deberíamos usar el chain completo
+        response_text = llm.process_question(enhanced_prompt)
+        
+        # Construir respuesta con métricas mejoradas
         chat_response = ChatResponse(
             response=response_text,
             sources=[Source(**s) for s in sources_list],
@@ -106,7 +174,8 @@ async def chat(request: ChatRequest):
                 "query_number": query_count,
                 "context_used": (metadata.get("context_size", 0) > 0) if metadata else False,
                 "sources_found": len(sources_list),
-                "mode": request.mode
+                "mode": request.mode,
+                "avg_relevance_score": round(sum(score for _, score in sources_with_scores) / len(sources_with_scores), 4) if sources_with_scores else 0.0
             }
         )
         
