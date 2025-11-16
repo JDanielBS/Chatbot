@@ -7,11 +7,8 @@ from datetime import datetime
 
 from api.models import ChatRequest, ChatResponse, Source
 from api.dependencies import (
-    get_rag_manager,
-    get_llm_gemini,
     get_chain,
     increment_query_counter,
-    format_sources_from_docs,
     get_timestamp
 )
 
@@ -60,110 +57,32 @@ async def chat(request: ChatRequest):
         # Incrementar contador de consultas
         query_count = increment_query_counter()
         
-        # Obtener componentes necesarios
-        rag = get_rag_manager()
-        llm = get_llm_gemini()
+        # Obtener chain
         chain = get_chain()
         
-        # Llamar al chain: dejar que el chain decida si hace RAG según request.use_rag
-        # Pedimos metadata para construir la lista de fuentes en la respuesta
+        # Invocar el chain completo (maneja RAG, LLM y métricas internamente)
         response_text, metadata = chain.invoke(
-            request.message,
-            request.thread_id,
+            inputs=request.message,
+            thread_id=request.thread_id,
             use_rag=request.use_rag,
             return_metadata=True
         )
-
-        # Reconstruir lista de fuentes desde metadata (si existe)
+        
+        # Extraer fuentes desde metadata (si existen)
         sources_list = []
-        context = ""
-        sources_with_scores = []
+        sources_with_scores = metadata.get("sources_with_scores", [])
         
-        # Si usa RAG, buscar documentos relevantes
-        if request.use_rag:
-            try:
-                # Usar retrieve_documents para obtener documentos completos con scores
-                retrieved_docs = rag.retrieve_documents(request.message, k=6, include_scores=True)
-                
-                if retrieved_docs:
-                    # Convertir documentos a formato de fuentes con excerpts
-                    for i, (doc, score) in enumerate(retrieved_docs, 1):
-                        source_name = doc.metadata.get("original_filename") or doc.metadata.get("source", "Desconocido")
-                        page = doc.metadata.get("page", None)
-                        
-                        # Crear excerpt truncado del contenido (primeros 150 caracteres)
-                        excerpt = doc.page_content[:150] + "..." if len(doc.page_content) > 150 else doc.page_content
-                        
-                        sources_list.append({
-                            "document": source_name,
-                            "page": page,
-                            "relevance_score": round(score, 4),
-                            "excerpt": excerpt
-                        })
-                        sources_with_scores.append((source_name, score))
-                    
-                    # Construir contexto para el prompt
-                    context_parts = []
-                    for i, (doc, score) in enumerate(retrieved_docs, 1):
-                        source = doc.metadata.get("original_filename") or doc.metadata.get("source", "Desconocido")
-                        context_parts.append(f"[Fuente {i}: {source} | score={score:.4f}]\n{doc.page_content}")
-                    context = "\n\n".join(context_parts)
-                    
-                    print(f"{len(sources_list)} fuentes encontradas con scores")
-                else:
-                    print("No se encontraron documentos relevantes")
-                    
-            except Exception as e:
-                print(f"Error en búsqueda RAG: {e}")
-                import traceback
-                traceback.print_exc()
+        if sources_with_scores:
+            # Convertir a formato API
+            for source, score in sources_with_scores:
+                sources_list.append({
+                    "document": source,
+                    "page": None,
+                    "relevance_score": round(score, 4),
+                    "excerpt": ""  # El chain no incluye excerpts en metadata
+                })
         
-        mode_instructions = {
-            "brief": "Responde de forma breve y concisa (máximo 2-3 párrafos cortos).",
-            "extended": "Proporciona una respuesta detallada y explicativa."
-        }
-        
-        mode_instruction = mode_instructions.get(request.mode, mode_instructions["extended"])
-        
-        if context:
-            enhanced_prompt = f"""Eres un asistente experto en Inteligencia Artificial.
-
-{mode_instruction}
-
-Usa la siguiente información de documentos confiables para responder la pregunta. 
-Si la información no está en los documentos, indícalo claramente.
-SIEMPRE cita las fuentes cuando uses información de los documentos.
-
-CONTEXTO DE DOCUMENTOS:
-{context}
-
-PREGUNTA DEL USUARIO:
-{request.message}
-
-INSTRUCCIONES:
-- Responde de forma precisa basándote en el contexto
-- Cita las fuentes mencionando el documento
-- Si algo no está en los documentos, puedes usar tu conocimiento pero indícalo
-- Sé claro, educativo y preciso
-"""
-        else:
-            enhanced_prompt = f"""Eres un asistente experto en Inteligencia Artificial.
-
-{mode_instruction}
-
-PREGUNTA DEL USUARIO:
-{request.message}
-
-Nota: No se encontró información específica en los documentos indexados, 
-pero puedes responder basándote en tu conocimiento general sobre IA.
-"""
-        
-        # Procesar con el LLM
-        # Nota: Aquí usamos process_question directamente porque chain.invoke tiene un bug
-        # En una futura actualización, deberíamos usar el chain completo
-        response_text = llm.process_question(enhanced_prompt)
-        
-        # Construir respuesta con métricas mejoradas
+        # Construir respuesta
         chat_response = ChatResponse(
             response=response_text,
             sources=[Source(**s) for s in sources_list],
@@ -172,10 +91,12 @@ pero puedes responder basándote en tu conocimiento general sobre IA.
             timestamp=get_timestamp(),
             metrics={
                 "query_number": query_count,
-                "context_used": (metadata.get("context_size", 0) > 0) if metadata else False,
+                "context_used": metadata.get("context_size", 0) > 0,
                 "sources_found": len(sources_list),
                 "mode": request.mode,
-                "avg_relevance_score": round(sum(score for _, score in sources_with_scores) / len(sources_with_scores), 4) if sources_with_scores else 0.0
+                "avg_relevance_score": round(
+                    sum(score for _, score in sources_with_scores) / len(sources_with_scores), 4
+                ) if sources_with_scores else 0.0
             }
         )
         
@@ -183,6 +104,8 @@ pero puedes responder basándote en tu conocimiento general sobre IA.
         
     except Exception as e:
         print(f"Error en endpoint /chat: {e}")
+        import traceback
+        traceback.print_exc()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error procesando el mensaje: {str(e)}"

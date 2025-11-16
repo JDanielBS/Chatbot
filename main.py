@@ -7,7 +7,7 @@ def main():
     # Inicializar el LLM y la cadena
     ia_llm = IAExpertLLM()
     rag = RAGManager()
-    rag.load_documents_from_directory("data/documents")
+    # rag.load_documents_from_directory("data/documents")
     chain = IAChain(ia_llm, rag)
     
     # Generar un ID único para la conversación
