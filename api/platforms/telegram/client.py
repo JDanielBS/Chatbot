@@ -1,7 +1,3 @@
-"""
-Cliente de Telegram Bot API.
-Implementa la interfaz PlatformClient.
-"""
 import os
 import logging
 import requests
@@ -13,33 +9,14 @@ logger = logging.getLogger(__name__)
 
 
 class TelegramClient(PlatformClient):
-    """
-    Cliente para interactuar con Telegram Bot API.
-    """
     
     def __init__(self, bot_token: str = None):
-        """
-        Inicializa el cliente de Telegram.
-        
-        Args:
-            bot_token: Token del bot de Telegram (si no se proporciona, se lee de .env)
-        """
         self.bot_token = bot_token or os.getenv('TELEGRAM_BOT_TOKEN')
         if not self.bot_token:
             logger.warning("TELEGRAM_BOT_TOKEN no configurado")
         self.api_url = f"https://api.telegram.org/bot{self.bot_token}"
     
     def send_message(self, user_id: str, message: str) -> bool:
-        """
-        Envía un mensaje de texto a Telegram.
-        
-        Args:
-            user_id: Chat ID del usuario
-            message: Texto del mensaje
-            
-        Returns:
-            bool: True si se envió exitosamente
-        """
         if not self.bot_token:
             logger.error("Telegram bot token no configurado")
             return False
@@ -49,7 +26,7 @@ class TelegramClient(PlatformClient):
         data = {
             "chat_id": user_id,
             "text": message,
-            "parse_mode": "Markdown"  # Soporta Markdown básico
+            "parse_mode": "Markdown"  
         }
         
         try:
@@ -69,41 +46,14 @@ class TelegramClient(PlatformClient):
             logger.error(f"Error en send_message Telegram: {str(e)}")
             return False
     
-    def mark_as_read(self, message_id: str) -> None:
-        """
-        Marca un mensaje como leído en Telegram.
-        
-        Nota: Telegram no tiene una API nativa para "marcar como leído"
-        como WhatsApp. Este método está aquí para mantener la interfaz,
-        pero no hace nada.
-        
-        Args:
-            message_id: ID del mensaje (no usado en Telegram)
-        """
-        # Telegram no tiene "marcar como leído" en su API
-        # Podríamos usar "answerCallbackQuery" para botones, pero no para mensajes normales
-        pass
-    
     def extract_message_data(self, webhook_data: dict) -> Optional[Dict]:
-        """
-        Extrae datos del mensaje del webhook de Telegram.
-        
-        Args:
-            webhook_data: Datos crudos del webhook de Telegram (update)
-            
-        Returns:
-            dict con keys: 'user_id', 'message_text', 'message_id', 'message_type'
-            o None si no hay mensaje válido
-        """
         try:
-            # Telegram envía updates con estructura diferente
             if 'message' in webhook_data:
                 message = webhook_data['message']
                 chat = message.get('chat', {})
                 chat_id = str(chat.get('id'))
                 message_id = message.get('message_id')
                 
-                # Verificar si es texto
                 if 'text' in message:
                     return {
                         'user_id': chat_id,
@@ -111,7 +61,6 @@ class TelegramClient(PlatformClient):
                         'message_id': message_id,
                         'message_type': 'text'
                     }
-                # Otros tipos de mensaje
                 elif 'photo' in message:
                     return {
                         'user_id': chat_id,
@@ -147,7 +96,6 @@ class TelegramClient(PlatformClient):
             return None
     
     def get_platform_name(self) -> str:
-        """Retorna el nombre de la plataforma."""
         return "telegram"
 
 

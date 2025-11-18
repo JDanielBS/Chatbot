@@ -222,7 +222,7 @@ def check_component_health() -> dict:
     
     # Verificar sistema de monitoreo
     try:
-        from metrics.Monitoring import logger
+        from src.metrics.Monitoring import logger
         components["monitoring"] = "operational"
     except Exception as e:
         components["monitoring"] = f"error: {str(e)[:50]}"

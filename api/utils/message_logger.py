@@ -1,6 +1,6 @@
 """
 Sistema de logging anonimizado para todas las plataformas.
-Guarda métricas de interacción sin información personal identificable (PII).
+Guarda métricas de interacción sin información personal identificable 
 """
 import csv
 from datetime import datetime
@@ -33,18 +33,6 @@ def log_interaction(
     query_number: int,
     sources_found: int = 0
 ) -> None:
-    """
-    Registra una interacción de forma anonimizada (sin PII).
-    
-    Args:
-        session_hash: Hash anonimizado del ID de usuario
-        platform: Nombre de la plataforma (whatsapp, telegram, etc.)
-        message_length: Longitud del mensaje (sin guardar el texto)
-        response_length: Longitud de la respuesta
-        mode: Modo usado (brief/extended)
-        query_number: Número de consulta global
-        sources_found: Número de fuentes encontradas
-    """
     log_entry = {
         'timestamp': datetime.now().isoformat(),
         'platform': platform,
@@ -62,7 +50,6 @@ def log_interaction(
         with open(LOG_FILE, 'a', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=CSV_HEADERS)
             
-            # Escribir headers si es la primera vez
             if not file_exists:
                 writer.writeheader()
             
@@ -73,12 +60,6 @@ def log_interaction(
 
 
 def get_logs_summary() -> Dict[str, Any]:
-    """
-    Obtiene un resumen de los logs (sin PII).
-    
-    Returns:
-        dict: Resumen estadístico de las interacciones
-    """
     if not LOG_FILE.exists():
         return {
             'total_interactions': 0,

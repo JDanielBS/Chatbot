@@ -23,23 +23,19 @@ class IAChain():
         self.rag = rag
         self.memory = MemorySaver()
         
-        # Prompts centralizados
         self.rag_prompt = get_rag_prompt()
         self.ia_prompt = get_ia_expert_prompt()
         
-        # Construir el grafo
         self.graph = self._build_graph()
 
     def _build_graph(self) -> StateGraph:
         """Construye el grafo de estados para el procesamiento de mensajes."""
         builder = StateGraph(MetricsState)
         
-        # Agregar nodos (usando lambdas para pasar las dependencias)
         builder.add_node("rag", lambda state: rag_node(state, self.rag))
         builder.add_node("llm", lambda state: llm_node(state, self.llm, self.rag_prompt, self.ia_prompt))
         builder.add_node("metrics", lambda state: metrics_node(state))
         
-        # Flujo condicional desde START
         builder.add_conditional_edges(START, route_start, {"rag": "rag", "llm": "llm"})
         builder.add_edge("rag", "llm")
         builder.add_edge("llm", "metrics")
@@ -60,11 +56,9 @@ class IAChain():
         Returns:
             str o Tuple[str, dict]: Respuesta generada, opcionalmente con metadatos
         """
-        # Preparar mensaje y configuración
         message = [HumanMessage(content=str(inputs))]
         config = {"configurable": {"thread_id": thread_id}}
         
-        # Inicializar estado
         initial_state = {
             "messages": message,
             "thread_id": thread_id,
@@ -72,10 +66,8 @@ class IAChain():
             "start_time": time.perf_counter()
         }
         
-        # Invocar el grafo
         result = self.graph.invoke(initial_state, config)
         
-        # Extraer respuesta
         response = result["messages"][-1]
         response_text = response.content if hasattr(response, 'content') else str(response)
         metadata = getattr(response, 'additional_kwargs', {}) or {}

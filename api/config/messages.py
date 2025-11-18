@@ -1,21 +1,11 @@
 """
 Configuración de mensajes comunes para todas las plataformas.
-Todos los mensajes son parametrizables y fáciles de modificar.
 """
 from typing import List
-
-# ============================================================================
-# CONFIGURACIÓN DE INSTITUCIÓN
-# ============================================================================
 
 INSTITUTION_NAME = "Universidad de Caldas"
 BOT_NAME = "Chatbot de Inteligencia Artificial"
 
-# ============================================================================
-# MENSAJES PRINCIPALES
-# ============================================================================
-
-# Mensaje de bienvenida (texto plano, sin formato de plataforma)
 WELCOME_MESSAGE_TEMPLATE = """Bienvenido al {bot_name}
 
 Soy un asistente especializado en Inteligencia Artificial de la {institution}.
@@ -35,7 +25,6 @@ Comandos disponibles:
 • MODO EXTENDIDO - Respuestas detalladas con citas
 • SALIR - Dejar de usar el servicio"""
 
-# Mensaje de política
 POLICY_MESSAGE_TEMPLATE = """Política de Uso del Chatbot
 
 ¿Qué es este bot?
@@ -58,13 +47,7 @@ Uso de datos:
 
 Fuentes:
 El bot utiliza documentos académicos confiables sobre IA. Escribe "FUENTE(S)" para ver la lista completa.
-
-¿Tienes más preguntas? Escribe cualquier pregunta sobre IA y te ayudaré."""
-
-# ============================================================================
-# MENSAJES DE COMANDOS
-# ============================================================================
-
+"""
 COMMAND_MESSAGES = {
     "mode_brief_activated": "✅ Modo Breve activado\n\nAhora recibirás respuestas cortas y concisas (2-3 frases).\n\nEscribe 'MODO EXTENDIDO' para cambiar.",
     "mode_extended_activated": "✅ Modo Extendido activado\n\nAhora recibirás respuestas detalladas con explicaciones y citas.\n\nEscribe 'MODO BREVE' para cambiar.",
@@ -78,7 +61,6 @@ COMMAND_MESSAGES = {
     "error_sources": "❌ No pude obtener la lista de fuentes en este momento. Por favor intenta más tarde."
 }
 
-# Mensaje de error para fuentes
 SOURCES_ERROR_MESSAGE = """❌ Error al obtener fuentes
 
 No pude acceder a la base de datos de documentos en este momento.
@@ -86,10 +68,6 @@ No pude acceder a la base de datos de documentos en este momento.
 El bot utiliza documentos académicos y normativos sobre Inteligencia Artificial de organizaciones como UNESCO, la Comisión Europea y fuentes académicas reconocidas.
 
 Por favor intenta más tarde o contacta al administrador."""
-
-# ============================================================================
-# FUNCIONES DE FORMATO
-# ============================================================================
 
 def get_welcome_message() -> str:
     """
@@ -127,67 +105,18 @@ def get_command_message(key: str) -> str:
     return COMMAND_MESSAGES.get(key, "")
 
 
-def format_sources_message(sources_list: List[str], total_chunks: int, error: bool = False) -> str:
-    """
-    Formatea el mensaje de fuentes.
-    
-    Args:
-        sources_list: Lista de nombres de fuentes (formato "• nombre")
-        total_chunks: Total de chunks indexados
-        error: Si hubo un error al obtener las fuentes
-        
-    Returns:
-        str: Mensaje formateado
-    """
+def format_sources_message(sources_list: List[str], error: bool = False) -> str:
     if error:
         return SOURCES_ERROR_MESSAGE
     
     if not sources_list:
         return SOURCES_ERROR_MESSAGE
     
-    message = "Fuentes Confiables Utilizadas:\n\n"
-    message += "\n".join(sources_list[:15])  # Limitar a 15
+    message = "Fuentes Confiables Disponibles:\n\n"
+    message += "\n".join(sources_list[:20])  
     
-    if len(sources_list) > 15:
-        message += f"\n\n... y {len(sources_list) - 15} documentos más"
-    
-    message += f"\n\nTotal de chunks indexados: {total_chunks}"
-    message += "\n\nEstas fuentes se utilizan para proporcionar respuestas precisas y actualizadas sobre Inteligencia Artificial."
+    if len(sources_list) > 20:
+        message += f"\n\n... y {len(sources_list) - 20} documentos más"
     
     return message
-
-
-# ============================================================================
-# FORMATEADORES POR PLATAFORMA
-# ============================================================================
-
-def format_for_whatsapp(message: str) -> str:
-    """
-    Formatea mensaje para WhatsApp (soporta Markdown básico).
-    
-    Args:
-        message: Mensaje en texto plano
-        
-    Returns:
-        str: Mensaje formateado para WhatsApp
-    """
-    # WhatsApp soporta *negrita* y _cursiva_
-    # Ya está en el formato correcto, solo retornamos
-    return message
-
-
-def format_for_telegram(message: str) -> str:
-    """
-    Formatea mensaje para Telegram (soporta Markdown).
-    
-    Args:
-        message: Mensaje en texto plano
-        
-    Returns:
-        str: Mensaje formateado para Telegram
-    """
-    # Telegram soporta Markdown similar
-    # Ya está en el formato correcto, solo retornamos
-    return message
-
 

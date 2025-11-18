@@ -54,13 +54,10 @@ async def chat(request: ChatRequest):
         HTTPException: Si hay error procesando el mensaje
     """
     try:
-        # Incrementar contador de consultas
         query_count = increment_query_counter()
         
-        # Obtener chain
         chain = get_chain()
         
-        # Invocar el chain completo (maneja RAG, LLM y métricas internamente)
         response_text, metadata = chain.invoke(
             inputs=request.message,
             thread_id=request.thread_id,
@@ -68,21 +65,18 @@ async def chat(request: ChatRequest):
             return_metadata=True
         )
         
-        # Extraer fuentes desde metadata (si existen)
         sources_list = []
         sources_with_scores = metadata.get("sources_with_scores", [])
         
         if sources_with_scores:
-            # Convertir a formato API
             for source, score in sources_with_scores:
                 sources_list.append({
                     "document": source,
                     "page": None,
                     "relevance_score": round(score, 4),
-                    "excerpt": ""  # El chain no incluye excerpts en metadata
+                    "excerpt": ""  
                 })
         
-        # Construir respuesta
         chat_response = ChatResponse(
             response=response_text,
             sources=[Source(**s) for s in sources_list],
