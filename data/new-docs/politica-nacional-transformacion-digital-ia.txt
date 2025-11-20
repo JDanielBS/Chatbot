@@ -1,0 +1,88 @@
+Pregunta: ¿Cuál es el objetivo general del documento CONPES "Política Nacional para la Transformación Digital e Inteligencia Artificial"?
+Respuesta: El objetivo general de esta política es aumentar la generación de valor social y económico a través de la transformación digital del sector público y del sector privado. Esto se logrará mediante la disminución de barreras, el fortalecimiento del capital humano y el desarrollo de condiciones habilitantes, con el fin de que Colombia pueda aprovechar las oportunidades y enfrentar los retos relacionados con la Cuarta Revolución Industrial (4RI). La política se centra en el uso estratégico de las Tecnologías de la Información y las Comunicaciones (TIC) para impulsar la productividad y el bienestar de los ciudadanos.
+Pregunta: ¿Qué justifica la necesidad de esta política en Colombia?
+Respuesta: La justificación se basa en tres limitaciones principales identificadas en las políticas públicas existentes hasta 2019:
+1. Las políticas de transformación digital habían estado orientadas principalmente al Gobierno para hacer más eficiente la relación ciudadano-Estado, pero se requería acelerar estos avances para estar a la vanguardia de los desarrollos más recientes en gobierno digital.
+2. Dada la velocidad del cambio tecnológico, el país aún debía fomentar en la ciudadanía los conocimientos y habilidades digitales necesarias para afrontar los cambios económicos y sociales de la 4RI.
+3. Las políticas de competitividad y productividad habían incorporado las tecnologías digitales, pero no con la relevancia y profundidad que exige la 4RI, lo que generaba el riesgo de una pérdida de oportunidad para generar valor económico y social.
+Pregunta: ¿Cuáles son los objetivos específicos de esta política?
+Respuesta: La política establece cuatro objetivos específicos (OE):
+* OE 1: Disminuir las barreras que impiden la incorporación de tecnologías digitales en el sector privado y en el sector público para facilitar la transformación digital del país.
+* OE 2: Crear condiciones habilitantes para la innovación digital en los sectores público y privado con el propósito de que sea un mecanismo para el desarrollo de la transformación digital.
+* OE 3: Fortalecer las competencias del capital humano para afrontar la 4RI con el fin de asegurar el recurso humano requerido.
+* OE 4: Desarrollar condiciones habilitantes para preparar a Colombia para los cambios económicos y sociales que conlleva la Inteligencia Artificial (IA).
+Pregunta: Según el diagnóstico, ¿cuáles son las principales barreras para la adopción de tecnologías digitales en el sector privado en Colombia?
+Respuesta: El diagnóstico identifica varias barreras clave en el sector privado, basándose en encuestas como la de la ANDI (2017) y la Primera Gran Encuesta TIC (2017):
+* Falta de cultura (74.1%): Ausencia de instrumentos que permitan la exploración de nuevas tecnologías, limitándose a digitalizar procesos sin un cambio de fondo en el modelo de negocio.
+* Desconocimiento (61.6%): Falta de conocimiento sobre tecnologías emergentes, soluciones digitales, tendencias del sector y buenas prácticas para una transformación digital exitosa.
+* Falta de presupuesto (56.3%): No contar con un presupuesto específico o percibir la inversión en transformación digital como un gasto.
+* Falta de mentalidad (50.9%): Aversión al cambio, percepción de las tecnologías como un fin y no como un medio, y falta de generación de nuevos productos y servicios.
+* Baja exigencia del mercado: El 66% de las empresas no tenían un área TIC, principalmente porque "el negocio no lo exige" (69.7%), lo que se atribuye a bajos niveles de competencia doméstica (Colombia en puesto 110 de 141 países).
+* Bajo uso de herramientas TIC: Un alto porcentaje de empresas no utilizaba herramientas como cloud computing (75.1%), big data (87.4%) o inteligencia artificial (88.3%).
+* Incredulidad tecnológica en las Mipymes: La mayoría de las micro, pequeñas y medianas empresas se clasifican como "incrédulas", considerando la tecnología solo para actividades específicas y sin promover estrategias de digitalización.
+Pregunta: ¿Qué problemas identifica el diagnóstico en el sector público respecto a la transformación digital?
+Respuesta: En el sector público, el diagnóstico, basado en el Formulario Único Reporte de Avances de la Gestión (FURAG), revela:
+* Bajo desempeño en políticas clave: Existe una brecha significativa entre el puntaje promedio y el máximo nacional en políticas como gobierno digital, seguridad digital y racionalización de trámites. Por ejemplo, en "Gobierno digital: trámites y servicios en línea" el promedio nacional fue de 73.0 frente a un máximo de 99.0.
+* Grandes disparidades entre entidades: Esto dificulta que la transformación digital se desarrolle y materialice de manera homogénea en el Estado.
+* Pérdida de posiciones en rankings internacionales: Colombia cayó del puesto 31 al 61 en el Índice de Desarrollo de Gobierno Electrónico de la ONU (2010-2018) y del puesto 49 al 58 en el Ranking Mundial de Competitividad Digital (2014-2019).
+Pregunta: ¿Cómo se define el concepto de "Transformación Digital" en el documento?
+Respuesta: La transformación digital se define como un proceso de explotación de tecnologías digitales que tiene la capacidad de crear nuevas formas de hacer las cosas en todos los sectores económicos. Esto genera nuevos modelos de desarrollo, procesos, y la creación de productos y servicios que producen valor. Se sustenta en la digitalización, que es la conversión de datos y procesos análogos hacia formatos que pueden ser entendidos y manipulados por máquinas. La transformación digital es una característica central de la Cuarta Revolución Industrial (4RI) y es transversal a todos los sectores económicos.
+Pregunta: ¿Qué se entiende por "Inteligencia Artificial" (IA) y cuál es su importancia según la política?
+Respuesta: La Inteligencia Artificial se define como un campo de la informática dedicado a resolver problemas cognitivos comúnmente asociados con la inteligencia humana o seres inteligentes, entendidos como aquellos que pueden adaptarse a situaciones cambiantes. Su base es el desarrollo de sistemas informáticos, la disponibilidad de datos y los algoritmos.
+Su importancia radica en que:
+* Es un acelerador clave de la transformación digital, ya que aumenta el potencial de las máquinas para entender y manipular datos.
+* Se estima que su implementación puede significar un crecimiento mínimo anual del 4.5% del PIB para Colombia durante los próximos 10 años.
+* Muchas otras tecnologías de la 4RI dependen de su desarrollo.
+* Se reconoce su potencial de beneficios, pero también los riesgos, como el impacto en el mercado laboral y la profundización de desigualdades.
+Pregunta: ¿Cuáles son los 14 principios para el desarrollo de la IA en Colombia que establece el documento?
+Respuesta: Los 14 principios son:
+1. Creación del mercado de IA: Convertir a Colombia en un laboratorio para un mercado de IA.
+2. Priorización de Innovaciones creadoras de mercado: Generar condiciones para innovaciones que jalonen el talento y cambios regulatorios.
+3. Políticas basadas en evidencia y métricas: Que la regulación esté soportada por evidencia para evitar limitantes injustificadas.
+4. Experimentación regulatoria: Adoptar modelos novedosos como sandboxes para que las entidades conozcan las tecnologías y los emprendedores experimenten.
+5. Infraestructura de datos de fácil acceso: Desarrollar bases de datos masivos, interoperables y disminuir barreras de acceso, garantizando los derechos ciudadanos.
+6. Mercado de IA como generador de equidad e inclusión: Dirigir la IA a consumidores no tradicionales y a mejorar la calidad de vida de la población vulnerable.
+7. Marco ético para la IA y seguridad: Atender desafíos éticos como justicia, no discriminación, transparencia, privacidad y derechos humanos.
+8. Compromisos creíbles y producto de consensos: Implementar una política creíble con consensos entre sectores para una seguridad jurídica duradera.
+9. Ambiente de experimentación para políticas de talento: Fomentar habilidades y metodologías efectivas para la adopción de la IA en toda la población.
+10. Rol estratégico de las universidades: Fomentar proyectos académicos de IA en centros de educación superior.
+11. Atracción de talento internacional: Crear programas para atraer expertos internacionales.
+12. Políticas sobre futuro del trabajo basadas en evidencia: Realizar seguimiento al mercado laboral para diseñar medidas contra los efectos negativos en el empleo.
+13. El Estado como facilitador y usuario de la IA: El Estado debe brindar condiciones para el desarrollo competitivo del mercado y ser un gran usuario de soluciones de IA.
+14. Acceso continuo a conocimiento internacional: Generar intercambio constante con entidades internacionales líderes en IA.
+Pregunta: ¿En qué consiste el plan de acción para "Disminuir las barreras que impiden la incorporación de tecnologías digitales" (OE1)?
+Respuesta: El plan para el OE1 se estructura en tres líneas de acción con múltiples actividades:
+* Línea de acción 1: Disminuir barreras de cultura y desconocimiento en el sector privado. Incluye integrar servicios de transformación digital en el Programa Fábricas de Productividad (Ministerio de Comercio) y articular iniciativas como Centros de Transformación Digital Empresarial y Laboratorios de Transformación Digital (MinTIC).
+* Línea de acción 2: Desarrollar ajustes normativos e institucionales. Comprende 10 actividades, como promover un ecosistema de pagos de bajo valor (Unidad de Proyección Normativa), actualizar la normativa para nuevos modelos de negocio y tecnologías (MinTIC), desplegar redes 5G (MinTIC y ANE), implementar una plataforma de factura electrónica como título valor (DIAN y MinComercio), reformar la Ley de Teletrabajo (MinTrabajo), crear ambientes de prueba regulatorios (sandboxes) en sectores como Fintech y Healthtech (Presidencia), y consolidar la estrategia SoftWhere para conectar empresas con oferta tecnológica.
+* Línea de acción 3: Mejorar el desempeño de la política de gobierno digital. Incluye desarrollar lineamientos para que las entidades públicas elaboren planes de transformación digital (MinTIC) y aplicar una Encuesta TIC nacional para medir el avance de la transformación digital (MinTIC y DANE).
+Pregunta: ¿Qué acciones se plantean para "Crear condiciones habilitantes para la innovación digital" (OE2)?
+Respuesta: Para el OE2, el plan se divide en cuatro líneas de acción:
+* Línea de acción 4: Alianzas internacionales para la Innovación. Posicionar el Centro para la Cuarta Revolución Industrial como impulsor de políticas públicas y desarrollar una plataforma digital para conectar el ecosistema de innovación pública (DNP y MinTIC).
+* Línea de acción 5: Fomento al emprendimiento y la transformación digital. Implementar el Campus C Emprende (INNPULSA), incluir la inversión en fondos de capital emprendedor con enfoque en 4RI (Bancóldex), desarrollar el concepto de manufactura avanzada a través del programa N.E.X.T. (INNPULSA), y generar criterios para seleccionar fondos de inversión en 4RI (Presidencia).
+* Línea de acción 6: Promover la Innovación basada en TIC en el sector público. Actualizar los instrumentos de agregación de demanda TIC en la compra pública (Colombia Compra Eficiente), incorporar la compra pública innovadora mediante pilotos, y desarrollar laboratorios digitales sectoriales (MinTIC).
+* Línea de acción 7: Ejecutar iniciativas de alto impacto. Incluye integrar trámites y servicios al Portal Único del Estado, implementar la interoperabilidad de la historia clínica (MinSalud y MinTIC), ejecutar el proyecto de expediente digital en la rama ejecutiva (MinJusticia y MinTIC), transformar digitalmente la DIAN, priorizar iniciativas de alto impacto por sectores (Presidencia), ejecutar un proyecto de analítica de datos para innovación pública (DNP), modernizar los archivos nacionales (Archivo General y MinTIC), diseñar una estrategia para la transformación digital del sector de la construcción (FDN y otros), y fomentar soluciones tecnológicas para asuntos públicos de alto impacto (MinTIC, INNPULSA, DNP).
+Pregunta: ¿Cómo se propone "Fortalecer las competencias del capital humano" (OE3)?
+Respuesta: El fortalecimiento del capital humano (OE3) se aborda a través de cinco líneas de acción:
+* Línea de acción 8: Condiciones habilitantes para competencias digitales en la trayectoria educativa. Diseñar lineamientos curriculares para promover habilidades para la 4RI (Ministerio de Educación) y publicar lineamientos de calidad para programas de articulación de educación media (SENA).
+* Línea de acción 9: Capacidades para la interacción con tecnologías emergentes. Desarrollar una estrategia nacional de Edutainment con énfasis en STEM+A (Ministerio de Educación, Colciencias, MinTIC) e implementar un piloto para identificar estudiantes con habilidades en STEM+A.
+* Línea de acción 10: Configuración de ecosistemas de Innovación. Diseñar y poner en marcha una estrategia para configurar ecosistemas de innovación educativa (Ministerio de Educación).
+* Línea de acción 11: Alianzas internacionales para la formación de talento. Definir planes de trabajo con actores líderes del mercado tecnológico para transferir conocimiento (MinTIC, Ministerio de Educación, ICETEX).
+* Línea de acción 12: Preparación de la educación, con prioridad en IA. Poner a disposición el portafolio de doctores en áreas afines (Colciencias), implementar una estrategia para que las Instituciones de Educación Superior ajusten sus programas a los desafíos de la 4RI e IA (Ministerio de Educación), ofrecer un programa de formación para el trabajo con énfasis en 4RI (SENA y MinTIC), y elaborar lineamientos para transformar "Computadores para Educar" en "Tecnologías para Aprender" (DNP, MinTIC, Ministerio de Educación).
+Pregunta: ¿Cuáles son las acciones clave para "Desarrollar condiciones habilitantes para la Inteligencia Artificial" (OE4)?
+Respuesta: El OE4, el más extenso, se concentra en dos líneas de acción con 24 actividades detalladas. Las acciones clave incluyen:
+* Línea de acción 13: Impulsar el desarrollo de la IA.
+o Marco Ético y Estándares: Diseñar un marco ético transversal para sistemas de IA (MinTIC, Presidencia) y desarrollar estándares para sistemas de IA incluyentes.
+o Ciberseguridad: Formular una política pública de ciberseguridad que incluya protección para usuarios de sistemas de IA (DNP, Presidencia).
+o Financiación e I+D: Establecer una línea permanente de financiamiento para I+D en IA (Colciencias) y definir un plan de transferencia de conocimiento del sector científico a las empresas.
+o Talento: Desarrollar un mecanismo para atraer expertos internacionales en IA (Colciencias, MinTIC, Presidencia) y crear programas de formación de alto nivel (C-Level) y técnicos en IA (MinTIC, Presidencia).
+o Evidencia y Mercado Laboral: Realizar un estudio sobre el impacto de la IA en el mercado laboral (Ministerio del Trabajo) y elaborar un reporte general sobre la regulación que impacta el mercado de IA (DNP).
+o Regulación e Innovación: Diseñar un plan para asistir a entidades en la creación de sandboxes regulatorios en IA (Presidencia) y poner en operación una sede del Campus C Emprende para emprendimientos 4.0 (INNPULSA).
+o Infraestructura de Datos: Implementar la infraestructura de datos del CONPES 3920 y definir lineamientos para modelos de Data Trusts (MinTIC, Superintendencia de Industria y Comercio).
+o Aplicación en el Sector Público: Desarrollar ejercicios de aplicación de soluciones de IA para mejorar servicios ciudadanos y la toma de decisiones (MinTIC, Presidencia).
+o Gobernanza y Posicionamiento Internacional: Posicionar el Centro para la 4RI, crear un consejo internacional de asesores, y hacer seguimiento a las recomendaciones de la OCDE en IA (Presidencia, DNP).
+* Línea de acción 14: Impulsar otras tecnologías digitales. Diseñar una metodología para el análisis prospectivo de tecnologías digitales emergentes (DNP, MinTIC).
+Pregunta: ¿Cuál es el presupuesto estimado y el cronograma de seguimiento para esta política?
+Respuesta:
+* Presupuesto: La política tiene un costo total aproximado de $121.619 millones de pesos colombianos, distribuidos entre 2019 y 2022. Los mayores ejecutores son el Ministerio de Educación Nacional ($55.424 millones) y el Ministerio de Tecnologías de la Información y las Comunicaciones ($40.239 millones). Otras entidades con asignaciones significativas son la DIAN ($15.272 millones) y el Departamento Nacional de Planeación ($2.386 millones).
+* Cronograma de Seguimiento: El seguimiento se realizará a través de un Plan de Acción y Seguimiento (PAS) con siete cortes de reporte entre diciembre de 2019 y diciembre de 2022. El DNP consolidará un Informe de cierre final en junio de 2023. El cumplimiento está sujeto a la disponibilidad de recursos apropiados.
+

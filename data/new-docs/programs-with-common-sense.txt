@@ -1,0 +1,51 @@
+Pregunta: ¿Cuál es el objetivo principal del artículo "Programs with Common Sense" de John McCarthy?
+Respuesta: El objetivo principal del artículo es proponer un programa llamado el "consejero" (advice taker) que sea capaz de resolver problemas mediante la manipulación de enunciados en lenguajes formales, especialmente aquellos que requieren sentido común en los humanos. McCarthy busca diseñar un sistema que pueda deducir automáticamente una amplia clase de consecuencias inmediatas a partir de lo que se le dice y de lo que ya sabe, sin depender de heurísticas externas al lenguaje formal. Este programa se diferencia de otros sistemas previos, como la Logic Theory Machine o el Geometry Program, en que las heurísticas y procedimientos se describen dentro del propio lenguaje formal, lo que permitiría mejorar su comportamiento simplemente haciendo declaraciones en ese lenguaje, sin necesidad de modificar el código subyacente.
+Pregunta: ¿Qué se entiende por "sentido común" en el contexto del advice taker?
+Respuesta: En el contexto del advice taker, un programa tiene "sentido común" si es capaz de deducir por sí mismo una clase suficientemente amplia de consecuencias inmediatas de cualquier cosa que se le diga y de lo que ya conoce. Esta propiedad es análoga a lo que en los humanos se describe como sentido común, ya que permite al sistema inferir información relevante a partir de conocimientos previos y nuevos enunciados, sin requerir instrucciones explícitas para cada situación.
+Pregunta: ¿Cuáles son las características clave que debe tener un sistema para evolucionar hacia una inteligencia de nivel humano según McCarthy?
+Respuesta: McCarthy enumera cinco características esenciales:
+1. Representabilidad de todos los comportamientos: El sistema debe poder construir autómatas arbitrarios o programar en un lenguaje de propósito general.
+2. Expresabilidad de cambios interesantes en el comportamiento: Modificaciones relevantes en el comportamiento deben poder expresarse de manera simple.
+3. Capacidad de mejora en todos los aspectos del comportamiento: Incluso los mecanismos de mejora deben ser mejorables.
+4. Conceptos de éxito parcial: El sistema debe poder evaluar grados de éxito, ya que en problemas complejos los éxitos o fracasos decisivos son infrecuentes.
+5. Creación de subrutinas: Debe ser capaz de crear subrutinas que puedan integrarse en procedimientos como unidades, junto con mecanismos para evaluar su utilidad en diferentes contextos.
+Pregunta: ¿Cuál es la diferencia principal entre instruir mediante oraciones imperativas y declarativas según McCarthy?
+Respuesta:
+* Oraciones imperativas:
+o Ventajas: El procedimiento ya está definido y se ejecuta más rápido; se parte de un estado básico de la máquina sin asumir conocimiento previo.
+o Desventajas: Dependen fuertemente del orden y del estado previo del sistema.
+* Oraciones declarativas:
+o Ventajas: Aprovechan el conocimiento previo; tienen consecuencias lógicas que la máquina puede deducir; son menos dependientes del orden y del estado previo, lo que facilita las modificaciones posteriores.
+o Desventajas: Requieren que el sistema tenga capacidad de inferencia lógica.
+Pregunta: ¿Cómo está estructurado el sistema advice taker propuesto?
+Respuesta: El sistema tiene los siguientes componentes principales:
+1. Representación de expresiones: Se utilizan estructuras de listas para representar términos y secuencias de expresiones.
+2. Sistema lógico: Las expresiones pueden ser enunciados declarativos en un sistema lógico análogo a un sistema Post canónico, con una regla de inferencia que combina sustitución de variables y modus ponens.
+3. Rutina de deducción inmediata: Aplica inferencias inmediatas a un conjunto de premisas, sin usar heurísticas semánticas.
+4. Listas de propiedades: Cada objeto tiene una lista de propiedades que almacena información específica sobre él.
+5. Ciclo de operación: La rutina de deducción se aplica a listas de premisas, se deducen imperativos y estos se ejecutan, pudiendo reiniciar el proceso.
+Pregunta: ¿Cómo ilustra McCarthy el funcionamiento del advice taker con el ejemplo de ir al aeropuerto?
+Respuesta: McCarthy describe un escenario en el que un individuo desea ir desde su escritorio en casa hasta el aeropuerto. El sistema utiliza premisas como:
+* at(I, desk), at(desk, home), at(car, home), etc.
+* Reglas de transitividad para at.
+* Reglas de factibilidad para caminar y conducir.
+* Definiciones de acciones como go(x, y, z) y canachult(x, y, z) que indican si una acción puede lograr un objetivo.
+El sistema deduce una secuencia de acciones:
+1. Caminar desde el escritorio al coche.
+2. Conducir desde casa al aeropuerto.
+La deducción final es do(go(desk, car, walking)), que inicia la acción.
+Pregunta: ¿Cómo se seleccionan las premisas relevantes para un problema dado en el advice taker?
+Respuesta: La selección de premisas se realiza mediante heurísticas almacenadas en las listas de propiedades de los objetos y metas. Por ejemplo:
+* La meta want(at(I, airport)) activa la búsqueda en las listas de propiedades de want(at(I, x)) y want(x).
+* Se consultan reglas generales, como las de transitividad o factibilidad de acciones.
+* Se utilizan rutinas de observación que identifican patrones en las listas de objetivos y activan la búsqueda de información relevante en niveles de abstracción creciente.
+* La búsqueda se guía por la relación entre ubicaciones y la disponibilidad de acciones (ej. caminar, conducir).
+Pregunta: ¿Qué críticas presenta el Prof. Bar-Hillel al trabajo de McCarthy?
+Respuesta: Bar-Hillel critica varios aspectos:
+* Falta de rigor lógico: Señala que la relación at no es transitiva en el sentido físico, lo que lleva a premisas falsas.
+* Falta de realismo: El ejemplo ignora factores como el tiempo, costos alternativos (ej. tomar un taxi) o imprevistos.
+* Complejidad no abordada: Considera que la selección de premisas relevantes entre millones de hechos almacenados es un problema de enorme complejidad no resuelto.
+* Sobresimplificación: Argumenta que el modelo es demasiado simplista para aplicaciones reales y que la deducción propuesta no es sólida.
+Pregunta: ¿Cuál es la postura de McCarthy sobre la relación entre epistemología y programación?
+Respuesta: McCarthy sostiene que, al programar sistemas que aprenden de la experiencia, se está incorporando una forma de epistemología en el código. Argumenta que, aunque la epistemología tradicional está en un estado confuso, el éxito en la creación de programas que razonen sobre el mundo podría permitir reformular la epistemología como una rama de las matemáticas aplicadas, tan sólida y menos misteriosa que la física.
+

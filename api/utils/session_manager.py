@@ -27,16 +27,3 @@ def get_session(platform: str, user_id: str) -> Dict:
         }
     
     return sessions[session_hash]
-
-
-def get_all_sessions() -> Dict:
-    return sessions
-
-
-def clear_session(platform: str, user_id: str) -> None:
-    session_hash = hash_user_id(platform, user_id)
-    if session_hash in sessions:
-        del sessions[session_hash]
-        logger.info(f"Sesión eliminada: {platform}_{user_id}")
-
-

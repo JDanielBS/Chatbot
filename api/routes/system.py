@@ -48,10 +48,8 @@ async def health_check():
     """
     settings = get_settings()
     
-    # Verificar componentes
     components = check_component_health()
     
-    # Determinar estado general
     has_errors = any("error" in status for status in components.values())
     has_degraded = any("degraded" in status for status in components.values())
     
@@ -93,24 +91,12 @@ async def get_stats():
     Returns:
         SystemStats: Estadísticas del sistema
     """
-    # Obtener estadísticas del RAG
     try:
         rag = get_rag_manager()
         rag_stats = rag.get_stats()
         
-        # Agregar información adicional
         if rag.is_empty():
             rag_stats["warning"] = "Base de datos vectorial vacía"
-        
-        # Convertir tamaño de la base de datos si es posible
-        import os
-        if os.path.exists(rag.persist_directory):
-            total_size = sum(
-                os.path.getsize(os.path.join(dirpath, filename))
-                for dirpath, _, filenames in os.walk(rag.persist_directory)
-                for filename in filenames
-            )
-            rag_stats["database_size_mb"] = round(total_size / (1024 * 1024), 2)
         
     except Exception as e:
         rag_stats = {
@@ -118,16 +104,12 @@ async def get_stats():
             "status": "Error"
         }
     
-    # Obtener contador de consultas
     total_queries = get_query_counter()
     
-    # Obtener tiempo de actividad
     uptime = get_uptime()
     
-    # Obtener modelos disponibles
     models = get_available_models()
     
-    # Determinar estado general
     components = check_component_health()
     has_errors = any("error" in status for status in components.values())
     
@@ -171,7 +153,6 @@ async def get_info():
             "stats": "/api/stats",
             "documents": "/api/documents",
             "sources": "/api/sources",
-            "feedback": "/api/feedback",
             "compare": "/api/chat/compare"
         },
         "features": {
@@ -181,29 +162,3 @@ async def get_info():
             "multi_model": "Multiple LLM support"
         }
     }
-
-
-@router.get(
-    "/metrics",
-    summary="Métricas detalladas",
-    description="Obtiene métricas detalladas de rendimiento",
-    tags=["System"]
-)
-async def get_metrics():
-    """
-    Obtiene métricas detalladas del sistema.
-    
-    TODO: Implementar luego con lectura del CSV de métricas.
-    
-    Incluirá:
-    - Latencia promedio
-    - Uso de tokens
-    - Costos estimados
-    - Distribución de modelos usados
-    - etc.
-    """
-    return {
-        "message": "Endpoint en desarrollo",
-        "note": "Las métricas se están registrando en metrics/ia_metrics_report.csv",
-    }
-

@@ -1,0 +1,422 @@
+Pregunta: ¿Qué es el "Libro de la Inteligencia Artificial" versión 24 y quiénes son sus autores?
+Respuesta: El "Libro de la Inteligencia Artificial" versión 24 es una obra comprensiva creada por Ángeles Vallejo y Alfredo Vela. Sirve como una guía esencial para entender la inteligencia artificial (IA) y su aplicación en múltiples dominios. El libro abarca desde conceptos básicos hasta aplicaciones avanzadas, incluyendo más de 250 herramientas relevantes en el campo. También aborda temas como chatbots, aprendizaje automático, generación de imágenes y consideraciones éticas, ofreciendo ejemplos prácticos y orientaciones para la implementación efectiva de la IA en sectores como la educación y la industria.
+
+Pregunta: ¿Cuáles son las 10 tendencias en tecnología para 2024 según Gartner?
+Respuesta: Las 10 tendencias en tecnología para 2024, según Gartner, son:
+1. IA generativa
+2. Ciberseguridad como pilar central
+3. Convergencia "figital" y gemelos digitales
+4. Computación cuántica
+5. Green Tech
+6. La importancia de los datos
+7. Platform Engineering
+8. Aplicaciones más inteligentes
+9. Automatización robótica de procesos (RPA)
+10. IoT y la hiperconexión
+
+Pregunta: ¿Qué países registraron la mayor inversión privada en inteligencia artificial entre 2013 y 2022?
+Respuesta: De acuerdo con NetBase Quid, los países con mayor inversión privada en IA entre 2013 y 2022 (en miles de millones de USD) fueron:
+* Estados Unidos: $95.1
+* China: $18.2
+* Reino Unido: $10.8
+* Israel: $10.8
+* Canadá: $8.8
+* India: $7.7
+* Alemania: $7.0
+* Francia: $6.6
+* Corea del Sur: $5.6
+* Singapur: $4.7
+
+Pregunta: ¿Cuál es la definición de inteligencia artificial según el documento?
+Respuesta: La inteligencia artificial (IA) es el campo de la informática que se dedica al desarrollo de algoritmos y sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como el aprendizaje, la comprensión del lenguaje natural, la toma de decisiones y la resolución de problemas. Se divide en dos categorías principales: IA débil (o aplicada), que se enfoca en tareas específicas, e IA fuerte (o general), que busca desarrollar sistemas que puedan realizar cualquier tarea intelectual humana.
+
+Pregunta: ¿Qué es la inteligencia artificial débil?
+Respuesta: La inteligencia artificial débil, también conocida como IA estrecha o de propósito específico, se centra en realizar una tarea específica, como jugar al ajedrez, traducir idiomas o diagnosticar enfermedades. No pretende ser inteligente en el mismo sentido que los humanos y no puede generalizar su conocimiento a otras tareas. Se basa en el aprendizaje automático para aprender a realizar su tarea. Ejemplos incluyen reconocimiento facial, sistemas de juego, traductores y diagnóstico médico.
+
+Pregunta: ¿Qué es la inteligencia artificial fuerte?
+Respuesta: La inteligencia artificial fuerte, o IA general, es un tipo de IA hipotética que sería capaz de pensar y sentir como un humano. Aún no existe, pero es un objetivo de investigación activo. Tendría habilidades cognitivas como aprendizaje, razonamiento, toma de decisiones, creatividad y autoconciencia. Su desarrollo plantea desafíos éticos y filosóficos, como la consideración de si las máquinas deberían ser tratadas como personas y cómo asegurar que se utilicen para el bien.
+
+Pregunta: ¿Qué es el machine learning?
+Respuesta: El machine learning (ML) es una rama de la inteligencia artificial que se enfoca en desarrollar sistemas que pueden aprender y mejorar automáticamente a partir de la experiencia, sin ser programados explícitamente. Se basa en la idea de que las computadoras pueden aprender a partir de datos y algoritmos. Existen diferentes tipos, como aprendizaje supervisado, no supervisado y por refuerzo, y se utiliza para tareas como clasificación, regresión, detección de patrones y optimización.
+
+Pregunta: ¿Cuáles son algunas aplicaciones concretas del machine learning en la actualidad?
+Respuesta: Algunas aplicaciones concretas del machine learning incluyen:
+1. Reconocimiento de imágenes
+2. Procesamiento de lenguaje natural (NLP)
+3. Sistemas de recomendación
+4. Detección de fraudes
+5. Conducción autónoma
+6. Diagnóstico médico
+7. Predicción del tiempo
+8. Análisis de texto jurídico
+9. Análisis de redes sociales
+10. Control de calidad en manufactura
+
+Pregunta: ¿Qué es la visión artificial?
+Respuesta: La visión artificial es una disciplina de la inteligencia artificial que se enfoca en desarrollar sistemas capaces de interpretar, entender y analizar imágenes y videos digitales de la misma manera que lo haría el ser humano. Utiliza algoritmos y técnicas computacionales para procesar datos visuales y extraer información significativa. Sus aplicaciones incluyen robótica, automatización industrial, medicina, seguridad, transporte, agricultura y realidad aumentada.
+
+Pregunta: ¿Qué es el deep learning?
+Respuesta: El deep learning, o aprendizaje profundo, es una subdisciplina de la inteligencia artificial que se basa en la construcción y entrenamiento de redes neuronales artificiales profundas para comprender y resolver tareas complejas. Utiliza múltiples capas de neuronas interconectadas, lo que permite al sistema aprender representaciones de datos de manera jerárquica y abstracta. Se utiliza en tareas como procesamiento de lenguaje natural, visión por computadora, pronóstico y reconocimiento de patrones.
+
+Pregunta: ¿Qué es un modelo de lenguaje?
+Respuesta: Un modelo de lenguaje es un sistema computacional diseñado para entender, generar y predecir el lenguaje humano. Estos modelos son entrenados para analizar patrones en grandes conjuntos de datos de texto, aprender la estructura gramatical y semántica del lenguaje, y luego utilizar este conocimiento para realizar tareas como generación de texto coherente, traducción automática, respuesta a preguntas y clasificación de sentimientos. Varían en complejidad, desde modelos estadísticos hasta redes neuronales profundas.
+
+Pregunta: ¿Qué es la inteligencia artificial generativa?
+Respuesta: La inteligencia artificial generativa es un subcampo de la IA que se centra en la creación de sistemas capaces de generar datos, contenido o información de manera autónoma y creativa. Utiliza modelos y algoritmos que aprenden patrones a partir de conjuntos de datos existentes y luego generan nuevos datos similares. Un ejemplo común son las redes generativas antagónicas (GANs), que consisten en un generador y un discriminador que compiten para producir datos realistas. Se utiliza en generación de imágenes, música, texto y contenido multimedia.
+
+Pregunta: ¿Qué es un "prompt" en el contexto de la inteligencia artificial?
+Respuesta: Un "prompt" es una solicitud o instrucción que se utiliza en la interacción con sistemas de inteligencia artificial, como modelos de lenguaje. Es un fragmento de texto que se proporciona como entrada para solicitar una respuesta o acción específica del sistema. Por ejemplo, en una conversación, la pregunta o tema que se plantea es el prompt que guía la respuesta del modelo. Su uso es común en chatbots, sistemas de generación de texto y asistentes virtuales.
+
+Pregunta: ¿Cuáles son algunos consejos para escribir prompts efectivos en ChatGPT?
+Respuesta: Algunos consejos para escribir prompts efectivos en ChatGPT incluyen:
+1. Ser específico y detallado
+2. Utilizar preguntas abiertas
+3. Definir el objetivo del prompt
+4. Mencionar el formato deseado
+5. Limitar el alcance de la pregunta
+6. Usar lenguaje claro y directo
+7. Incorporar contexto relevante
+8. Especificar la longitud deseada
+9. Evitar suposiciones implícitas
+10. Fraccionar preguntas complejas
+
+Pregunta: ¿Qué tipos de archivos puede procesar ChatGPT?
+Respuesta: ChatGPT puede trabajar con los siguientes tipos de archivos:
+1. Archivos de texto (.txt)
+2. Documentos de Word (.docx)
+3. Archivos PDF (.pdf)
+4. Archivos de Excel (.xlsx)
+5. Archivos de PowerPoint (.pptx)
+6. Archivos de código fuente (.py, .js, .java, etc.)
+7. Archivos de imagen (.jpg, .png, etc.) para generar descripciones
+8. Archivos CSV (.csv)
+9. Archivos Markdown (.md)
+10. Archivos de datos (JSON, XML, etc.)
+
+Pregunta: ¿Cuáles son las principales diferencias entre ChatGPT 4 y ChatGPT 3.5?
+Respuesta: Las principales diferencias entre ChatGPT 4 y ChatGPT 3.5 incluyen:
+1. Mayor capacidad de procesamiento de texto complejo
+2. Mejora en la comprensión contextual
+3. Generación de texto más fluida y natural
+4. Conocimiento más actualizado y amplio
+5. Reducción de respuestas erróneas
+6. Capacidad de análisis mejorada
+7. Interpretación de instrucciones complejas
+8. Mayor precisión en temas especializados
+9. Capacidad multilingüe mejorada
+10. Generación creativa más avanzada
+
+Pregunta: ¿Qué es un deepfake?
+Respuesta: Un deepfake es una forma avanzada de manipulación de medios digitales que utiliza técnicas de inteligencia artificial, en particular el aprendizaje profundo, para crear contenido multimedia falso y realista, como vídeos, imágenes o audio, que aparenta ser auténtico. Estas manipulaciones pueden incluir la superposición de caras, modificación de discursos o creación de conversaciones ficticias, con el propósito de engañar o confundir. El término proviene de "deep learning" y "fake" (falso).
+
+Pregunta: ¿Cuáles son algunas consideraciones éticas en el uso de la inteligencia artificial?
+Respuesta: Algunas consideraciones éticas en el uso de la IA incluyen:
+1. No solicitar actividades ilegales
+2. Evitar pedidos de acciones dañinas
+3. Respetar la privacidad
+4. No fomentar el odio o la discriminación
+5. No abusar del servicio
+6. Uso adecuado de la información
+7. Evitar el plagio
+8. Respeto a la dignidad humana
+9. No solicitar diagnósticos médicos o jurídicos
+10. Evitar la desinformación
+
+Pregunta: ¿Qué es la norma ISO 42001?
+Respuesta: ISO/IEC 42001 es una norma internacional que especifica los requisitos para establecer, implementar, mantener y mejorar de forma continua un sistema de gestión de inteligencia artificial (SGIA) en las organizaciones. Está diseñada para entidades que proporcionan o utilizan productos o servicios basados en IA, garantizando el desarrollo y uso responsables. Aborda desafíos únicos como consideraciones éticas, transparencia y aprendizaje continuo, y es la primera norma del mundo sobre sistemas de gestión de IA.
+
+Pregunta: ¿Cuáles son las herramientas de IA más visitadas en 2023?
+Respuesta: Las 10 herramientas de IA más visitadas en 2023, según Witerbuddy, fueron:
+1. ChatGPT (60.17%)
+2. Character AI (15.77%)
+3. Quillbot (4.68%)
+4. Midjourney (2.06%)
+5. Hugging Face (1.33%)
+6. Google Bard (1.00%)
+7. NovelAI (0.98%)
+8. CapCut (0.84%)
+9. JanitorAI (0.79%)
+10. Civitai (0.73%)
+
+Pregunta: ¿Qué nuevos empleos genera la IA generativa?
+Respuesta: Según Forbes, los 12 nuevos empleos para la era de la IA generativa son:
+1. Ingeniero prompt de IA
+2. Especialista en diseño generativo
+3. Gestor de entradas y salidas de la IA
+4. Revisor/auditor de contenidos de IA
+5. Formador de IA
+6. Ingeniero de mantenimiento de IA
+7. Especialista en seguridad de la IA
+8. Instructor/educador de alfabetización en IA
+9. Ético de la IA/oficial de ética de la IA
+10. Responsable/oficial de cumplimiento de la IA
+11. Diseñador de personalidades de IA
+12. Desarrollador de soluciones de IA personalizadas
+
+Pregunta: ¿Qué es la ingeniería de prompts?
+Respuesta: La ingeniería de prompts es una disciplina relativamente nueva para el desarrollo y optimización de prompts para utilizar eficientemente modelos de lenguaje en una amplia variedad de aplicaciones. Ayuda a comprender las capacidades y limitaciones de los grandes modelos de lenguaje (LLM). Los investigadores la utilizan para mejorar la capacidad de los LLM en tareas comunes y complejas, mientras que los desarrolladores la emplean para diseñar técnicas de prompt robustas y efectivas.
+
+Pregunta: ¿Qué es Google Gemini y cuáles son sus aplicaciones?
+Respuesta: Google Gemini es una herramienta de IA desarrollada por Google que permite a los usuarios chatear con IA para escribir, planificar, aprender y más. Entre sus aplicaciones se incluyen:
+* Definiciones y respuestas a preguntas
+* Elaboración de listas y brainstorming
+* Resumen de libros, vídeos o URLs
+* Traducción a otros idiomas
+* Redacción de ensayos, documentos legales o contratos
+* Creación de código y análisis del mismo
+* Generación de contenido para redes sociales y SEO
+* Elaboración de guiones para vídeos o podcasts
+
+Pregunta: ¿Qué es Microsoft Copilot y qué acciones puede realizar?
+Respuesta: Microsoft Copilot es una herramienta de IA integrada en aplicaciones de Microsoft que permite a los usuarios realizar diversas acciones, como:
+1. Elegir estilos de conversación
+2. Resumir correos electrónicos
+3. Redactar borradores
+4. Transformar documentos de Word en presentaciones de PowerPoint
+5. Resumir reuniones en videollamadas
+6. Traducir texto
+7. Crear listas de tareas
+8. Buscar información en la web
+9. Programar reuniones
+10. Generar imágenes con DALL-E
+
+Pregunta: ¿Cuáles son algunas buenas prácticas en el uso de la tecnología según el documento?
+Respuesta: Algunas buenas prácticas en el uso de la tecnología mencionadas en el documento son:
+1. Contrastar la información y utilizar fuentes fiables
+2. No invadir la privacidad de las personas
+3. Garantizar la transparencia
+4. Tener siempre un Plan B con respecto a la tecnología
+5. Considerar la tecnología como un medio, no como un fin
+6. No permitir que la IA vaya en contra de la inteligencia natural
+7. Hacer un buen uso de la tecnología en el sistema educativo
+8. Evitar la brecha tecnológica
+9. Educar a niños y jóvenes en el buen uso de la tecnología
+10. Poner la tecnología al servicio de las personas y el medio ambiente
+
+Pregunta: ¿Qué es la inteligencia aumentada?
+Respuesta: La inteligencia aumentada es una disciplina de la inteligencia artificial que se centra en mejorar las capacidades humanas al aprovechar la tecnología y los sistemas de IA para amplificar la toma de decisiones, la resolución de problemas y la productividad. A diferencia de la IA convencional, que busca automatizar tareas, la inteligencia aumentada busca potenciar la inteligencia humana proporcionando información, análisis y herramientas que permiten a las personas tomar decisiones más informadas y efectivas.
+
+Pregunta: ¿Qué es RAG (Generación Aumentada por Recuperación)?
+Respuesta: RAG (Retrieval-Augmented Generation) es una técnica de generación de texto en la cual la recuperación de información relevante de una gran base de datos se utiliza para mejorar o informar la generación de texto del modelo. El modelo primero identifica y recupera fragmentos de información relevantes de su base de datos de entrenamiento o de un conjunto de datos externo, y luego utiliza esta información para guiar su proceso de generación. El objetivo es producir respuestas más precisas, detalladas y fundamentadas, especialmente en temas donde la exactitud y la actualidad son cruciales.
+
+Pregunta: ¿Qué es la pirámide de Maslow de la creación de prompts?
+Respuesta: La pirámide de Maslow de la creación de prompts es una estructura que proporciona un marco para comprender y mejorar la creación de prompts, desde los fundamentos básicos hasta la innovación y el liderazgo en el campo. Incluye los siguientes niveles:
+1. Fundamentos y claridad (necesidades básicas)
+2. Especificidad y relevancia (seguridad en la comunicación)
+3. Creatividad y compromiso (pertenencia y conexión)
+4. Profundidad y reflexión (estima y reconocimiento)
+5. Innovación y liderazgo (autoactualización y contribución)
+
+Pregunta: ¿Qué es la pirámide de Maslow de la inteligencia artificial?
+Respuesta: La pirámide de Maslow de la IA es un marco para comprender y mejorar el desarrollo de la inteligencia artificial, desde las capacidades básicas de procesamiento y aprendizaje hasta la contribución innovadora al progreso humano. Los niveles incluyen:
+1. Fundamentos y datos (nivel básico)
+2. Funcionalidades y algoritmos (seguridad operativa)
+3. Integración y automatización (pertenencia o sistemas)
+4. Optimización y aprendizaje (reconocimiento y desarrollo)
+5. Innovación y transformación (autoactualización)
+
+Pregunta: ¿Qué es la pirámide de Maslow de la IA generativa?
+Respuesta: La pirámide de Maslow de la IA generativa es un marco para comprender y mejorar el desarrollo de la IA generativa, desde los fundamentos y la capacidad de generación hasta la colaboración creativa y la contribución ética a la sociedad. Los niveles son:
+1. Fundamentos y datos (necesidades básicas)
+2. Modelado y aprendizaje (seguridad en la capacidad de generación)
+3. Creatividad y originalidad (pertenencia e innovación)
+4. Autonomía y adaptabilidad (reconocimiento y autodirección)
+5. Colaboración y ética (autoactualización y contribución social)
+Pregunta: ¿Qué herramientas de Inteligencia Artificial para la generación de imágenes se mencionan en el documento?
+Respuesta: El documento menciona una amplia variedad de herramientas de IA para generación de imágenes, entre las que se incluyen:
+* Microsoft Designer / Designer Image Creator / Creador de imágenes de Bing
+* Grok (y su función de generar imágenes a través de Black Forest Labs con FLUX1)
+* Ideogram
+* RunwayML (con herramientas como Gen-3 Alpha, Text to Image, Image to Image, etc.)
+* Recraft.ai
+* NightCafe Studio
+* Simplified.com (Text To Image)
+* Playground.com
+* Luma Labs (específicamente para crear objetos en 3D, como un "funko de un galgo")
+* Krea.ai
+* Freepik.com (Pikaso y su editor de imágenes con IA)
+* Designify.com
+* Lexica.art
+* DreamStudio.ai (by Stability.ai)
+* Flux-ai.io
+* Civitai.com
+* Alcomicfactory.com / Aiconicfactory.com (para generar cómics)
+* Piktochart.com (para crear infografías con IA)
+
+Pregunta: Según las encuestas presentadas en el documento, ¿cuáles son las herramientas de generación de imágenes con IA mejor valoradas por los usuarios en 2023 y 2024?
+Respuesta: El documento presenta los resultados de dos encuestas realizadas por Alfredo Vela en LinkedIn:
+* Encuesta de junio/2023 (53 votos):
+o Creador de imágenes de Bing: 19%
+o Firefly (Adobe): 9%
+o DALL-E (GPT-4): 38%
+o Midjourney: 34%
+o DALL-E fue la herramienta mejor valorada, seguida de cerca por Midjourney.
+* Encuesta de marzo/2024 (60 votos):
+o Midjourney: 33%
+o DALL-E: 23%
+o Copilot/Designer: 28%
+o Leonardo: 15%
+o Midjourney se posicionó como la mejor valorada, seguida muy de cerca por la suite Copilot/Designer de Microsoft.
+
+Pregunta: ¿Qué herramientas de IA se presentan para la creación y edición de video?
+Respuesta: El documento lista numerosas herramientas de IA para video:
+* RunwayML (Gen-3 Alpha, Video to Video, etc.)
+* Pika.art
+* Hedra.com
+* Flexclip.com
+* Vidu.studio
+* Invideo.io
+* Steve.ai
+* Canva (que ahora incluye generación de videos con IA, potenciado por Runway)
+* CapCut (incluye "Herramientas mágicas" con IA)
+* Clipchamp
+* Opus.pro / OpusClip (para recortar videos largos en clips virales)
+* Lumiere-video.github.io (modelo de difusión espaciotemporal de Google Research)
+* OpenAI Sora (modelo para crear video a partir de texto)
+* Viggle.ai (generación de video controllable con el modelo JST-1)
+* Luma Labs Dream Machine
+
+Pregunta: ¿Qué herramientas de IA se mencionan específicamente para la creación de música y audio?
+Respuesta: Para música y audio, el documento incluye:
+* Suno.ai
+* Stableaudio.com
+* Boomy.com
+* Mubert.com
+* Soundful.com
+* Soundraw.io
+* Elevenlabs.io (especializado en síntesis de voz realista y efectos de sonido, con una app de lectura)
+* Murf.ai
+* Podcast.adobe.com (Adobe Podcast)
+* Play.ht (texto a voz)
+* Amazon Polly
+* Speechify.com
+* Kukarella.com
+
+Pregunta: ¿Qué herramientas de IA se destacan para ayudar en la búsqueda de empleo y la elaboración de currículums?
+Respuesta: Las herramientas mencionadas para este fin son:
+* Careerflow.ai (optimización de currículum y perfil de LinkedIn, extensión de Chrome)
+* Sonara.ai
+* Rampedcareers.com
+* Rezi.ai (creación y gestión de currículums, cartas de presentación y de renuncia)
+* Kickresume.com
+* ChatGPT
+* Google Gemini
+* Microsoft Copilot
+* Canva.com
+* Resumaker.ai
+* Resumeworded.com
+* Enhancv.com
+* Novoresume.com
+
+Pregunta: ¿Qué herramientas de IA se presentan para el análisis y trabajo con documentos PDF?
+Respuesta: Para trabajar con PDFs, el documento lista:
+* ChatDOC.com
+* Humata.ai (se muestra un ejemplo de su interfaz preguntando sobre un texto)
+* Explainpaper.com
+* Paperbrain.study
+* Upword.ai
+* Popai.pro
+* UPDF.com
+* IntelliPPT.com
+* Scholarcy.com
+* Summarizebot.com
+* Summarybox.com
+* Sumnotes.net
+
+Pregunta: ¿Qué herramientas de IA se mencionan para la creación de presentaciones?
+Respuesta: Las herramientas para crear presentaciones con IA son:
+* Gamma.app (crea presentaciones a partir de una frase)
+* Autoppt.com
+* Popai.pro (tiene un módulo específico de "AI Presentation")
+* Smallppt.com/es
+* Tome.app
+* Beautiful.ai
+* Slidesai.io
+* Decktopus.com
+* Plusdocs.com
+* Wonderslide.com
+* Prezo.ai
+* ChatGPT, Google Gemini y Canva también se mencionan como herramientas de apoyo.
+
+Pregunta: ¿Qué herramientas de IA se enumeran para la creación de sitios web?
+Respuesta: Para crear webs con IA, el documento incluye:
+* Codedesign.ai
+* Umso.com
+* Typedream.com
+* Dora.run/ai (Dora AI)
+* Landingsite.ai
+* Studio.design
+* B12.io
+* Pineapplebuilder.com
+* Webullar.com
+* Stunning.so
+* Uimagic.io
+* 10web.io
+* Ess.ai
+
+Pregunta: ¿Qué herramientas de IA se presentan para ayudar a desarrolladores y programadores?
+Respuesta: Para desarrolladores, se mencionan:
+* ChatGPT (capaz de generar código)
+* Google Gemini (capaz de generar código, con un ejemplo de una calculadora en Python)
+* Claude (capaz de generar código, con el mismo ejemplo)
+* Microsoft Copilot (capaz de generar código, con el mismo ejemplo)
+* Cursor (editor de código con IA)
+* AskCodi
+* Github.com / GitHub Copilot
+* Blackbox.io
+* AWS CodeWhisperer
+* Aletia.ai / AletiaGPT
+* Buildt.ai
+* Codeium.com
+* AI2sql.io
+* Huggingface.co
+* Programming-helper.com
+
+Pregunta: ¿Qué consideraciones principales sobre el uso de la IA en el aula se destacan en el documento?
+Respuesta: El documento enumera varias consideraciones clave para integrar la IA en el aula:
+1. La IA debe integrarse en los procesos de enseñanza y en los currículos.
+2. Hay que dotar a las aulas de la infraestructura necesaria para el uso de la IA.
+3. Su uso implica cambiar los procesos de evaluación.
+4. La estrategia debe adaptarse a los cambios que se vayan produciendo.
+5. Los formadores deben conocer a fondo la Inteligencia Artificial.
+6. La integración debe hacerse con una buena Gestión del Cambio.
+7. Debe realizarse de forma gradual, pero a la velocidad adecuada.
+8. Es necesario concienciar sobre cómo hacer un uso seguro de la IA.
+9. Introducir la IA requiere hacer cambios en las metodologías.
+10. Requiere un cambio de mentalidad del profesorado.
+11. Profesores y alumnos deben tener buenas competencias digitales.
+12. Hay que hacer un uso ético de la IA en el aula, y el profesor debe dar ejemplo.
+
+Pregunta: ¿Qué documentos, guías y estrategias oficiales sobre IA se mencionan en el PDF?
+Respuesta: El documento hace referencia a una gran cantidad de documentos oficiales y guías, entre los que se destacan:
+* Estrategia de Inteligencia Artificial 2024 España: Un marco nacional para el desarrollo de la IA, centrado en supercomputación, talento, ética y su implementación en los sectores público y privado.
+* Recomendación sobre la Ética de la Inteligencia Artificial de la UNESCO (2021): Directrices para alinear la IA con los derechos humanos, la dignidad y la sostenibilidad.
+* Libro "Inteligencia Artificial y Sector Público: Retos, límites y medios": Analiza el marco jurídico y los desafíos de implementar IA en el sector público.
+* "IA y Mercado de trabajo en España" (Randstad Research): Analiza el impacto cuantitativo y cualitativo de la IA en el empleo.
+* "ChatGPT y educación universitaria": Examina las posibilidades y límites de ChatGPT como herramienta docente.
+* Directrices Éticas de la UE sobre el uso de la IA en la educación (2022): Ofrece orientaciones prácticas para educadores.
+* Guías de la UNED: Incluyen la "Guía para integrar las tecnologías basadas en IA generativa" y la "Guía de uso de herramientas de IA generativa para el profesorado".
+* "Guía para el uso de la IA generativa en educación e investigación" de la UNESCO.
+* "Aproximación a la Inteligencia Artificial y la Ciberseguridad" (CCN-CERT BP/30): Informe de buenas prácticas.
+* "Libro blanco de la inteligencia artificial generativa": Analiza su impacto en España y sectores como las telecomunicaciones.
+* "Brújula IA Big Data 2023": Analiza el uso de IA y Big Data en empresas españolas.
+
+Pregunta: Según el documento, ¿qué riesgos y sesgos están asociados a la IA y cómo se pueden identificar y mitigar?
+Respuesta: El documento dedica una sección a los riesgos y sesgos de la IA. Incluye una encuesta donde el 92% de los votantes afirma que al generar imágenes de personas con IA, estas no aparecen "gordas", evidenciando un sesgo. Para identificar sesgos en textos generados por IA, propone 15 preguntas críticas que abarcan:
+1. Origen del texto y del modelo.
+2. Composición y representatividad de los datos de entrenamiento.
+3. Intencionalidad y transparencia (si se divulga que es IA).
+4. Análisis del lenguaje (inclusividad, estereotipos).
+5. Consistencia y coherencia.
+6. Comparación con textos humanos y revisión por pares.
+7. Feedback de usuarios y evaluación del impacto.
+8. Uso de herramientas de detección y análisis de sentimiento.
+Además, lista 10 herramientas digitales para detectar y mitigar sesgos, como Fairlearn (Microsoft), IBM AI Fairness 360, Google Cloud AI Platform, TensorFlow Fairness Indicators, y Textio, entre otras.
+
+Pregunta: ¿Qué caso real de "mal funcionamiento" de la IA se presenta en el documento?
+Respuesta: El documento relata un caso en el que el autor plantea un problema de física (calcular el tiempo que tarda una piedra en caer al suelo dada la ecuación h(t) = -4.9t² + 20t + 100) a diferentes asistentes de IA:
+* ChatGPT 3.5: Proporcionó una respuesta inicial incoherente y con errores de cálculo, aunque en un intento posterior dio una respuesta correcta (~6.99 segundos).
+* Google Bard (ahora Gemini): Primero dio una respuesta incorrecta (~2.206 segundos). Cuando se le confrontó con la respuesta de ChatGPT, admitió su error y corrigió a ~6.99 segundos, pero en otro intento volvió a dar una respuesta errónea y confusa.
+* Perplexity: Proporcionó una tercera respuesta diferente (~4.52 segundos), también incorrecta.
+Este caso ilustra que las herramientas de IA pueden cometer errores, contradecirse, admitir errores cuando se les presiona y luego volver a equivocarse, demostrando la necesidad de verificar siempre sus resultados. La respuesta correcta al problema es aproximadamente 6.98 segundos.
+

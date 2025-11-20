@@ -1,0 +1,130 @@
+Preguntas y Respuestas sobre el Acta de Inteligencia Artificial de la UE
+Contexto y Antecedentes
+Pregunta: ¿Qué es el Acta de Inteligencia Artificial de la UE y cuál es su importancia?
+Respuesta: El Acta de Inteligencia Artificial es la primera regulación horizontal vinculante a nivel mundial sobre IA, que establece un marco común para el uso y suministro de sistemas de IA en la UE. Los legisladores de la Unión Europea firmaron el acta en junio de 2024, fue publicada en el Diario Oficial de la UE el 12 de julio de 2024 y entró en vigor en agosto de 2024. Ofrece una clasificación para sistemas de IA con diferentes requisitos y obligaciones adaptadas a un "enfoque basado en riesgos".
+
+Pregunta: ¿Cuál fue el proceso legislativo que condujo al Acta de IA?
+Respuesta: El proceso incluyó:
+
+- La Comisión Europea publicó su propuesta en abril de 2021
+- El Consejo adoptó su posición común en diciembre de 2022
+- El Parlamento adoptó su posición negociadora en junio de 2023
+- Se realizaron reuniones trilogo en junio, julio, septiembre, octubre y diciembre de 2023
+- Se alcanzó un acuerdo provisional en diciembre de 2023
+- El reglamento fue adoptado por el Parlamento en marzo de 2024 y por el Consejo en mayo de 2024
+- Fue firmado formalmente el 13 de junio de 2024
+
+Definiciones Fundamentales
+Pregunta: ¿Cómo define el Acta de IA un "sistema de IA"?
+Respuesta: El Acta consagra en la ley de la UE una definición de sistemas de IA alineada con la definición revisada acordada por la OCDE: "Un sistema de IA es un sistema basado en máquina diseñado para operar con diversos niveles de autonomía y que puede exhibir adaptabilidad después del despliegue y que, para objetivos explícitos o implícitos, infiere, a partir de la entrada que recibe, cómo generar resultados como predicciones, contenido, recomendaciones o decisiones que pueden influir en entornos físicos o virtuales". La definición no pretende cubrir sistemas de software tradicionales más simples o enfoques de programación.
+
+Pregunta: ¿Qué son los modelos de IA de propósito general (GPAI)?
+Respuesta: El Acta define los modelos de IA de propósito general (GPAI) como "modelos que están entrenados con una gran cantidad de datos usando auto-supervisión a escala", que muestran "significativa generalidad" y son "capaces de realizar competentemente una amplia gama de tareas distintas" y "pueden integrarse en una variedad de sistemas o aplicaciones posteriores". Además, define los sistemas de IA de propósito general como sistemas basados en un modelo GPAI, que tienen la capacidad de servir para una variedad de propósitos, tanto para uso directo como para integración en otros sistemas de IA.
+
+Enfoque Basado en Riesgos
+Pregunta: ¿En qué consiste el enfoque basado en riesgos del Acta de IA?
+Respuesta: El Acta adopta un enfoque basado en riesgos que clasifica los sistemas de IA en cuatro categorías principales:
+- Riesgo inaceptable: Prácticas de IA prohibidas
+- Alto riesgo: Sistemas que pueden crear un impacto adverso en la salud, seguridad o derechos fundamentales
+- Riesgo de transparencia: Sistemas que plantean riesgos de suplantación o decepción
+- Riesgo mínimo: Sistemas que no están sujetos a obligaciones adicionales
+
+Pregunta: ¿Qué prácticas de IA están prohibidas por el Acta?
+Respuesta: El texto final prohíbe un rango más amplio de prácticas de IA que la propuesta original de la Comisión:
+- Sistemas de IA que usan técnicas subliminales, manipulativas o engañosas para distorsionar el comportamiento de personas o grupos y perjudicar la toma de decisiones informada, leading to daño significativo
+- Sistemas de IA que explotan vulnerabilidades debido a edad, discapacidad o situaciones sociales o económicas, causando daño significativo
+- Sistemas de categorización biométrica que inferen raza, opiniones políticas, afiliación sindical, creencias religiosas o filosóficas, vida sexual u orientación sexual (excepto para etiquetado o filtrado legítimo en fines de aplicación de la ley)
+- Sistemas de IA que evalúan o clasifican individuos o grupos basados en comportamiento social o características personales, leading to tratamiento perjudicial o desproporcionado en contextos no relacionados o injustificado o desproporcionado a su comportamiento
+- Identificación biométrica remota "en tiempo real" en espacios públicos para aplicación de la ley (excepto para objetivos específicos necesarios como buscar víctimas de abducción, explotación sexual o personas desaparecidas, prevenir amenazas sustanciales e inminentes a la seguridad, o identificar sospechosos en crímenes graves)
+- Sistemas de IA que evalúan el riesgo de que individuos cometan delitos penales basados únicamente en perfiles o rasgos y características de personalidad (excepto cuando apoyan evaluaciones humanas basadas en hechos objetivos y verificables vinculados a una actividad criminal)
+- Sistemas de IA que crean o expanden bases de datos de reconocimiento facial mediante scraping no dirigido de internet o grabaciones de CCTV
+- Sistemas de IA que inferen emociones en lugares de trabajo o instituciones educativas, excepto por razones médicas o de seguridad
+
+Sistemas de Alto Riesgo
+Pregunta: ¿Qué son los sistemas de IA de alto riesgo y cómo se regulan?
+Respuesta: Los sistemas de IA de alto riesgo son aquellos que pueden crear un impacto adverso en la salud, seguridad o derechos fundamentales de las personas. La clasificación de riesgo se basa en el propósito previsto del sistema de IA. Incluyen:
+
+- Sistemas utilizados como componente de seguridad de un producto o bajo legislación de armonización de salud y seguridad de la UE (juguetes, aviación, coches, dispositivos médicos, ascensores)
+
+- Sistemas desplegados en áreas específicas listadas en un anexo (infraestructuras críticas, educación y formación vocacional, empleo y gestión de trabajadores, acceso a servicios esenciales privados y públicos, aplicación de la ley, control fronterizo, administración de justicia y procesos democráticos)
+
+- Los proveedores de estos sistemas deben ejecutar un procedimiento de evaluación de conformidad antes de que sus productos puedan venderse y usarse en la UE, y deben cumplir con requisitos que incluyen pruebas, entrenamiento de datos y ciberseguridad.
+
+Pregunta: ¿Qué es la "disposición filtro" para sistemas de alto riesgo?
+Respuesta: A petición del Parlamento, se incorporó una nueva prueba según la cual los sistemas de IA no se considerarán de alto riesgo si no plantean un riesgo significativo de daño a la salud, seguridad o derechos fundamentales de las personas naturales. Un sistema de IA no se considerará de alto riesgo si cumple uno o más de estos criterios: realiza una tarea procedural estrecha, mejora el resultado de una actividad humana previamente completada, detecta patrones de toma de decisiones sin reemplazar la evaluación humana previa, o realiza una tarea preparatoria para una evaluación relevante. Sin embargo, un sistema de IA siempre se considerará de alto riesgo si realiza perfiles de personas naturales.
+
+Transparencia y GPAI
+Pregunta: ¿Qué obligaciones de transparencia establece el Acta?
+Respuesta: Ciertos sistemas de IA destinados a interactuar con personas naturales o generar contenido pueden plantear riesgos específicos de suplantación o decepción, estén o no clasificados como de alto riesgo. Estos sistemas están sujetos a requisitos de información y transparencia:
+- Los usuarios deben ser informados cuando interactúan con chatbots
+- Los implementadores de sistemas de IA que generan o manipulan contenido de imagen, audio o video (deep fakes) deben divulgar que el contenido ha sido generado o manipulado artificialmente
+- Los proveedores de sistemas de IA que generan grandes cantidades de contenido sintético deben implementar técnicas y métodos confiables (como marcas de agua) para permitir el marcado y detección de que el resultado fue generado por IA
+- Los empleadores que implementan sistemas de IA en el lugar de trabajo deben informar a los trabajadores y sus representantes
+
+Pregunta: ¿Qué requisitos específicos aplican a los modelos GPAI?
+Respuesta: Todos los modelos GPAI deben:
+
+- Elaborar y mantener documentación técnica actualizada
+- Poner una política para respetar la ley de derechos de autor de la UE, incluso mediante tecnologías de vanguardia (marcas de agua)
+- Realizar excepciones legales de minería de texto y datos según la Directiva de Derechos de Autor
+- Elaborar y hacer públicamente disponible un resumen suficientemente detallado del contenido utilizado en el entrenamiento
+- Si están fuera de la UE, designar un representante en la UE
+- Los modelos de IA accesibles bajo licencia libre y de código abierto estarán exentos de algunas obligaciones.
+
+Pregunta: ¿Qué son los modelos GPAI con riesgo sistémico y cómo se regulan?
+Respuesta: Los modelos GPAI con "capacidades de alto impacto" podrían plantear un riesgo sistémico y tener un impacto significativo en el mercado interno, debido a su alcance y sus efectos negativos reales o razonablemente previsibles. Los proveedores de GPAI deben notificar a la Comisión Europea si su modelo está entrenado usando una potencia de computación total que exceda 10^25 FLOPs (operaciones de punto flotante por segundo). Cuando se alcanza este umbral, se presumirá que el modelo es un modelo GPAI que plantea riesgos sistémicos. Además de los requisitos de transparencia, los proveedores de modelos GPAI con riesgo sistémico deben evaluar y mitigar constantemente los riesgos que plantean, garantizar protección de ciberseguridad, realizar seguimiento de incidentes graves e implementar medidas correctivas.
+
+Gobernanza y Aplicación
+Pregunta: ¿Qué estructura de gobernanza establece el Acta de IA?
+Respuesta: La implementación del Acta es responsabilidad de varios actores a nivel nacional y de la UE:
+- Los Estados miembros deben establecer o designar al menos una autoridad de vigilancia del mercado y una autoridad notificadora
+- A nivel de la UE, actores incluyen la Comisión, la Junta de IA, la Oficina de IA, los organismos de normalización de la UE (CEN y CENELEC) y un foro consultivo y panel científico de expertos independientes
+- Se estableció la Oficina de IA de la UE para proporcionar asesoramiento sobre la implementación de las nuevas reglas, particularmente respecto a modelos GPAI
+
+Pregunta: ¿Qué son los sandboxes regulatorios de IA?
+Respuesta: Las autoridades nacionales deben establecer al menos un sandbox regulatorio de IA a nivel nacional para facilitar el desarrollo y prueba de sistemas de IA innovadores bajo estricta supervisión regulatoria. Estos sandboxes regulatorios proporcionan un entorno controlado que fomenta la innovación y facilita el desarrollo, entrenamiento, prueba y validación de sistemas de IA innovadores por un tiempo limitado antes de su comercialización. Los sandboxes deben permitir, cuando sea apropiado, pruebas de sistemas de IA en condiciones del mundo real fuera de un laboratorio por un período limitado.
+
+Pregunta: ¿Qué sanciones establece el Acta por incumplimiento?
+Respuesta: Se establecen multas administrativas de escalas variables dependiendo de la severidad de la infracción. Para infracciones de prácticas prohibidas o incumplimiento relacionado con requisitos sobre datos, las multas pueden llegar hasta 35 millones de euros o el 7% del volumen de negocios anual mundial total del ejercicio financiero anterior (lo que sea mayor).
+
+Cronograma de Implementación
+Pregunta: ¿Cuál es el cronograma de implementación del Acta de IA?
+Respuesta: Los sistemas prohibidos deben eliminarse gradualmente dentro de los 6 meses posteriores a la entrada en vigor del Acta. Las disposiciones sobre GPAI y sanciones se aplicarán 12 meses después de la entrada en vigor. Las disposiciones sobre sistemas de IA de alto riesgo se aplican 24 meses después de la entrada en vigor (36 meses después para sistemas de IA cubiertos por legislación de productos de la UE existente)
+Los códigos de práctica previstos deben estar listos, como máximo, nueve meses después de la entrada en vigor del Acta de IA
+
+Perspectivas de Stakeholders y Académicos
+Pregunta: ¿Qué preocupaciones plantearon los stakeholders sobre el Acta?
+Respuesta:
+- Definiciones: Algunos stakeholders consideraron que la definición de sistemas de IA era demasiado amplia y cubriría más de lo que se entiende subjetivamente como IA
+- Enfoque basado en riesgos: Organizaciones de derechos civiles pidieron prohibiciones más amplias de sistemas de IA, especialmente en biometría
+- Cadenas de valor de IA: Hubo incertidumbre sobre los roles y responsabilidades de diferentes actores en la cadena de valor de IA
+- Protección al consumidor: BEUC argumentó que la propuesta debería tener un alcance más amplio e imponer principios básicos a todos los sistemas de IA
+- Impacto en inversiones: Algunos estudios sugirieron que los costos de cumplimiento podrían tener un efecto disuasorio en la inversión en IA en Europa
+
+Pregunta: ¿Qué críticas académicas se mencionan sobre el Acta?
+Respuesta:
+- Definición de sistemas de IA: Críticos advirtieron que la definición carece de claridad y puede llevar a incertidumbre legal
+- Enfoque basado en riesgos: Académicos argumentaron que el enfoque no asegura un alto nivel de protección de derechos fundamentales
+- Evaluación de riesgos: Preocupación porque la evaluación de riesgos se deja a la autoevaluación de los proveedores
+- Estructura de gobernanza: El Acta carece de estructuras de aplicación efectivas y mecanismos de recurso individuales
+
+- Coordinación: Falta mecanismos de coordinación adecuados entre autoridades, especialmente para infracciones transfronterizas
+
+Cuestiones Actuales y Futuras
+Pregunta: ¿Qué desafíos de implementación identifican los académicos?
+Respuesta: 
+- La alineación con la regulación sectorial existente es incompleta
+- Los costos de cumplimiento serán sustanciales, especialmente para PYMEs
+- El umbral de 10^25 FLOPs para categorización de riesgo sistémico es demasiado alto
+- Se necesita supervisión europea de la identificación biométrica remota
+- Se requiere una taxonomía robusta que establezca la correlación entre clasificación de riesgo y capacidades del modelo
+- Los procesos de normalización podrían no incluir grupos representativos de stakeholders
+
+Pregunta: ¿Qué desarrollos futuros se anticipan en la regulación de IA?
+Respuesta:
+
+- La IA generativa probablemente requerirá enmiendas a las leyes y regulaciones de la UE
+- Los legisladores están considerando legislar en otras áreas como IA en el lugar de trabajo, competencia en IA generativa, sostenibilidad energética de IA y derechos de propiedad intelectual
+- Se necesita más cooperación internacional en la armonización de la gobernanza de IA
+- Es crucial la cooperación UE-EE.UU. para la gobernanza democrática de la IA
+- Posible revisión de la Directiva de Derechos de Autor

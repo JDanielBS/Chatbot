@@ -1,0 +1,97 @@
+Preguntas y Respuestas sobre Inteligencia Artificial: Conceptos e Historia
+Conceptos Fundamentales de IA
+Pregunta: ¿Qué es la Inteligencia Artificial (IA) según el documento?
+Respuesta: La inteligencia artificial (IA) tiene por objetivo el estudio y el análisis del comportamiento humano en los ámbitos de la comprensión, percepción, resolución de problemas y toma de decisiones con el fin de poder reproducirlos con la ayuda de un computador. Las aplicaciones de la IA se sitúan principalmente en la simulación de actividades intelectuales del hombre, imitando por medio de máquinas tantas actividades mentales como sea posible. Un programa de IA manipula informaciones simbólicas bajo la forma de conceptos, objetos o reglas, a diferencia de la computación clásica que solo trata datos de tipo numérico. Los sistemas de IA utilizan métodos heurísticos ("heurística: arte de inventar") contrariamente a los métodos algorítmicos clásicos.
+
+Pregunta: ¿Cuáles son los tres puntos de vista principales sobre la Inteligencia Artificial?
+Respuesta: 
+1. IA fuerte: Aquellos que sostienen que es posible realizar "dispositivos realmente pensantes"
+2. IA débil: Otros que piensan que es posible simular estados mentales - sin ser estados mentales - de nuestro cerebro por medio de computadores
+3. Dualistas: Quienes dan por separada la dimensión del cuerpo y del espíritu, y que de esa manera, existirán "juicios de verdad" a los cuales los 
+
+Historia de la Inteligencia Artificial
+Pregunta: ¿Cuál es el origen del término "Inteligencia Artificial" y cuándo apareció?
+Respuesta: El término de Inteligencia Artificial (IA) aparece por primera vez en agosto de 1956 en el Colegio Dartmouth (EEUU), en la ocasión de una conferencia sobre la inteligencia de los computadores donde se reunieron grandes científicos tales como J. McCarthy, M. Minsky, C. Shannon, A. Newell, y H. Simon.
+
+Pregunta: ¿Qué hitos históricos importantes se mencionan en el desarrollo de la IA?
+Respuesta: Línea de tiempo histórica que incluye:
+
+- 1834: Charles Babbage define el concepto de máquina calculadora universal
+- 1936: Alan Turing define la "Máquina de Turing"
+- 1943: Aparición del primer computador, el ENIAC
+- 1950: Turing propone el test de Turing en "Can a machine think?"
+- 1956: J. McCarthy desarrolla la noción de listas
+- 1959: Surge el General Problem Solver (GPS) de Newell y Simon
+- Años Sesenta: Desarrollo de la heurística
+- 1966: Reconocimiento de dificultades en reconocimiento de palabra y traducción
+- Años Setenta: Explosión de trabajos en IA
+- 1970: Aparición de Dendral, el primer sistema experto
+- 1975: Aparece PROLOG, programación en lógica de primer orden
+- 1976: MYCIN, sistema experto en diagnósticos médicos
+- 1981: Lanzamiento del proyecto de computador de quinta generación en Japón
+- Años noventa: Comunicación hombre-máquina con interfaces inteligentes
+
+Máquinas de Turing y Computación
+Pregunta: ¿Qué es una Máquina de Turing y cuáles son sus características?
+Respuesta: Una máquina de Turing es un dispositivo abstracto definido por Alan Turing en 1936 con las siguientes características:
+- Número finito, aunque enorme, de estados internos posibles diferentes
+- Una cinta "infinita", siempre tan o mucho más larga que lo queramos
+Un lector de datos de entrada "input" y de reescritura para entrega de los resultados de las operaciones de cálculo o "output"
+Turing representaba los datos externos y el espacio de almacenamiento en forma de una cinta sobre la que se hacen marcas. Cada cuadrado de la cinta está en blanco o contiene una sola marca, representado por "0" y "1" respectivamente. El dispositivo lee de cuadrado en cuadrado y después de cada operación se mueve un solo cuadrado a la izquierda o derecha.
+
+Pregunta: ¿Qué es un algoritmo y cómo se relaciona con las máquinas de Turing?
+Respuesta: Un algoritmo es una sucesión finita de reglas para aplicar, en un orden determinado, a un número finito de datos, para llegar, en un número finito de etapas, a un resultado, independientemente de los datos. Se trata de una secuencia bien definida (enumerable) de operaciones, un procedimiento sistematizado. La noción de algoritmo encuentra su versión más precisa en el concepto de "máquina de Turing". La palabra "algoritmo" procede del nombre del matemático persa del siglo IX Abu Ja'far al-Khow?rizm.
+
+Pregunta: ¿Qué es el sistema binario y cómo se utiliza en computación?
+Respuesta: El sistema binario es un sistema numérico compuesto por dos dígitos: el "0" y el "1". Un "bit" es la mínima unidad de información (abreviatura de "dígito binario") que puede representar cualquier estado o su negación (sí/no, verdadero/falso). Las leyes de la lógica binaria están en la base de la computación. Para representar un bit de información en los microprocesadores se utiliza la ausencia o presencia de miles de millones de electrones en un diminuto transistor.
+
+Test de Turing y Evaluación de IA
+Pregunta: ¿En qué consiste el test de Turing?
+Respuesta: El test de Turing, propuesto por Alan Turing en 1950 en su artículo "Can a machine think?", consiste en que un computador y algún voluntario humano se ocultan a la vista de algún interrogador perspicaz. El interrogador tiene que tratar de decidir cuál de los dos es el computador y cuál el ser humano mediante el simple procedimiento de plantear preguntas a cada uno de ellos. Si en el curso de una serie de tests semejantes el interrogador es incapaz de identificar la naturaleza de su interlocutor, se considera que el computador ha superado la prueba.
+
+Pregunta: ¿Qué problemas plantea el test de Turing según el documento?
+Respuesta: El documento plantea varios problemas con el test de Turing:
+- La distinción entre sintáctica y semántica: la comprensión requiere más que solo reconocimiento de caracteres y palabras
+- La necesidad de conocimiento del mundo real para interpretar correctamente el lenguaje
+- Ejemplo dado: en frases como "El profesor mandó el alumno al Director porque quería...", el verbo "quería" puede referirse a diferentes sujetos según el contexto del mundo real
+- Penrose sugiere que pedir al computador que imite perfectamente a un humano es pedir demasiado, y que bastaría con que la interrogadora sintiera una "presencia consciente" en las réplicas
+
+Filosofía y Críticas de la IA
+Pregunta: ¿Qué es el argumento de la "cámara china" de John Searl?
+Respuesta: El argumento de la cámara china es un experimento mental donde una persona que no entiende chino se encuentra encerrada en una cámara llena de cajas con signos chinos (bases de datos). Recibe preguntas en chino y busca en un libro de reglas (el programa) qué debe hacer, realizando operaciones con los signos según las reglas y enviando respuestas. Aunque externamente parece entender chino, internamente no comprende nada. El argumento se basa en tres etapas:
+- Los programas efectúan operaciones sintácticas
+- El espíritu pone en juego contenidos semánticos
+- Las operaciones sintácticas son diferentes de los contenidos semánticos e insuficientes para alcanzar un nivel semántico
+- Conclusión: los programas informáticos no son espíritus.
+
+Pregunta: ¿Qué es la Inteligencia Artificial Fuerte?
+Respuesta: La IA fuerte es el punto de vista que atribuye, además de ser inteligentes y de tener mentes, un cierto tipo de cualidades mentales al funcionamiento lógico de cualquier dispositivo computacional, incluso los dispositivos mecánicos más simples. Según sus defensores, la relación entre el espíritu y el cerebro es del mismo orden que aquella que existe entre el Software y el Hardware. Esta teoría es defendida por Daniel C. Dennett en "Consciousness Explained". Se basa en que cualquier máquina con hardware suficientemente complejo es equivalente a cualquier otra máquina semejante mediante software apropiado.
+Pregunta: ¿Qué son las neuronas y cómo funcionan según el documento?
+Respuesta: La neurona es la unidad estructural y funcional del sistema nervioso, constituida de tres partes: Axón, cuerpo celular y dendrita. Cada neurona recibe señales por medio de las dendritas, las procesa en su cuerpo celular y a través de su axón envía una nueva señal a las neuronas siguientes. Las sinapsis son conexiones funcionales entre neuronas donde una célula presináptica influye en una postsináptica mediante neurotransmisores. Las neuronas reciben señales excitadoras e inhibidoras y emiten un solo tipo de señal a la vez.
+
+Pregunta: ¿Qué es una propiedad emergente en el contexto de la conciencia?
+Respuesta: Una propiedad emergente de un sistema es una propiedad que se explica a partir de los elementos de ese sistema, pero que no pertenece propiamente tal a ninguno de los elementos particulares del sistema y no puede explicarse como la simple suma de las propiedades de los elementos del sistema. La liquidez del agua es un buen ejemplo: el comportamiento de las moléculas de H2O explica la liquidez, pero individualmente esas moléculas no son líquidas. Según esta perspectiva, la conciencia sería una propiedad emergente del sistema de neuronas.
+
+Futuro de la IA y Consideraciones Finales
+Pregunta: ¿Qué tecnologías futuras se mencionan para la computación?
+Respuesta: El documento especula sobre varias tecnologías futuras:
+- Computación cuántica: basada en qubits (bits cuánticos) que permiten superposiciones de estados
+- Computación molecular
+- Bio-computación
+- Computación ADN
+- El qubit implica el concepto de "ambos a la vez", con cuatro respuestas posibles, donde el estado de una partícula se determina mediante asignación de probabilidad.
+
+Pregunta: ¿Qué conclusiones principales se presentan sobre la IA y la conciencia?
+Respuesta: Las conclusiones principales son:
+- La conciencia parece ser una propiedad emergente de los procesos físicos del cerebro, imitable pero no reproducible
+- La hipótesis de IA fuerte (cuerpo como hardware y espíritu como software) no es popular entre matemáticos, filósofos y biólogos
+- Se ignora aún cómo los procesos cerebrales causan la conciencia
+- La cuestión del hogar de la conciencia es polémica y se centra en si cerebro y conciencia son del mismo mundo
+- Los progresos de la IA y Neurobiología proporcionarán más información en el futuro
+- Existe la posibilidad de que máquinas muy complejas desarrollen propiedades emergentes
+
+Las tres leyes de la robótica de Isaac Asimov:
+- Un robot no puede dañar a un ser humano, ni por inacción permitir que sufra daño
+- Un robot debe obedecer órdenes de seres humanos, excepto si contradicen la primera ley
+- Un robot debe proteger su existencia, mientras no contradiga las primeras dos leyes
+
