@@ -7,6 +7,7 @@ def main():
     ia_llm = IAExpertLLM()
     rag = RAGManager()
     chain = IAChain(ia_llm, rag)
+    # rag.storage_manager.load_documents_from_directory(directory_path="data/documents",)
     
     thread_id = str(uuid.uuid4())
     

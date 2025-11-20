@@ -23,17 +23,15 @@ def rag_node(state: MetricsState, rag_manager) -> dict:
         dict: Estado actualizado con contexto y fuentes
     """
     # Extraer pregunta del mensaje
-    question = None
-    for msg in state["messages"]:
-        if isinstance(msg, HumanMessage):
-            question = msg.content
-            break
+    question = state["messages"][-1].content if state["messages"] else None
     
     if not question:
         return {}
     
     # Recuperar contexto y fuentes
-    context, sources_with_scores = rag_manager.build_context(question, k=6)
+    # Cambia use_retriever=True para probar con get_retriever() estándar
+    # Cambia use_retriever=False para usar retrieve_documents() con similitud coseno
+    context, sources_with_scores = rag_manager.build_context(question, k=6, use_retriever=True)
     
     # Calcular métricas de recuperación
     retrieval_metrics = MetricsCollector.calculate_retrieval_metrics(
