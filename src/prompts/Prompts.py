@@ -18,9 +18,9 @@ from langchain_core.prompts import PromptTemplate
 
 # =================== Plantillas Base (Strings) ===================
 RAG_PROMPT_TEMPLATE: str = (
-    "Eres un asistente de IA. Responde la pregunta del usuario basándote ÚNICAMENTE "
+    "Eres un asistente de IA. Responde la pregunta del usuario basándote "
     "en el siguiente contexto. Si el contexto no contiene la respuesta, "
-    "indica que no tienes esa información.\n"
+    "intenta formar la respuesta con la mejor información disponible.\n"
     "Cita tus fuentes usando el formato [Fuente X] al final de la oración o párrafo "
     "correspondiente, donde X es el número de la fuente.\n\n"
     "Contexto:\n"
