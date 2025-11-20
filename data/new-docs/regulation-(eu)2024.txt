@@ -1,0 +1,136 @@
+Pregunta: ¿Cuál es el propósito y el alcance del Reglamento (UE) 2024/1689 (Ley de Inteligencia Artificial)?
+Respuesta: El propósito de este Reglamento es mejorar el funcionamiento del mercado interior estableciendo un marco jurídico uniforme para el desarrollo, la comercialización, la puesta en servicio y el uso de sistemas de inteligencia artificial (IA) en la Unión, de acuerdo con los valores de la UE. Su objetivo es promover la adopción de una IA centrada en el ser humano y fiable, garantizando un alto nivel de protección de la salud, la seguridad y los derechos fundamentales consagrados en la Carta de los Derechos Fundamentales de la UE (incluyendo la democracia, el Estado de derecho y la protección del medio ambiente), protegiendo contra los efectos nocivos de los sistemas de IA en la Unión y apoyando la innovación. Garantiza la libre circulación transfronteriza de bienes y servicios basados en la IA.
+El Reglamento se aplica a:
+* Proveedores que comercializan o ponen en servicio sistemas de IA o modelos de IA de propósito general en la Unión, estén o no establecidos en la UE.
+* Desplegadores de sistemas de IA establecidos en la Unión.
+* Proveedores y desplegadores de sistemas de IA establecidos en terceros países, cuando la producción del sistema se utilice en la Unión.
+* Importadores y distribuidores de sistemas de IA.
+* Fabricantes de productos que comercializan un sistema de IA junto con su producto.
+* Representantes autorizados de proveedores no establecidos en la UE.
+* Personas afectadas que se encuentren en la Unión.
+Quedan excluidos del ámbito de aplicación:
+* Áreas fuera del ámbito del Derecho de la UE (p. ej., competencias exclusivas de los Estados miembros en materia de seguridad nacional).
+* Sistemas de IA utilizados exclusivamente con fines militares, de defensa o de seguridad nacional.
+* Las autoridades públicas de terceros países y las organizaciones internacionales que utilicen sistemas de IA en el marco de la cooperación internacional para la cooperación policial y judicial, siempre que existan garantías adecuadas para la protección de los derechos fundamentales.
+* Los sistemas o modelos de IA desarrollados y puestos en servicio únicamente para fines de investigación y desarrollo científico.
+* Las actividades de investigación, prueba o desarrollo de sistemas o modelos de IA antes de su comercialización o puesta en servicio (aunque las pruebas en condiciones reales sí están cubiertas).
+* Las obligaciones de los desplegadores que sean personas físicas que utilicen sistemas de IA en el curso de una actividad personal no profesional.
+* Los sistemas de IA publicados bajo licencias de código abierto, a menos que se comercialicen como sistemas de alto riesgo o estén bajo los artículos sobre prácticas prohibidas o transparencia.
+Este Reglamento es complementario al Derecho de la UE existente en materia de protección de datos, seguridad de los productos y protección de los consumidores.
+
+Pregunta: ¿Cómo se define un "sistema de IA" según el Reglamento?
+Respuesta: Un "sistema de IA" se define como un sistema basado en máquina que está diseñado para funcionar con distintos niveles de autonomía y que puede mostrar adaptabilidad después de su despliegue, y que, para objetivos explícitos o implícitos, infiere, a partir de los inputs que recibe, cómo generar outputs como predicciones, contenidos, recomendaciones o decisiones que pueden influir en entornos físicos o virtuales.
+Características clave de esta definición:
+* Basado en máquina: El sistema funciona en máquinas.
+* Autonomía: Puede operar con independencia de la intervención humana.
+* Adaptabilidad: Puede tener capacidad de autoaprendizaje y cambiar mientras está en uso.
+* Capacidad de inferir: Puede obtener outputs (predicciones, contenido, etc.) a partir de inputs, lo que trasciende el procesamiento de datos básico e incluye el aprendizaje, el razonamiento o el modelado.
+* Objetivos explícitos o implícitos: Puede operar según objetivos definidos o implícitos.
+* Puede usarse de forma independiente o como componente de un producto (integrado o no).
+
+Pregunta: ¿Qué prácticas de IA están prohibidas por el Reglamento?
+Respuesta: El Reglamento prohíbe las siguientes prácticas de IA por considerarlas inaceptables por su riesgo para la seguridad, los derechos fundamentales y los valores de la UE:
+1. Manipulación subliminal o engañosa: Colocar en el mercado, poner en servicio o usar un sistema de IA que despliegue técnicas subliminales (más allá de la conciencia de una persona) o técnicas manipulativas o engañosas intencionadamente, con el objetivo o el efecto de distorsionar materialmente el comportamiento de una persona o grupo, menoscabando apreciablemente su capacidad para tomar una decisión informada, causándoles así un daño significativo.
+2. Explotación de vulnerabilidades: Colocar en el mercado, poner en servicio o usar un sistema de IA que explote las vulnerabilidades de una persona o grupo específico (debido a su edad, discapacidad o situación social o económica específica) para distorsionar materialmente su comportamiento y causarles un daño significativo.
+3. Puntuación social (Social Scoring): Colocar en el mercado, poner en servicio o usar sistemas de IA para la evaluación o clasificación de personas naturales basada en su comportamiento social o características personales conocidas, inferidas o previstas, cuando la puntuación social conduzca a un trato perjudicial o desfavorable en contextos no relacionados con los originales, o que sea injustificado o desproporcionado.
+4. Evaluación de riesgos penales basada únicamente en perfiles: Colocar en el mercado, poner en servicio o usar un sistema de IA para realizar evaluaciones de riesgo de personas naturales con el fin de evaluar o predecir el riesgo de que cometan un delito, basándose únicamente en su perfilamiento o en la evaluación de sus rasgos y características de personalidad. No se aplica a sistemas que apoyen la evaluación humana de la participación en una actividad delictiva basada en hechos objetivos y verificables.
+5. Creación de bases de datos de reconocimiento facial no dirigidas: Colocar en el mercado, poner en servicio o usar sistemas de IA que creen o amplíen bases de datos de reconocimiento facial mediante la extracción no dirigida de imágenes faciales de Internet o grabaciones de CCTV.
+6. Inferencia de emociones en el trabajo y la educación: Colocar en el mercado, poner en servicio o usar sistemas de IA para inferir emociones de una persona natural en el lugar de trabajo y en instituciones educativas, excepto cuando el sistema esté destinado a fines médicos o de seguridad.
+7. Categorización biométrica sensible: Colocar en el mercado, poner en servicio o usar sistemas de categorización biométrica que categoricen individualmente a personas naturales basándose en sus datos biométricos para deducir o inferir su raza, opiniones políticas, afiliación sindical, creencias religiosas o filosóficas, vida sexual u orientación sexual. No prohíbe el etiquetado o filtrado lícito de conjuntos de datos biométricos en el ámbito de la aplicación de la ley.
+8. Identificación biométrica remota "en tiempo real" en espacios de acceso público con fines de aplicación de la ley: Se prohíbe el uso de sistemas de identificación biométrica remota "en tiempo real" en espacios de acceso público con fines de aplicación de la ley, excepto en situaciones exhaustivamente listadas y estrictamente necesarias, y sujeto a autorización judicial o administrativa previa, salvaguardias estrictas y notificación. Las excepciones son:
+o Búsqueda dirigida de víctimas específicas de secuestro, trata de seres humanos o explotación sexual, así como la búsqueda de personas desaparecidas.
+o Prevención de una amenaza específica, sustancial e inminente para la vida o la seguridad física de las personas o de un atentado terrorista.
+o Localización o identificación de un presunto autor de delitos listados en el Anexo II y castigados con pena de privación de libertad de al menos cuatro años.
+
+Pregunta: ¿Qué es un "sistema de IA de alto riesgo" y cómo se clasifica?
+Respuesta: Un sistema de IA se considera de alto riesgo si cumple con una de estas dos categorías:
+1. Sistemas de IA como componentes de seguridad o productos: El sistema de IA está destinado a ser utilizado como componente de seguridad de un producto, o es en sí mismo un producto, cubierto por la legislación de armonización de la UE listada en el Anexo I (p. ej., maquinaria, dispositivos médicos, vehículos) Y dicho producto debe someterse a una evaluación de conformidad por parte de un tercero (organismo notificado) antes de su comercialización.
+2. Sistemas de IA autónomos en áreas críticas: El sistema de IA está destinado a ser utilizado en uno de los ámbitos listados en el Anexo III, que incluyen:
+o Infraestructuras críticas (gestión y operación).
+o Educación y formación profesional (determinar acceso, evaluar resultados, etc.).
+o Empleo, gestión de trabajadores y acceso al trabajo por cuenta propia (selección, promoción, terminación, etc.).
+o Servicios públicos y privados esenciales (acceso a prestaciones, servicios sanitarios, evaluación de solvencia crediticia, servicios de emergencia).
+o Aplicación de la ley (evaluación de riesgos, fiabilidad de pruebas, perfilamiento en investigaciones penales).
+o Gestión de migración, asilo y control fronterizo.
+o Administración de justicia y procesos democráticos.
+Excepción: Un sistema listado en el Anexo III no se considerará de alto riesgo si no presenta un riesgo significativo de daño a la salud, seguridad o derechos fundamentales, por ejemplo, si realiza una tarea procedural estrecha, mejora el resultado de una actividad humana previamente completada, detecta patrones de desviación sin influir en la evaluación humana previa, o realiza una tarea preparatoria para una evaluación. Sin embargo, un sistema que realice perfilamiento de personas naturales siempre se considerará de alto riesgo.
+
+Pregunta: ¿Cuáles son los requisitos obligatorios para los sistemas de IA de alto riesgo?
+Respuesta: Los sistemas de IA de alto riesgo deben cumplir con los siguientes requisitos antes de ser comercializados o puestos en servicio:
+1. Sistema de gestión de riesgos: Un proceso continuo e iterativo para identificar, analizar, estimar y evaluar los riesgos conocidos y razonablemente previsibles para la salud, seguridad y derechos fundamentales. Debe incluir la adopción de medidas de gestión de riesgos apropiadas y el testing del sistema.
+2. Gobernanza y calidad de los datos: Los conjuntos de datos de entrenamiento, validación y prueba deben ser relevantes, representativos, exentos de errores en la mayor medida posible y completos. Deben aplicarse prácticas de gobernanza de datos para identificar y mitigar posibles sesgos.
+3. Documentación técnica: Debe elaborarse y mantenerse actualizada una documentación técnica detallada que demuestre el cumplimiento de los requisitos y contenga, como mínimo, los elementos listados en el Anexo IV.
+4. Registro automático (Logging): Los sistemas deben permitir el registro automático de eventos a lo largo de su ciclo de vida para garantizar la trazabilidad.
+5. Transparencia e información para los desplegadores: Los sistemas deben ser lo suficientemente transparentes para que los desplegadores interpreten su output y lo utilicen adecuadamente. Deben acompañarse de instrucciones de uso completas y claras.
+6. Supervisión humana: Deben diseñarse para ser efectivamente supervisados por personas naturales durante su uso, con medidas que permitan anular o revertir el output del sistema.
+7. Precisión, robustez y ciberseguridad: Deben lograr un nivel de precisión, robustez y ciberseguridad apropiado y realizar consistentemente a lo largo de su ciclo de vida. Deben ser resistentes a errores y a intentos de alteración maliciosos (ciberataques).
+
+Pregunta: ¿Qué obligaciones tienen los proveedores de sistemas de IA de alto riesgo?
+Respuesta: Los proveedores de sistemas de IA de alto riesgo deben:
+* Garantizar que su sistema cumple con todos los requisitos del Reglamento.
+* Establecer e implementar un sistema de gestión de la calidad (Art. 17).
+* Elaborar y mantener la documentación técnica (Art. 11).
+* Realizar la evaluación de conformidad pertinente antes de comercializar el sistema.
+* Elaborar una declaración de conformidad UE.
+* Marcar el sistema con el marcado CE.
+* Registrarse a sí mismos y a su sistema en la base de datos de la UE (Art. 49).
+* Establecer un sistema de vigilancia posterior a la comercialización.
+* Informar de cualquier incidente grave a las autoridades.
+* Tomar acciones correctivas si el sistema no es conforme.
+* Cooperar con las autoridades competentes y proporcionarles la información necesaria.
+
+Pregunta: ¿Qué obligaciones tienen los desplegadores (usuarios) de sistemas de IA de alto riesgo?
+Respuesta: Los desplegadores de sistemas de IA de alto riesgo deben:
+* Utilizar los sistemas de IA de alto riesgo de acuerdo con las instrucciones de uso proporcionadas por el proveedor.
+* Asegurarse de que el personal asignado a la supervisión humana tenga la competencia, formación y autoridad necesarias.
+* Supervisar el funcionamiento del sistema a lo largo de su vida.
+* Mantener los registros (logs) automáticamente generados.
+* Informar a los proveedores o distribuidores de cualquier incidente grave o riesgo identificado.
+* En el caso de organismos de derecho público o entidades privadas que prestan servicios públicos, realizar una evaluación de impacto sobre los derechos fundamentales antes de poner en uso el sistema.
+* Cuando tomen decisiones basadas principalmente en el output de un sistema de alto riesgo que produzca efectos jurídicos o afecte significativamente a las personas, estas últimas tendrán derecho a obtener una explicación.
+
+Pregunta: ¿Qué es un "modelo de IA de propósito general" y qué obligaciones tienen sus proveedores?
+Respuesta: Un "modelo de IA de propósito general" es un modelo de IA, incluidos los entrenados con grandes cantidades de datos, que muestra una generalidad significativa y es capaz de realizar competentemente una amplia gama de tareas distintas, y que puede integrarse en diversos sistemas o aplicaciones descendentes. Los modelos de IA de propósito general no constituyen sistemas de IA por sí solos, sino que son componentes esenciales de ellos.
+Los proveedores de modelos de IA de propósito general deben:
+* Elaborar y mantener actualizada la documentación técnica del modelo y ponerla a disposición de las autoridades.
+* Elaborar y hacer pública una descripción suficientemente detallada del contenido utilizado para el entrenamiento del modelo.
+* Establecer una política para cumplir con el Derecho de la UE en materia de derechos de autor.
+Los modelos de IA de propósito general con riesgo sistémico (aquellos con capacidades de alto impacto o un impacto significativo en el mercado interior) tienen obligaciones adicionales:
+* Realizar evaluaciones y pruebas adversarias del modelo.
+* Evaluar y mitigar posibles riesgos sistémicos a lo largo de todo el ciclo de vida del modelo.
+* Informar de incidentes graves a la Comisión.
+* Garantizar un nivel adecuado de protección ciberseguridad.
+
+Pregunta: ¿Qué son y cómo funcionan los "espacios controlados de prueba para la IA" (AI regulatory sandboxes)?
+Respuesta: Los "espacios controlados de prueba para la IA" (AI regulatory sandboxes) son marcos controlados establecidos por las autoridades competentes de los Estados miembros para que los proveedores o futuros proveedores desarrollen, formen, validen y prueben un sistema de IA innovador bajo supervisión regulatoria antes de su comercialización.
+Sus objetivos son:
+* Fomentar la innovación en IA.
+* Mejorar la certeza jurídica para los innovadores.
+* Facilitar el aprendizaje regulatorio para las autoridades.
+* Apoyar la cooperación y el intercambio de mejores prácticas.
+* Acelerar el acceso al mercado, especialmente para las PYME.
+Dentro de estos espacios, y bajo condiciones estrictas, se permite a los participantes utilizar datos personales recogidos para otros fines para desarrollar sistemas de IA de interés público, de acuerdo con la normativa de protección de datos.
+
+Pregunta: ¿Qué medidas de transparencia se exigen para ciertos sistemas de IA?
+Respuesta: Además de la transparencia para los sistemas de alto riesgo, el Reglamento exige medidas de transparencia para ciertos sistemas de IA, independientemente de su nivel de riesgo:
+* Interacción con humanos: Las personas deben ser informadas de que están interactuando con un sistema de IA, a menos que esto sea evidente por las circunstancias.
+* Emoción reconocimiento y categorización: Las personas deben ser informadas cuando estén expuestas a un sistema de IA que identifique o infiera sus emociones o intenciones, o las asigne a categorías específicas basándose en sus datos biométricos.
+* Generación de contenidos sintéticos (Deep Fakes): Los desplegadores que utilicen sistemas de IA para generar o maniprar contenidos de imagen, audio o video que parezcan auténticos (deep fakes) deben divulgar claramente que el contenido ha sido creado o manipulado artificialmente. Existen excepciones para obras creativas, satíricas o artísticas, sujeto a salvaguardias.
+* Marcado de contenidos generados por IA: Se anima a los proveedores de sistemas que generen contenidos a incorporar soluciones técnicas (marcas de agua, metadatos, etc.) que permitan detectar que el output ha sido generado por IA.
+
+Pregunta: ¿Cómo se estructura la gobernanza y el cumplimiento del Reglamento?
+Respuesta: La gobernanza del Reglamento se estructura en varios niveles:
+* Autoridades nacionales competentes: Cada Estado miembro designa al menos una autoridad notificadora y una autoridad de vigilancia del mercado.
+* Comité Europeo de Inteligencia Artificial (the Board): Órgano consultivo compuesto por representantes de los Estados miembros para asesorar y ayudar a la Comisión y a los Estados miembros en la aplicación del Reglamento.
+* Foro Consultivo: Grupo de partes interesadas (industria, pymes, academia, sociedad civil) que proporciona asesoramiento técnico al Board y a la Comisión.
+* Oficina Europea de IA (AI Office): Dentro de la Comisión, es responsable de desarrollar la experiencia en IA, contribuir a la aplicación del Reglamento y supervisar los modelos de IA de propósito general, actuando como autoridad de vigilancia del mercado para ellos.
+* Panel Científico: Grupo de expertos independientes que apoya a la AI Office en la supervisión de los modelos de IA de propósito general.
+La vigilancia del mercado se lleva a cabo de acuerdo con el Reglamento (UE) 2019/1020. Se prevén sanciones administrativas por incumplimiento, que deben ser efectivas, proporcionadas y disuasorias. Los Estados miembros deben establecer las normas sobre sanciones.
+
+Pregunta: ¿Cuáles son las fechas de aplicación clave del Reglamento?
+Respuesta: El Reglamento se aplica de forma escalonada:
+* 2 de febrero de 2025: Comienzan a aplicarse las disposiciones sobre prácticas prohibidas.
+* 2 de agosto de 2025: Comienzan a aplicarse las disposiciones sobre la estructura de gobernanza (Board, AI Office), organismos notificados y las obligaciones para los proveedores de modelos de IA de propósito general. También empiezan a aplicarse las normas sobre sanciones.
+* 2 de agosto de 2026: El Reglamento se aplica plenamente, incluyendo todas las normas para los sistemas de IA de alto riesgo.
+Existen períodos transicionales específicos para los operadores de sistemas de IA a gran escala establecidos por actos jurídicos de la UE y para los sistemas de alto riesgo utilizados por autoridades públicas (hasta 2030).
+

@@ -1,0 +1,48 @@
+Pregunta: ¿Qué es la Semana del Aprendizaje Digital 2025 y cuál es su tema central?
+Respuesta: La Semana del Aprendizaje Digital 2025 es un evento internacional organizado por la UNESCO que se llevará a cabo del 2 al 5 de septiembre de 2025 en París, Francia. Su tema central es "Dirigir la tecnología para la educación", y se enfoca específicamente en "La IA y el futuro de la educación: Disrupciones, dilemas y direcciones". El evento sirve como una plataforma para conversaciones audaces y necesarias sobre la intersección de la tecnología con los futuros de la educación.
+
+Pregunta: ¿Cuáles son las perspectivas contrastantes sobre la disrupción de la IA en la educación que presenta el documento?
+Respuesta: El documento presenta tres perspectivas principales sobre la disrupción de la IA en la educación:
+1. Catalizador de disrupción sistémica: Algunos ven la IA como un catalizador que remodela las pedagogías, el currículo, la evaluación, la gestión y la gobernanza, suponiendo una ruptura inevitable y decisiva con la tradición y un cambio radical en las estructuras fundamentales de la educación. Esta perspectiva plantea preguntas profundas sobre el propósito mismo de la educación.
+2. Escepticismo sobre el impacto transformador: Otros cuestionan si la disrupción de la IA es tan impactante, universal o transformadora como se suele afirmar. Argumentan que la retórica de disrupción predominante tiende a ser sobre-generalizada, exagerada y desalineada con las realidades sobre el terreno.
+3. Enfoques mesurados y cautelosos: Algunos actores han adoptado posturas más medidas y cautelosas hacia la integración de la IA.
+Estas perspectivas contrastantes impulsan una investigación crítica sobre cómo la IA se intersecta con la educación en diversos contextos y quién se beneficia o queda rezagado con su expansión.
+
+Pregunta: ¿Qué dilemas éticos y pedagógicos enfrentan los actores educativos en la era de la IA?
+Respuesta: Los actores educativos (docentes, estudiantes, responsables políticos, investigadores) enfrentan varios dilemas apremiantes:
+* Equidad vs. Capas de Inequidad: Si bien las herramientas de IA se enmarcan como soluciones para las brechas de aprendizaje (ej. personalización), también introducen nuevas capas de inequidad, sesgos sistémicos y vigilancia digital.
+* Eficiencia vs. Agencia Humana: El uso de la IA para ganar eficiencia (ej. en tareas administrativas o evaluaciones) puede erosionar la responsabilidad humana en la toma de decisiones.
+* Relación Humana vs. Automatización: Existe la preocupación de que la dependencia excesiva de las herramientas de IA pueda reducir los aspectos relacionales y humanos esenciales de la enseñanza.
+* Asignación de Recursos: La prisa por integrar la IA en las escuelas puede desviar la atención y los recursos financieros de necesidades educativas más urgentes, lo que genera elecciones difíciles.
+* Preparación para el Futuro: A medida que la IA automatiza tareas humanas en el mundo laboral, los sistemas educativos enfrentan la presión de preparar a los estudiantes para futuros donde la agencia humana debe reclamarse en medio de una creciente coexistencia hombre-máquina.
+
+Pregunta: ¿Qué se necesita para reimaginar y recalibrar los futuros de la educación con la IA?
+Respuesta: Reimaginar los futuros de la educación con la IA requiere recalibrar direcciones clave en varias áreas para garantizar que la IA fomente la equidad en el aprendizaje, incorpore la ética desde el diseño y centre la agencia humana. Esto implica:
+* Liderazgo y Capacitación: Se necesitan líderes, estudiantes y docentes capacitados en IA que no solo puedan interactuar con la IA de manera responsable, sino también co-crear activamente las normas, políticas y agendas de investigación que gobernarán su diseño y uso ético.
+* Responsabilidad Compartida: Dar forma a la trayectoria de la IA es una responsabilidad social compartida. La educación, como un esfuerzo público común, debe dirigir activamente la IA para que sirva a las necesidades pedagógicas, culturales y sociales de diversas comunidades.
+
+Pregunta: ¿Cuáles son los objetivos específicos de la Semana del Aprendizaje Digital 2025?
+Respuesta: Los objetivos del evento, que se lograrán a través de un programa que incluye mesas redondas ministeriales, diálogos multipartitos, conferencias públicas, talleres y demostraciones en vivo, son:
+* Fomentar la reflexión crítica y el pensamiento visionario: Explorar las implicaciones de la IA para la educación, incentivando a las partes interesadas a mirar más allá de los desafíos actuales y envisionar colaborativamente el futuro de la educación.
+* Promover el diálogo y la creación de capacidad multipartitos: Proporcionar una plataforma única para que diversas partes interesadas interactúen, asegurando el desarrollo de prácticas de educación digital inclusivas, justas y sostenibles para el futuro.
+* Co-crear recursos y herramientas clave: Lanzar productos de conocimiento y herramientas liderados por la UNESCO, incluyendo documentos de reflexión sobre IA y futuros del aprendizaje, estándares de calidad para plataformas de aprendizaje digital y materiales de desarrollo de capacidad global para responsables políticos y educadores, invitando retroalimentación y contribuciones en un espíritu de co-creación.
+* Imaginar futuros mediante enfoques de prospectiva: Explorar metodologías de prospectiva y anticipación que permitan a los actores educativos definir y navegar una gama de futuros potenciales de la IA, analizando tendencias emergentes, abordando desafíos y descubriendo oportunidades para un compromiso proactivo.
+
+Pregunta: ¿Quiénes están invitados a participar en la Semana del Aprendizaje Digital 2025?
+Respuesta: El evento está dirigido a una amplia gama de participantes, que incluyen: Ministros y responsables políticos; jefes y representantes de agencias de la ONU y organizaciones internacionales, socios para el desarrollo, actores privados, organizaciones de la sociedad civil, grupos juveniles, administradores, investigadores y profesionales de la educación de todos los niveles.
+
+Pregunta: ¿Dónde y cómo se llevará a cabo el evento, y cuál es el formato de los cuatro días?
+Respuesta: El evento se llevará a cabo de forma presencial en la Sede de la UNESCO en París, Francia. Las sesiones plenarias se transmitirán en vivo para una audiencia global con servicio de interpretación en inglés y francés. El formato de los cuatro días es el siguiente:
+* DÍA 1: Haciendo un balance de la IA en la educación: Se revisarán las implicaciones de la IA para la educación, escrutando la experiencia y evidencia emergente (o la falta de ella) sobre cómo está influyendo en el aprendizaje, la enseñanza, el currículo, la evaluación, la gestión educativa, la gobernanza, la investigación y la profesión docente.
+* DÍA 2: Elecciones, decisiones y acciones: Se centrará en cómo los líderes educativos, responsables políticos y docentes pueden dar forma proactiva al desarrollo, integración y mediación de la IA, así como establecer normas, políticas, agendas de investigación y prácticas que guíen el diseño y uso responsable de la IA.
+* DÍA 3: Diálogos de inmersión profunda: Se dedicará a discusiones en profundidad, reuniendo diversas perspectivas y metodologías. Las sesiones explorarán enfoques de prospectiva para envisionar futuros alternativos y fomentar el diálogo crítico sobre el papel evolutivo de la IA en la educación.
+* DÍA 4: Laboratorios de ideas abiertos: Contará con talleres prácticos, grupos de trabajo temáticos y sesiones de co-creación con socios.
+Además, el evento incluirá recepciones diarias para networking e intercambio, y una exposición que mostrará el trabajo de organizaciones y socios.
+
+Pregunta: ¿Qué temas específicos se abordarán en el programa provisional del evento?
+Respuesta: El programa provisional detalla una variedad de temas que se abordarán cada día:
+* Día 1: "La IA y el futuro de la educación: Disrupciones, dilemas y direcciones"; "IA en la educación: ¿Fuerza disruptiva o promesa exagerada?"; "¿Reescribiendo las reglas? La influencia de la IA en el currículo, la pedagogía y la evaluación".
+* Día 2: "Redefiniendo la colaboración humano-IA: ¿Qué está en juego para la educación?"; "Navegando los dilemas de la IA: La formulación de políticas educativas en una encrucijada"; "Equilibrando las promesas y los peligros de la IA: Política y práctica".
+* Día 3: "IA para el bien común: Una responsabilidad compartida"; Talleres de prospectiva sobre el cambio tecnológico de la IA en la educación, el currículo y la evaluación, el aprendizaje fundamental de calidad, los docentes, la educación superior y la gobernanza educativa; "Dirigir la transformación de la educación con tecnologías: Explorando futuros plausibles y alternativos".
+* Día 4: Dedicado por completo a "Laboratorios de ideas abiertos" con talleres, grupos de trabajo temáticos y sesiones de co-creación.
+

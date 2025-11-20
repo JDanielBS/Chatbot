@@ -1,0 +1,70 @@
+Pregunta: ¿Qué es la Recomendación de la UNESCO sobre la Ética de la Inteligencia Artificial y cuándo fue adoptada?
+Respuesta: La Recomendación de la UNESCO sobre la Ética de la Inteligencia Artificial es el primer marco global sobre ética de la IA. Fue adoptada por aclamación por los 193 Estados Miembros de la UNESCO en noviembre de 2021. Este instrumento integral es el resultado de un proceso de consulta global de dos años que involucró a expertos, desarrolladores y otras partes interesadas de todo el mundo. Su objetivo es proporcionar un marco ético sólido para el desarrollo y uso de las tecnologías de IA, asegurando que contribuyan al bien público.
+Pregunta: ¿Por qué era necesaria una Recomendación global sobre la ética de la IA?
+Respuesta: El rápido aumento de la IA presenta oportunidades, pero también profundas preocupaciones éticas. Estas surgen del potencial de los sistemas de IA para incorporar sesgos, contribuir a la degradación climática y amenazar los derechos humanos. Estos riesgos ya han comenzado a agravar las desigualdades existentes, dañando aún más a los grupos marginados. La Recomendación aborda esta urgencia al establecer el primer estándar global para garantizar que la IA se desarrolle y utilice de manera ética, con la protección de los derechos humanos y la dignidad como piedra angular.
+Pregunta: ¿Cuáles son los cuatro valores centrales que fundamentan la Recomendación?
+Respuesta: Los cuatro valores centrales son:
+1. Respeto, protección y promoción de los derechos humanos, las libertades fundamentales y la dignidad humana.
+2. Vivir en sociedades pacíficas, justas e interconectadas.
+3. Garantizar la diversidad y la inclusión.
+4. ??Prosperidad del medio ambiente y los ecosistemas.
+Estos valores sientan las bases para sistemas de IA que trabajen para el bien de la humanidad, los individuos, las sociedades y el medio ambiente.
+Pregunta: ¿Cuáles son los diez principios centrales para un enfoque de la ética de la IA centrado en los derechos humanos?
+Respuesta: Los diez principios son:
+1. Proporcionalidad y No Maleficencia: El uso de los sistemas de IA no debe ir más allá de lo necesario para lograr un objetivo legítimo. Debe utilizarse la evaluación de riesgos.
+2. Seguridad y Protección: Deben evitarse y abordarse los daños no deseados (riesgos de seguridad) y las vulnerabilidades ante ataques (riesgos de seguridad).
+3. Derecho a la Privacidad y Protección de Datos: La privacidad debe protegerse y promoverse durante todo el ciclo de vida de la IA. Deben establecerse marcos de protección de datos adecuados.
+4. Gobernanza Multisectorial, Adaptativa y Colaboración: Debe respetarse el derecho internacional y la soberanía nacional en el uso de datos. Es necesaria la participación de diversas partes interesadas.
+5. Responsabilidad y Rendición de Cuentas: Los sistemas de IA deben ser auditables y trazables. Deben existir mecanismos de supervisión, evaluación de impacto, auditoría y debida diligencia.
+6. Transparencia y Explicabilidad: El despliegue ético de la IA depende de su transparencia y explicabilidad. Las personas deben saber cuándo una decisión está informada por IA.
+7. Supervisión y Determinación Humana: Los Estados miembros deben asegurar que los sistemas de IA no desplacen la responsabilidad y rendición de cuentas humana última.
+8. Sostenibilidad: Las tecnologías de IA deben evaluarse según sus impactos en la "sostenibilidad", entendida como metas en evolución como los Objetivos de Desarrollo Sostenible de la ONU.
+9. Concienciación y Competencias: Debe promoverse la comprensión pública de la IA y los datos a través de educación abierta, participación cívica, competencias digitales y formación en ética de IA.
+10. Equidad y No Discriminación: Los actores de IA deben promover la justicia social, la equidad y la no discriminación, asegurando que los beneficios de la IA sean accesibles para todos.
+
+Pregunta: Según la Recomendación, ¿qué son los "actores de IA" y el "ciclo de vida de la IA"?
+Respuesta:
+* Actores de IA: Cualquier actor (persona natural o jurídica) involucrado en cualquier etapa del ciclo de vida de la IA.
+* Ciclo de Vida de la IA: Abarca todas las etapas, desde la investigación, el diseño y el desarrollo hasta el despliegue y el uso, incluyendo el mantenimiento, la operación, el comercio, la financiación, la monitorización y evaluación, el fin del uso, el desmontaje y la terminación.
+Pregunta: ¿Qué disposición rompedora incluye la Recomendación respecto a la puntuación social y la vigilancia masiva?
+Respuesta: La Recomendación es el primer instrumento normativo internacional que contiene una disposición explícita contra el uso de sistemas de IA para la puntuación social y la vigilancia masiva.
+Pregunta: ¿Qué se entiende por "Explicabilidad" en el contexto de la IA?
+Respuesta: El término "caja negra" se ha utilizado para describir ecosistemas de IA opacos y difíciles de interpretar. La 'Explicabilidad' requiere que la lógica detrás de la toma de decisiones algorítmica pueda ser completamente interpretada por expertos y que esta lógica pueda ser explicada a los usuarios en un lenguaje accesible.
+Pregunta: ¿Cuáles son las once áreas políticas clave identificadas en la Recomendación para la acción?
+Respuesta: Las once áreas políticas clave son:
+1. Evaluación de Impacto Ético
+2. Gobernanza y Administración Éticas
+3. Política de Datos
+4. Desarrollo y Cooperación Internacional
+5. Medio Ambiente y Ecosistemas
+6. Género
+7. Cultura
+8. Educación e Investigación
+9. Comunicación e Información
+10. Economía y Trabajo
+11. Salud y Bienestar Social
+Pregunta: ¿Qué estipula la Recomendación sobre la "Gobernanza Ética y la Administración"?
+Respuesta: Los mecanismos de gobernanza de la IA deben ser inclusivos, transparentes, multidisciplinares, multilaterales y multisectoriales. Las comunidades impactadas por la IA deben participar activamente en su gobernanza, junto con expertos de diversas disciplinas. La gobernanza debe ir más allá de las meras recomendaciones para incluir la anticipación, la aplicación y la reparación. Una disposición rompedora subraya que la gobernanza no puede detenerse una vez identificados los riesgos; todos los daños identificados deben ser investigados y abordados, dando a las comunidades el derecho a la reparación.
+Pregunta: ¿Qué políticas promueve la Recomendación en relación con la "Política de Datos"?
+Respuesta: Los Estados miembros deben implementar mecanismos para estrategias efectivas de gobernanza de datos que aseguren la privacidad individual, al mismo tiempo que garanticen una recolección de datos adecuada y medios para regular su uso. Una disposición clave promueve y facilita el uso de conjuntos de datos de calidad y sólidos para el entrenamiento, desarrollo y uso de la IA, incluyendo la creación de conjuntos de datos de "estándar de oro" o conjuntos de datos abiertos y confiables.
+Pregunta: ¿Cómo aborda la Recomendación el impacto de la IA en la "Economía y el Trabajo"?
+Respuesta: Los Estados miembros deben considerar y intentar regular el impacto de los sistemas de IA en el mercado laboral. Los estudios relacionados con la IA deberían convertirse en una competencia básica en todos los niveles educativos para ayudar a cerrar la brecha de habilidades. Esto impulsará la competencia del mercado y garantizará la protección del consumidor a escala nacional e internacional.
+Pregunta: ¿Qué medidas específicas sugiere la Recomendación para la equidad de "Género" en la IA?
+Respuesta: Los Estados miembros deben maximizar el potencial de la IA para contribuir a la igualdad de género, previniendo su potencial para exacerbar las brechas de género. Debe haber fondos dedicados para políticas que apoyen a mujeres y niñas, por ejemplo, invirtiendo en mujeres para carreras STEM. Se destaca un caso que muestra cómo la IA puede replicar sesgos existentes, como en procesos de contratación con sesgo masculino, o cómo los algoritmos de publicidad pueden mostrar anuncios de carreras STEM a un 20% más de hombres que de mujeres.
+Pregunta: ¿Qué enfoque tiene la Recomendación sobre la "Educación e Investigación" en IA?
+Respuesta: Los Estados miembros deben proporcionar una educación adecuada en competencias de IA al público, incluidos programas de concienciación sobre datos, priorizando la participación de grupos marginados. También deben fomentar iniciativas de investigación sobre IA ética. Una disposición rompedora reconoce la ética de la IA, la comunicación y las habilidades de trabajo en equipo como prioridades, junto con habilidades ampliamente reconocidas como la alfabetización básica, la aritmética, la codificación y las competencias digitales.
+Pregunta: ¿Cómo se relaciona la Recomendación con el "Medio Ambiente y los Ecosistemas"?
+Respuesta: Los Estados miembros y las empresas deben evaluar los impactos ambientales directos e indirectos de los sistemas de IA, incluyendo su huella de carbono, consumo de energía y extracción de materias primas. Cuando sea necesario, deben introducir incentivos para asegurar que las soluciones de IA se utilicen para apoyar la predicción, prevención, control y mitigación de problemas relacionados con el clima. Se cita un caso que ilustra la alta demanda energética de la IA, donde un modelo de entrenamiento común puede emitir más de 626,000 libras de CO² equivalente.
+Pregunta: ¿Qué disposición especial incluye la Recomendación sobre "Tecnologías Convergentes"?
+Respuesta: La Recomendación incluye disposiciones para tecnologías emergentes que convergen con la IA, creando preocupaciones éticas distintivas, como es el caso de la neurotecnología y las interfaces cerebro-computadora.
+Pregunta: ¿Qué dos metodologías prácticas desarrollará la UNESCO para implementar la Recomendación?
+Respuesta: La UNESCO desarrollará dos metodologías prácticas:
+1. Metodología de Evaluación de la Preparación (RAM): Diseñada para ayudar a evaluar si los Estados Miembros están preparados para implementar la Recomendación. Aborda preguntas como si existen leyes para regular la IA o si la infraestructura nacional apoya su accesibilidad. Su propósito es ayudar a los Estados a identificar su estado de preparación y desarrollar una hoja de ruta.
+2. Evaluación de Impacto Ético (EIA): Un proceso estructurado que ayuda a los equipos de proyectos de IA, en colaboración con las comunidades afectadas, a identificar y evaluar los impactos potenciales de un sistema de IA. Aborda preguntas como quién podría verse afectado negativamente y qué se puede hacer para prevenir daños. Su propósito es reflexionar sobre los impactos potenciales e identificar las acciones de prevención necesarias.
+Pregunta: ¿Cuáles son los componentes clave de la estrategia de implementación de la UNESCO para la Recomendación?
+Respuesta: La estrategia de implementación multidimensional incluye:
+* Observatorio Global sobre la Ética de la IA: Una plataforma digital innovadora que sirve como un "centro integral" para el análisis más reciente sobre el desarrollo y uso ético de la IA en el mundo.
+* Foro Global sobre la Ética de la IA: Un evento anual de alto nivel para avanzar en el conocimiento sobre los desafíos de la IA y facilitar el aprendizaje entre pares.
+* Red de Expertos en Ética de IA sin Fronteras (AIEB): Un grupo flexible de expertos para desplegar en Estados Miembros que necesiten asistencia en la implementación.
+* Red de Mujeres por la Ética de la IA (W4AIEthics): Una plataforma para mujeres líderes que impulsan la transformación hacia la igualdad de género en y a través de la IA.
+

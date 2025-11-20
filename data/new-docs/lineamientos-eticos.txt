@@ -1,0 +1,91 @@
+Pregunta: ¿Qué es la Ley de Inteligencia Artificial (AI Act) de la Unión Europea y cuál es su importancia?
+Respuesta: La Ley de Inteligencia Artificial (AI Act) es el primer marco regulatorio vinculante a nivel mundial de carácter horizontal sobre la inteligencia artificial. Fue firmada por los legisladores de la Unión Europea en junio de 2024, publicada en el Diario Oficial de la UE el 12 de julio de 2024 y entró en vigor en agosto de 2024. Esta regulación establece un marco común para el uso y suministro de sistemas de IA en la UE. Su importancia radica en que busca garantizar que los sistemas de IA sean seguros, transparentes y respeten los derechos fundamentales, adoptando un "enfoque basado en el riesgo" para regular esta tecnología.
+
+Pregunta: ¿Cuál es el contexto y los antecedentes que llevaron a la propuesta de la AI Act?
+Respuesta: La propuesta surgió como respuesta a los beneficios esperados de la IA en diversos sectores (medio ambiente, salud, finanzas, etc.), pero también a la creciente preocupación por sus implicaciones para los derechos fundamentales (no discriminación, libertad de expresión, privacidad) y los riesgos de seguridad. Inicialmente, la Comisión Europea adoptó un enfoque de "ley blanda" con las Directrices Éticas para una IA Confiable de 2019. Sin embargo, ante el rápido desarrollo de la tecnología, se decidió pasar a un enfoque legislativo. El Parlamento Europeo y el Consejo habían pedido repetidamente un marco común para la IA. La Comisión lanzó una consulta pública en 2020 y publicó una evaluación de impacto que identificó problemas específicos de la IA: opacidad, complejidad, adaptación continua, comportamiento autónomo y dependencia de los datos.
+
+Pregunta: ¿Cómo define la AI Act un "sistema de IA"?
+Respuesta: La AI Act consagra en la ley de la UE una definición de "sistema de IA" alineada con la definición revisada acordada por la OCDE. La define como: "Un sistema basado en máquina diseñado para operar con diversos niveles de autonomía y que puede exhibir adaptabilidad después de su implementación y que, para objetivos explícitos o implícitos, infiere, a partir de las entradas que recibe, cómo generar salidas como predicciones, contenido, recomendaciones o decisiones que pueden influir en entornos físicos o virtuales". La definición no pretende cubrir sistemas de software tradicionales más simples o enfoques de programación convencionales.
+
+Pregunta: ¿Qué es el "enfoque basado en el riesgo" que adopta la AI Act?
+Respuesta: El "enfoque basado en el riesgo" es el principio central de la AI Act. Significa que la intervención legal y las obligaciones se adaptan y son proporcionales al nivel de riesgo concreto que presenta un sistema de IA. La ley clasifica los sistemas de IA en cuatro categorías principales de riesgo, cada una con un conjunto diferente de requisitos:
+1. Riesgo inaceptable: Prohibidos.
+2. Alto riesgo: Autorizados sujetos a estrictos requisitos y evaluaciones de conformidad.
+3. Riesgo limitado (o de transparencia): Sujetos a obligaciones de información y transparencia.
+4. Riesgo mínimo o mínimo: Sin obligaciones adicionales más allá de la legislación existente.
+
+Pregunta: ¿Qué prácticas de IA están prohibidas por considerarse de "riesgo inaceptable"?
+Respuesta: La AI Act prohíbe una serie de prácticas de IA debido a su impacto perjudicial y la amenaza clara que suponen para la seguridad, los medios de vida y los derechos de las personas. La lista final es más amplia que la propuesta inicial e incluye:
+* Sistemas de IA que utilizan técnicas subliminales, manipuladoras o engañosas para distorsionar el comportamiento y perjudicar la toma de decisiones informada, causando un daño significativo.
+* Sistemas de IA que explotan vulnerabilidades debido a la edad, discapacidad o situación social o económica, causando un daño significativo.
+* Sistemas de categorización biométrica que inferen raza, opiniones políticas, afiliación sindical, creencias religiosas o filosóficas, vida sexual u orientación sexual (excepto para etiquetado o filtrado lícito con fines de aplicación de la ley).
+* Sistemas de IA que evalúan o clasifican a individuos o grupos basándose en su comportamiento social o características personales, leading to un tratamiento perjudicial o desproporcionado en contextos no relacionados.
+* Identificación biométrica remota en "tiempo real" en espacios públicos para la aplicación de la ley, con excepciones muy limitadas (como buscar a víctimas de secuestro o prevenir amenazas sustanciales e inminentes).
+* Sistemas de IA que evalúan el riesgo de que un individuo cometa delitos basándose únicamente en la elaboración de perfiles o rasgos de personalidad (excepto cuando apoyan evaluaciones humanas basadas en hechos objetivos).
+* Sistemas de IA que crean o expanden bases de datos de reconocimiento facial mediante la extracción no dirigida de Internet o imágenes de CCTV.
+* Sistemas de IA que infieren emociones en lugares de trabajo o instituciones educativas, excepto por razones médicas o de seguridad.
+
+Pregunta: ¿Qué son los "sistemas de IA de alto riesgo" y qué requisitos deben cumplir?
+Respuesta: Los sistemas de IA de alto riesgo son aquellos que pueden crear un impacto adverso en la salud, la seguridad o los derechos fundamentales de las personas. Se clasifican en dos categorías:
+1. Sistemas utilizados como componente de seguridad de un producto cubierto por la legislación de armonización de la UE (juguetes, aviación, coches, dispositivos médicos).
+2. Sistemas desplegados en áreas específicas listadas en un anexo de la ley (infraestructuras críticas, educación y formación profesional, empleo y gestión de trabajadores, acceso a servicios y beneficios esenciales, aplicación de la ley, control fronterizo, administración de justicia y procesos democráticos).
+Un sistema no se considerará de alto riesgo si cumple ciertos criterios (realiza una tarea procedural estrecha, mejora el resultado de una actividad humana previa, etc.), excepto si realiza perfiles de personas naturales.
+Los proveedores de estos sistemas deben someterse a una evaluación de conformidad (que puede ser auto-evaluación o con un organismo notificado) antes de comercializarlos. Deben cumplir requisitos de:
+* Gestión de riesgos.
+* Pruebas y robustez técnica.
+* Gobernanza y calidad de los datos de entrenamiento.
+* Transparencia.
+* Supervisión humana.
+* Ciberseguridad.
+* En algunos casos, una evaluación de impacto de derechos fundamentales.
+También deben implementar un monitoreo post-mercado y tomar acciones correctivas. El cumplimiento de las normas europeas armonizadas que se desarrollen otorgará una presunción de conformidad.
+
+Pregunta: ¿Qué obligaciones tienen los sistemas de IA de "riesgo limitado" o "transparencia"?
+Respuesta: Los sistemas de IA que presentan riesgos limitados, principalmente debido a la falta de transparencia y al potencial de impersonación o decepción, están sujetos a obligaciones de información y transparencia. Estos incluyen:
+* Chatbots: Los usuarios deben ser informados de que están interactuando con una IA.
+* Deepfakes y contenido generado por IA: Los desplegadores deben divulgar que el contenido (imagen, audio, video) ha sido generado o manipulado artificialmente. Hay excepciones limitadas (como prevenir delitos).
+* Marcado de contenido sintético: Los proveedores de sistemas que generan grandes volúmenes de contenido sintético deben implementar técnicas (como marcas de agua) para permitir su detección.
+* IA en el lugar de trabajo: Los empleadores que despliegan sistemas de IA deben informar a los trabajadores y sus representantes.
+
+Pregunta: ¿Qué son los "modelos de IA de propósito general" (GPAI) y cómo se regulan?
+Respuesta: Un modelo de IA de propósito general (GPAI) es un modelo "entrenado con una gran cantidad de datos utilizando auto-supervisión a escala", que muestra "generalidad significativa" y es "capaz de realizar competentemente una amplia gama de tareas distintas" pudiendo integrarse en diversos sistemas o aplicaciones. Un sistema de IA de propósito general se basa en un modelo GPAI.
+La AI Act establece reglas específicas para ellos:
+* Para todos los modelos GPAI: Deben elaborar documentación técnica, poner en práctica una política para respetar la ley de derechos de autor de la UE (ej. mediante minería de texto y datos legal o marcas de agua) y publicar un resumen suficientemente detallado del contenido utilizado para el entrenamiento. Los modelos fuera de la UE deben tener un representante en la UE. Los modelos de código abierto ("open-source") están exentos de algunas obligaciones, como la divulgación de documentación técnica.
+* Para modelos GPAI con riesgo sistémico: Son aquellos con "capacidades de alto impacto" que podrían suponer un riesgo sistémico por su alcance y efectos negativos previsibles. Se presume que un modelo presenta riesgo sistémico si se entrena con una potencia de cálculo total superior a 10^25 FLOPs (operaciones de punto flotante por segundo). Además de las obligaciones de transparencia, estos proveedores deben evaluar y mitigar constantemente los riesgos, garantizar la ciberseguridad, y realizar un seguimiento y notificación de incidentes graves.
+
+Pregunta: ¿Qué son los "sandboxes regulatorios" y las "pruebas en condiciones reales" según la AI Act?
+Respuesta: Son medidas para fomentar la innovación y la inversión en IA:
+* Sandboxes regulatorios de IA: Son entornos controlados establecidos por las autoridades nacionales para facilitar el desarrollo y prueba de sistemas de IA innovadores bajo una estricta supervisión regulatoria, durante un tiempo limitado antes de su comercialización. Deben permitir, cuando sea apropiado, pruebas en condiciones reales fuera del laboratorio.
+* Pruebas en condiciones reales: Los proveedores de sistemas de IA de alto riesgo pueden probarlos en el mundo real, incluso sin participar en un sandbox, si cumplen garantías como obtener un consentimiento específico y presentar su plan a la autoridad de vigilancia del mercado.
+
+Pregunta: ¿Cómo se hará cumplir la AI Act y qué sanciones establece?
+Respuesta: La implementación de la AI Act es responsabilidad de actores nacionales y de la UE:
+* Nivel Nacional: Los Estados miembros deben designar al menos una autoridad de vigilancia del mercado y una autoridad notificadora.
+* Nivel de la UE: Se establece una Junta Europea de IA, una Oficina de IA (para asesorar, especialmente sobre GPAI, y desarrollar códigos de práctica), y se cuenta con organismos de normalización (CEN y CENELEC).
+* Sanciones: Se establecen multas administrativas muy elevadas por incumplimiento. Por ejemplo, por infringir las normas sobre prácticas prohibidas o requisitos de datos, las multas pueden llegar hasta 35 millones de euros o el 7% del volumen de negocios anual mundial total (lo que sea mayor).
+
+Pregunta: ¿Cuál es el calendario de aplicación (timeline) de la AI Act?
+Respuesta: Las disposiciones de la AI Act se aplicarán de forma escalonada:
+* 6 meses después de la entrada en vigor: Las disposiciones sobre sistemas prohibidos comenzarán a aplicarse.
+* 12 meses después de la entrada en vigor: Se aplicarán las normas sobre los modelos de IA de propósito general (GPAI) y los regímenes de sanciones.
+* 24 meses después de la entrada en vigor: Se aplicarán las normas para los sistemas de IA de alto riesgo.
+* 36 meses después de la entrada en vigor: Se aplicarán las normas para los sistemas de IA de alto riesgo cubiertos por la legislación de productos de la UE existente.
+Los códigos de práctica deben estar listos, como muy tarde, a los 9 meses de la entrada en vigor de la ley.
+
+Pregunta: ¿Cuáles fueron algunas de las opiniones y preocupaciones clave de las partes interesadas (stakeholders) durante el proceso legislativo?
+Respuesta: Durante la consulta, surgieron diversas posturas:
+* Definición de IA: Algunas asociaciones industriales consideraron que la definición era demasiado amplia y podría cubrir algoritmos simples, abogando por una definición más estrecha centrada en aplicaciones de alto riesgo.
+* Enfoque de riesgos: Las organizaciones de derechos civiles pidieron prohibiciones más amplias, especialmente sobre el uso de biometría en espacios públicos y en el control fronterizo o la policía predictiva.
+* Cadena de valor de la IA: Hubo incertidumbre sobre los roles y responsabilidades de los diferentes actores, especialmente para los proveedores de modelos de código abierto o de propósito general.
+* Protección al consumidor: Se pidió que el alcance fuera más amplio, imponiendo principios básicos a todos los sistemas de IA y otorgando más derechos y mecanismos de reparación a los consumidores.
+* Impacto en la inversión y PYMES: Algunos estudios advirtieron sobre altos costos de cumplimiento que podrían disuadir la inversión y perjudicar a las PYMES, mientras que otros cuestionaron estas estimaciones. Se pidió una representación efectiva de las PYMES en la elaboración de normas y sandboxes obligatorios.
+
+Pregunta: ¿Qué críticas y preocupaciones plantearon los académicos sobre el texto final de la AI Act?
+Respuesta: Los académicos, si bien en general apoyan la ley, han señalado varios desafíos de implementación y lagunas:
+* Falta de armonización: Incompleta alineación con la regulación sectorial existente, lo que genera burocracia.
+* Costos de cumplimiento: Sustanciales, especialmente para las PYMES.
+* Umbral de riesgo sistémico: El umbral de 10^25 FLOPs para los modelos GPAI se considera demasiado alto.
+* Supervisión de la biometría: Riesgo de que algunos Estados miembros eludan las normas sobre identificación biométrica remota.
+* Derechos de los individuos: Falta de mecanismos de ejecución individuales y derecho a la reparación para las personas afectadas por sistemas de IA.
+* Proceso de estandarización: Preocupación por la falta de supervisión democrática y la representación de las partes interesadas en el desarrollo de normas por parte de organizaciones privadas.
+Falta de derechos ejercibles: Se necesita legislación complementaria para proteger a los ciudadanos de los daños generados por la IA, controlar el impacto ambiental del entrenamiento de modelos y proteger los derechos de los trabajadores

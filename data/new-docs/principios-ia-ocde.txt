@@ -1,0 +1,86 @@
+Pregunta: ¿Qué es la inteligencia artificial generativa (Generative AI) y cuál es su potencial transformador?
+Respuesta: La inteligencia artificial generativa (Generative AI) es un tipo de inteligencia artificial que crea nuevo contenido (como texto, imágenes, audio y video) en respuesta a "prompts" o instrucciones del usuario, basándose en los datos con los que fue entrenada. Ofrece un potencial transformador en múltiples sectores como la educación, el entretenimiento, la atención sanitaria y la investigación científica. Puede crear contenido individualizado y escalable, automatizar tareas, generar hipótesis y mejorar la productividad. Además, los sistemas de IA generativa se utilizan cada vez más como "agentes autónomos", lo que les permite operar con información en tiempo real y realizar acciones de forma autónoma, como realizar reservas.
+
+Pregunta: ¿Cuáles son los principales desafíos y riesgos políticos y sociales asociados con la IA generativa?
+Respuesta: Los principales desafíos y riesgos identificados en el documento incluyen:
+1. Desinformación y manipulación: La IA generativa puede amplificar enormemente la escala y el alcance de la información errónea (misinformation) y la desinformación intencionada (disinformation), incluyendo la creación de deepfakes convincentes. Esto puede causar daños materiales a nivel individual (por ejemplo, influir en la toma de decisiones sobre vacunas) y erosionar la confianza social, el discurso público y la democracia.
+2. Sesgo y discriminación: Estos sistemas pueden reflejar, automatizar y perpetuar prejuicios sociales, estereotipos y discriminación presentes en sus datos de entrenamiento, lo que podría exacerbar la marginación de grupos específicos.
+3. Propiedad Intelectual (IPR): Surgen cuestiones sobre si el entrenamiento de modelos con datos con derechos de autor sin autorización constituye una infracción, y sobre si las salidas generadas por IA pueden ser protegidas por derechos de autor o patentes y, en tal caso, a quién pertenecen.
+4. Mercados laborales: La IA generativa podría impactar los mercados laborales en una escala y alcance diferentes, con una posible mayor exposición de ocupaciones altamente cualificadas a la automatización, aunque también tiene el potencial de mejorar la productividad de los trabajadores menos cualificados.
+5. Otros riesgos: Incluyen la seguridad cibernética automatizada, la vigilancia y la censura, la sobre-dependencia en los sistemas, la deshonestidad académica y la concentración de recursos y poder en unas pocas empresas tecnológicas.
+
+Pregunta: ¿Cómo se está adoptando la IA generativa en los distintos sectores industriales?
+Respuesta: La IA generativa se está adoptando rápidamente en varios sectores clave:
+* Desarrollo de software: Asistentes como GitHub Copilot autocompletan y generan código, y ayudan en la refactorización del mismo.
+* Industrias creativas y arte: Se utiliza para generar música desde cero o basada en compases anteriores, y aplicaciones como Stable Diffusion y Dall-E 2 generan nuevas formas de arte para la publicidad, los medios de comunicación y el cine.
+* Educación: Los estudiantes utilizan aplicaciones para aprender y preparar exámenes, y los profesores las usan para crear material educativo, cartas de recomendación y diseñar planes de estudio, mejorando su eficiencia.
+* Salud (Healthcare): Actúa como interfaz para pacientes y proveedores, ofreciendo información sobre cuidados preventivos y explicaciones de condiciones médicas. También se utiliza en el descubrimiento y desarrollo de nuevos fármacos.
+* Búsqueda (Search): Los motores de búsqueda están integrando modelos conversacionales de IA generativa, como Microsoft Bing con GPT-4, para mejorar la experiencia de búsqueda.
+
+Pregunta: ¿Cómo amplifica la IA generativa los riesgos de información errónea y desinformación?
+Respuesta: La IA generativa amplifica estos riesgos de varias maneras:
+* Indistinguibilidad: Los humanos tienen una capacidad limitada para diferenciar el contenido generado por IA del creado por humanos. En 2022, se encontró que las personas no podían diferenciar noticias generadas por IA de las humanas en el 50% de los casos.
+* Capacidades multimodales: Los modelos de vanguardia pueden combinar texto con imagen, video o voces, creando desinformación más convincente (por ejemplo, deepfakes de líderes políticos o manipulación de imágenes científicas).
+* Alucinaciones (Hallucinations): Los modelos de lenguaje (LLMs) pueden generar respuestas incorrectas pero convincentes, especialmente cuando la respuesta no está disponible en sus datos de entrenamiento, creando así información errónea.
+* Operaciones de influencia: Los LLMs pueden reducir drásticamente los costos de la propaganda y aumentar su escala, facilitando campañas de influencia dirigidas y manipuladoras. OpenAI reportó que GPT-4 puede rivalizar con propagandistas humanos.
+* Credibilidad: Investigaciones han encontrado que las noticias falsas generadas por IA pueden ser más creíbles para los evaluadores humanos que las escritas por humanos.
+
+Pregunta: ¿Qué medidas de mitigación se proponen para combatir la desinformación generada por IA?
+Respuesta: Las medidas de mitigación discutidas incluyen:
+* Aumentar el tamaño del modelo: Aunque se considera insuficiente por sí solo.
+* Solicitar evidencia: Desarrollar modelos que sustenten sus afirmaciones con referencias y fuentes.
+* Marcas de agua (Watermarking): Añadir marcas de agua para identificar imágenes y posiblemente texto sintéticos. La Coalición para la Proveniencia y Autenticidad del Contenido (C2PA) está desarrollando estándares abiertos para certificar la fuente del contenido online.
+* Pruebas de penetración (Red-teaming): Equipos que adoptan una mentalidad de atacante para probar el modelo en busca de fallos y vulnerabilidades que puedan generar desinformación.
+* Detección: Desarrollar sistemas de IA que ayuden a detectar contenido sintético (deepfakes, texto).
+Sin embargo, el documento señala las limitaciones de estos enfoques: los textos cortos son difíciles de marcar o detectar, los actores malintencionados pueden eludir las medidas, y los modelos de código abierto pueden sortear las salvaguardias. Se concluye que se necesitan soluciones novedosas e innovadoras.
+
+Pregunta: ¿De qué manera puede la IA generativa perpetuar sesgos y discriminación?
+Respuesta: La IA generativa puede perpetuar sesgos al replicar los prejuicios presentes en sus datos de entrenamiento. Los ejemplos incluyen:
+* Modelos de lenguaje: Mostrar sentimientos negativos hacia grupos sociales, vincular ocupaciones a un género específico o expresar sesgos respecto a religiones particulares.
+* Modelos de imagen: Se ha encontrado que sobretrepresentan la piel blanca y la masculinidad, y representan a las mujeres en entornos más domésticos en comparación con los hombres. También pueden reflejar relaciones sesgadas entre raza, género y estatus económico.
+La facilidad de uso y la rápida adopción de estos sistemas aumentan el riesgo de diseminación de resultados discriminatorios.
+
+Pregunta: ¿Qué mecanismos se utilizan para mitigar los sesgos en los modelos de IA generativa?
+Respuesta: Los mecanismos para mitigar sesgos incluyen:
+* Documentación y curación de datos: Hacer un inventario de los datos de entrenamiento para identificar grupos y narrativas representados y faltantes, y curar conjuntos de datos para obtener resultados más justos.
+* Investigación en explicabilidad (Explainability): Desarrollar métodos para entender cómo los modelos toman decisiones.
+* Auditorías (Auditing): Aplicar procesos de auditoría para identificar sesgos.
+* Pruebas de penetración (Red-teaming): Tanto con humanos como con otros modelos de IA para encontrar vulnerabilidades relacionadas con sesgos.
+* Aprendizaje por Refuerzo con Retroalimentación Humana (RLHF): Un enfoque de ajuste fino que utiliza feedback humano para moldear el comportamiento del modelo, por ejemplo, para que responda menos a contenido no permitido. No obstante, el RLHF tiene limitaciones de escalabilidad, costo y puede introducir nuevos sesgos de los humanos que proporcionan el feedback.
+
+Pregunta: ¿Qué problemas de Propiedad Intelectual (IPR) plantea la IA generativa?
+Respuesta: La IA generativa plantea principalmente dos problemas de IPR:
+1. Entrenamiento con datos bajo copyright: Los modelos se entrenan con cantidades masivas de datos que incluyen material con derechos de autor, mayoritariamente sin la autorización de los titulares de los derechos. Existe un debate legal en curso sobre si esto constituye una infracción o si se puede amparar bajo doctrinas como el "uso justo" (fair use) en EE.UU.
+2. Protección de las salidas generadas por IA: Se cuestiona si las salidas novedosas generadas por IA (imágenes, texto, audio) pueden ser protegidas por derechos de autor o patentes y, de ser así, a quién correspondería la autoría. Hasta la fecha, la mayoría de las jurisdicciones (como EE.UU. y Europa) coinciden en que las obras generadas de forma autónoma por IA no son susceptibles de derechos de autor, ya que requieren autoría humana. Algunas jurisdicciones, como el Reino Unido, atribuyen la autoría a la persona que realiza los arreglos necesarios para la creación de la obra.
+
+Pregunta: ¿Cuál es el impacto potencial de la IA generativa en los mercados laborales?
+Respuesta: El impacto es ambiguo y presenta efectos tanto positivos como negativos:
+* Exposición de tareas: Las ocupaciones de alta cualificación (profesionales de negocios, gestión, ciencia, ingeniería, derecho) son las más expuestas a los avances recientes de la IA generativa. Investigaciones de OpenAI sugieren que los sistemas de IA generativa podrían exponer los trabajos de mayores ingresos a la automatización.
+* Beneficios de productividad: La IA generativa puede mejorar la productividad. Investigaciones del MIT muestran que herramientas como ChatGPT reducen el tiempo dedicado a tareas y mejoran la calidad de la producción, con un impacto mayor en trabajadores con menor aptitud, permitiéndoles ponerse al día con colegas más senior.
+* Creación y destrucción de empleo: Si bien la IA desplaza algunas tareas (efecto desplazamiento), también puede aumentar la productividad (efecto productividad) y crear nuevas tareas y empleos (efecto reinstalación). Hasta ahora, el impacto principal ha sido en la calidad de los empleos (generalmente de manera positiva, reduciendo tareas tediosas), con poca evidencia de efectos negativos significativos en la cantidad de empleos, aunque esto podría cambiar.
+* Preocupación: Una proporción significativa de ocupaciones podría verse impactada, y tres de cada cinco trabajadores se preocupan por perder su trabajo por la IA en la próxima década.
+
+Pregunta: ¿Qué acciones políticas se recomiendan para abordar los impactos de la IA generativa en el mercado laboral?
+Respuesta: El documento enfatiza la necesidad de una acción política decisiva:
+* Formación (Skilling): Es crucial permitir que empleadores y trabajadores se adapten, notably through training. Las empresas deben abordar las brechas de habilidades emergentes mediante el reciclaje (re-skilling) y la mejora de habilidades (up-skilling).
+* Diálogo social: Los resultados del mercado laboral son mejores cuando la adopción de tecnologías se discute con los trabajadores.
+* Estrategias de cambio organizativo: Fomentar la apertura hacia las tecnologías de IA y trabajar para prevenir la ansiedad por percepciones erróneas.
+* Abordar riesgos laborales: Es urgente abordar los riesgos que la IA puede plantear en términos de privacidad, seguridad, equidad y derechos laborales, asegurando la rendición de cuentas, transparencia y explicabilidad en las decisiones relacionadas con el empleo apoyadas por la IA.
+* Monitoreo: Se requiere un seguimiento continuo de las implicaciones de la IA generativa en el mercado laboral debido a las muchas incógnitas existentes.
+
+Pregunta: ¿Cuáles son las preocupaciones y riesgos futuros potenciales asociados con la IA generativa?
+Respuesta: Además de los riesgos actuales, se identifican preocupaciones futuras:
+* Ciclo negativo de la información: La proliferación de contenido sintético de calidad variable en espacios digitales que luego se utiliza para entrenar a otros modelos de IA generativa, lo que podría desencadenar un ciclo vicioso que degrade la calidad de la información online.
+* Comportamientos emergentes: A más largo plazo, existe la preocupación por comportamientos emergentes en modelos muy grandes, como un aumento de la "agencia" (capacidad de actuar autónomamente), la búsqueda de poder y el desarrollo de "sub-objetivos" no alineados con los valores humanos. Esto podría llevar a "daños sistémicos y retardados" y al "desempoderamiento colectivo" de los humanos.
+* Hacking de recompensas (Reward Hacking): Donde un modelo encuentra formas imprevistas y potencialmente dañinas de lograr un objetivo.
+* Camino hacia la Inteligencia Artificial General (AGI): El aumento de las capacidades ha llevado a un debate sobre si estos modelos podrían conducir a una AGI, lo que conlleva beneficios y riesgos potencialmente vastos.
+* Otros riesgos a corto plazo: Incluyen ataques cibernéticos automatizados, vigilancia masiva, sobre-dependencia, deshonestidad académica, concentración de recursos y la huella ecológica de estos sistemas.
+
+Pregunta: ¿Qué es el "Red-teaming" y el "RLHF" en el contexto de la seguridad de la IA generativa?
+Respuesta:
+* Red-teaming: Es una práctica en la que equipos adoptan una mentalidad de atacante para probar el modelo en busca de fallos, vulnerabilidades y comportamientos no deseados. El objetivo es identificar cómo el modelo podría ser explotado para generar, por ejemplo, desinformación o discurso de odio, antes de que ocurra en un entorno real. Puede realizarse con expertos humanos o utilizando otros modelos de lenguaje.
+* RLHF (Reinforcement Learning from Human Feedback - Aprendizaje por Refuerzo con Retroalimentación Humana): Es un enfoque de múltiples pasos para ajustar finamente un modelo y moldear su comportamiento. Implica recopilar comparaciones de las respuestas del modelo donde los humanos indican qué salida prefieren, y luego entrenar un modelo de recompensa que refleje estas preferencias humanas. Finalmente, se utiliza el aprendizaje por refuerzo para optimizar el modelo principal contra este modelo de recompensa. Se utiliza, por ejemplo, para que el modelo se niegue a dar instrucciones sobre cómo hacerse daño o responda menos a contenido no permitido. Sin embargo, el RLHF tiene limitaciones en cuanto a escalabilidad, costo y puede introducir nuevos sesgos.
+
+Pregunta: ¿Cómo están respondiendo los gobiernos y los organismos internacionales a los desafíos de la IA generativa?
+Respuesta: Los gobiernos reconocen rápidamente la naturaleza transformadora de la IA generativa y están tomando medidas para seguir el ritmo del cambio. Un ejemplo destacado es el compromiso de los países del G7 (Grupo de los Siete) en mayo de 2023 de avanzar en las discusiones internacionales sobre su gobernanza en busca de una IA inclusiva y confiable, lo que incluyó el establecimiento del "Hiroshima AI Process" en colaboración con la OCDE. La OCDE, a través de su Observatorio de Políticas de IA (OECD.AI), está comprometida a ayudar a los gobiernos a mantenerse al día con los rápidos cambios. Este documento sirve como un primer paso para informar estas consideraciones políticas, y el Observatorio y su nuevo Grupo de Expertos sobre Futuros de la IA servirán como foros para el diálogo y la generación de recomendaciones.
+

@@ -1,0 +1,83 @@
+Pregunta: ¿Qué es el programa de Ingeniería en Inteligencia Artificial de la Universidad de Caldas y cuáles son sus características generales?
+Respuesta: El programa de Ingeniería en Inteligencia Artificial de la Universidad de Caldas es un programa de pregrado de modalidad presencial. Tiene una duración de 8 semestres y se imparte en la ciudad de Manizales. El título que otorga es el de Ingeniero(a) en Inteligencia Artificial. Su enfoque principal es formar profesionales con sólidas bases científicas, técnicas y éticas, combinando conocimientos teóricos y prácticos para diseñar, desarrollar y gestionar sistemas inteligentes. El aprendizaje se basa en proyectos, hace énfasis en la ética en el uso de la IA y prepara a los estudiantes para enfrentar los desafíos de la Cuarta Revolución Industrial, promoviendo la innovación tecnológica y la solución de problemas en diversos sectores.
+
+Pregunta: ¿Cuáles son los objetivos principales del programa de Ingeniería en Inteligencia Artificial?
+Respuesta: Los objetivos del programa son tres:
+1. Preparar a los estudiantes para enfrentar los desafíos de la Cuarta Revolución Industrial mediante la adquisición de habilidades técnicas avanzadas en inteligencia artificial, alineadas con las necesidades del mercado laboral.
+2. Formar ingenieros en Inteligencia Artificial con sólidas competencias técnicas y éticas, capaces de diseñar, implementar y liderar soluciones basadas en tecnologías digitales y emergentes.
+3. Fomentar la innovación en productos, servicios y procesos que impulsen el crecimiento económico y la competitividad.
+
+Pregunta: ¿Cómo está estructurado el plan de estudios del programa, semestre por semestre?
+Respuesta: El plan de estudios está organizado en ocho semestres, con una carga crediticia total de 144 créditos. A continuación, se detalla la distribución:
+* Primer Semestre (16 créditos): Matemáticas Fundamentales, Lógica Matemática, Introducción a la Ingeniería en Inteligencia Artificial, Fundamentos de Programación, Inglés para Ingeniería I, Constitución Política de Colombia.
+* Segundo Semestre (19 créditos): Cálculo I, Matemáticas Discretas, Álgebra Lineal, Sistemas Analógicos y Digitales, Programación Orientada a Objetos, Electivas, Inglés para Ingeniería II, Opcional I.
+* Tercer Semestre (19 créditos): Cálculo II, Probabilidad e Inferencia Estadística, Estructuras de Datos y Algoritmos, Bases de Datos Relacionales, Machine Learning I, Inglés para Ingeniería III, Opcional II.
+* Cuarto Semestre (19 créditos): Cálculo III, Cálculo IV, Seminario de Investigación, Desarrollo e Innovación, Bases de Datos No Relacionales, Machine Learning II, Diseño de Interfaces y Visualización para IA, Opcional III.
+* Quinto Semestre (18 créditos): Procesamiento Digital de Señales e Imágenes, Modelado y Simulación Computacional, Deep Learning, Arquitectura de Software para IA, Computación de Alto Rendimiento, Electiva I.
+* Sexto Semestre (18 créditos): Procesamiento del Lenguaje Natural, Cloud Computing, Computer Vision, Gestión de Proyectos, Big Data, Gestión del Conocimiento Empresarial, Electiva II.
+* Séptimo Semestre (18 créditos): Machine Learning Operations, Internet de las Cosas y Computación en el Borde, Aprendizaje por Refuerzo, IA Generativa, Proyecto Integrador, Electiva III.
+* Octavo Semestre (16 créditos): Trabajo de Grado, Inteligencia de Negocios, Robótica Inteligente, Responsible AI, Electiva IV.
+
+Pregunta: ¿Qué materias electivas se ofrecen en el programa?
+Respuesta: El programa incluye un componente de materias electivas que permiten a los estudiantes profundizar en áreas de su interés. La lista de electivas incluye: Mejora y optimización de procesos utilizando IA, Interacción hombre-máquina, Agentes autónomos y sistemas cognitivos, IA en biotecnología y bioinformática, Computación y ML cuántico, Causal AI, IA en videojuegos, Legislación en IA y gobernanza de datos, IA en salud, y Big Data.
+
+Pregunta: ¿Cuál es la distribución de créditos por núcleos de formación en el programa?
+Respuesta: La estructura académica del programa se divide en cuatro núcleos de formación con la siguiente distribución de créditos:
+* Componente de Formación en Ciencia: 28 créditos.
+* Componente de Formación Profesional: 94 créditos.
+* Formación General: 10 créditos.
+* Componente de Profundización: 12 créditos.
+El total de créditos del programa es de 144.
+
+Pregunta: ¿Qué infraestructura y recursos especializados ofrece la universidad para el programa de IA?
+Respuesta: La universidad cuenta con una infraestructura robusta para apoyar el aprendizaje y la investigación en IA:
+* Actual: Al menos 3 salas con equipos para entrenamiento y procesamiento de datos.
+* Futura (en el nuevo bloque): 4 laboratorios especializados de altas prestaciones:
+1. Laboratorio de Inteligencia Artificial.
+2. Laboratorio de Analítica de Datos y Visualización.
+3. Laboratorio de Robótica e IoT.
+4. Laboratorio de Ciberseguridad.
+* Recursos en la Nube: Acceso a servicios OnCloud para Operaciones de Machine Learning (MLOps).
+
+Pregunta: ¿Qué grupos y semilleros de investigación están asociados al programa?
+Respuesta: El programa está vinculado a grupos y semilleros de investigación que fomentan la exploración y el desarrollo en el área:
+* Grupos de Investigación:
+o GITIR
+o IA (Inteligencia Artificial)
+* Semilleros de Investigación:
+o Semillero de IA
+o Semillero de Seguridad
+
+Pregunta: ¿Cuál es el campo de acción profesional para un graduado de este programa?
+Respuesta: El campo de acción profesional es amplio e incluye áreas como:
+* Desarrollo de soluciones de IA.
+* Ciencia de datos y análisis predictivo.
+* Automatización y robótica.
+* Innovación y emprendimiento.
+* Investigación y desarrollo.
+* Consultoría y asesoría en IA.
+
+Pregunta: ¿Qué oportunidades laborales específicas tiene un Ingeniero en Inteligencia Artificial egresado de la Universidad de Caldas?
+Respuesta: El campo laboral para los egresados es diverso y abarca roles especializados como:
+* Desarrollador de sistemas de IA.
+* Ingeniero de Machine Learning.
+* Desarrollador de robótica inteligente.
+* Arquitecto de soluciones IA.
+* Científico de datos.
+* Ingeniero de Big Data y Analítica.
+* Ingeniero en Analítica Predictiva.
+* Gerente de innovación y transformación digital.
+* Especialista en Inteligencia de Negocios (BI) con IA.
+* Ingeniero en procesamiento de lenguaje natural (NLP).
+* Especialista en ciberseguridad basada en IA.
+* Gerente de proyectos en IA.
+* Consultor en ética y gobernanza de la IA.
+
+Pregunta: ¿Dónde se puede encontrar más información y contactar al programa?
+Respuesta: Para obtener más información o contactar al programa, se pueden utilizar los siguientes medios:
+* Sitio web: https://www.ingenieras.ucaldas.edu.co/
+* Correo electrónico: facingenieria@ucaldas.edu.co
+* Teléfono: (+57) 6 8871500 Extensión 13415
+* Lugar: Manizales, Caldas, Colombia.
+* Para inscripciones: https://viceacademica.ucaldas.edu.co/admisiones/
+

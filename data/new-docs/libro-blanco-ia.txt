@@ -1,0 +1,113 @@
+Pregunta: ¿Qué es el Libro Blanco sobre la Inteligencia Artificial y cuál es su objetivo principal?
+Respuesta: El Libro Blanco sobre la Inteligencia Artificial - Un enfoque europeo orientado a la excelencia y la confianza es un documento de la Comisión Europea (COM/2020/65 final/2) cuyo objetivo principal es formular alternativas políticas para promover la adopción de la inteligencia artificial (IA) y abordar los riesgos vinculados a determinados usos de esta tecnología. Se centra en un enfoque europeo coordinado que aproveche las oportunidades de la IA respetando los valores y derechos fundamentales de la UE. El documento no aborda el desarrollo o uso de la IA con fines militares.
+
+Pregunta: ¿Cuáles son los dos pilares fundamentales del enfoque europeo propuesto en el Libro Blanco?
+Respuesta: Los dos pilares fundamentales son:
+1. Un marco político para un "ecosistema de excelencia": Establece medidas para armonizar esfuerzos a escala regional, nacional y europea. Moviliza recursos para la investigación, innovación y adopción de IA, especialmente en pymes.
+2. Un futuro marco normativo para un "ecosistema de confianza": Garantiza el cumplimiento de las normas de la UE, especialmente en protección de derechos fundamentales y de consumidores, centrándose en sistemas de IA de alto riesgo. Este marco busca ofrecer seguridad a los ciudadanos y certeza jurídica a las empresas.
+
+Pregunta: ¿Qué oportunidades y riesgos presenta la inteligencia artificial según el Libro Blanco?
+Respuesta:
+* Oportunidades: Mejora de la atención sanitaria (diagnósticos más precisos, prevención de enfermedades), aumento de la eficiencia agrícola, mitigación del cambio climático, mejora de la eficiencia productiva mediante mantenimiento predictivo, aumento de la seguridad, y desarrollo de nuevos productos y servicios en sectores donde Europa es fuerte (maquinaria, transporte, ciberseguridad, agricultura, economía verde, turismo).
+* Riesgos: Opacidad en la toma de decisiones, discriminación (de género u otros tipos), intromisión en la vida privada, uso con fines delictivos, y posibles efectos imprevistos o malintencionados.
+
+Pregunta: ¿Cuál es la posición competitiva de Europa en IA y qué desafíos enfrenta?
+Respuesta: Europa tiene una posición sólida en investigación, robótica, fabricación, sectores industriales (automoción, energía, salud, financiero) y en infraestructura informática (computación de alto rendimiento). Sin embargo, enfrenta desafíos como:
+* Inversión insuficiente: En 2016, se invirtieron 3.200 millones de euros en IA en Europa, frente a 12.100 millones en América del Norte y 6.500 millones en Asia.
+* Fragmentation: Riesgo de fragmentación del mercado único si surgen iniciativas nacionales descoordinadas.
+* Acceso a datos: Desventaja competitiva en aplicaciones de consumo y plataformas en línea, aunque tiene un gran volumen de datos públicos e industriales infrautilizados.
+
+Pregunta: ¿Qué acciones propone el Libro Blanco para crear un "ecosistema de excelencia"?
+Respuesta: Las acciones clave incluyen:
+* Colaboración con Estados miembros: Revisar y ampliar el Plan Coordinado sobre IA para optimizar inversiones y evitar duplicidades.
+* Centros de excelencia y pruebas: Crear centros de referencia mundial combinando inversiones europeas, nacionales y privadas.
+* Desarrollo de habilidades: Priorizar la formación en IA, atraer talento, y aumentar la participación femenina en el sector.
+* Apoyo a pymes: Garantizar acceso a la IA mediante centros de innovación digital y financiación a través de InvestEU.
+* Asociaciones público-privadas: Crear una nueva asociación en IA, datos y robótica en el marco de Horizonte Europa.
+* Adopción en el sector público: Promover el uso de IA en administraciones públicas, sanidad y transporte.
+* Acceso a datos e infraestructuras: Mejorar el acceso y la gestión de datos, e invertir en infraestructuras de computación.
+
+Pregunta: ¿Qué se entiende por un "enfoque basado en el riesgo" para el marco regulador de la IA?
+Respuesta: Un enfoque basado en el riesgo significa que la intervención reguladora se centra en las aplicaciones de IA que presentan riesgos significativos, especialmente para la seguridad, los derechos de los consumidores y los derechos fundamentales. Una aplicación se considera de alto riesgo cuando cumple dos criterios:
+1. Sector de uso: Se emplea en sectores donde normalmente existen riesgos significativos (ej. sanidad, transporte, energía, sector público como asilo, migración, poder judicial).
+2. Uso específico: Se utiliza de manera que pueden surgir riesgos significativos (ej. aplicaciones con efectos jurídicos en derechos de personas, riesgo de causar lesiones, muerte, o daños significativos).
+Además, ciertos usos se consideran siempre de alto riesgo, independientemente del sector:
+* Procedimientos de contratación y situaciones que afecten derechos de trabajadores.
+* Identificación biométrica remota y tecnologías de vigilancia intrusiva.
+
+Pregunta: ¿Qué requisitos obligatorios propone el Libro Blanco para las aplicaciones de IA de alto riesgo?
+Respuesta: Los requisitos clave incluyen:
+* Datos de entrenamiento: Garantizar que los conjuntos de datos sean amplios, representativos (evitando sesgos de género, etnia, etc.) y cumplan con la normativa de protección de datos.
+* Conservación de registros y datos: Mantener documentación sobre conjuntos de datos, metodologías de programación y entrenamiento, para facilitar la trazabilidad y supervisión.
+* Información a facilitar: Proporcionar información clara sobre capacidades, limitaciones, y objetivo de los sistemas; informar cuándo se interactúa con una IA.
+* Solidez y exactitud: Garantizar que los sistemas sean técnicamente robustos, exactos, reproducibles y resilientes ante ataques.
+* Supervisión humana: Asegurar la intervención humana adecuada, que puede variar desde validación previa a resultados, intervención posterior, o capacidad de desactivación en tiempo real.
+* Requisitos específicos para identificación biométrica remota: Su uso debe estar justificado, ser proporcionado y sujeto a garantías adecuadas según la normativa de protección de datos y la Carta de Derechos Fundamentales.
+
+Pregunta: ¿Cómo se propone garantizar el cumplimiento y la ejecución del marco regulador de IA?
+Respuesta: Se propone:
+* Control previo de conformidad: Evaluaciones obligatorias para aplicaciones de alto riesgo, que pueden incluir ensayos, inspecciones o certificaciones de algoritmos y conjuntos de datos.
+* Vigilancia del mercado: Mecanismos de supervisión ex post por autoridades nacionales competentes, facilitados por una documentación adecuada y posibilidad de pruebas por terceros.
+* Acceso a la justicia: Garantizar que las personas afectadas por sistemas de IA tengan acceso efectivo a la justicia y compensación.
+* Estructura de gobernanza europea: Crear un marco de cooperación entre autoridades nacionales para evitar fragmentación, intercambiar mejores prácticas, y asesorar sobre normalización y certificación.
+* Organismos notificados: Designar organismos para realizar evaluaciones de conformidad, incluso para agentes económicos de terceros países.
+
+Pregunta: ¿Qué es el sistema de etiquetado voluntario y para qué se propone?
+Respuesta: Es un sistema opcional para aplicaciones de IA que no se consideran de alto riesgo. Los desarrolladores o implementadores pueden someterse voluntariamente a los requisitos obligatorios (o a un conjunto similar) y obtener una etiqueta de calidad. Esto permite:
+* Demostrar que sus productos o servicios con IA son fiables.
+* Ayudar a los usuarios a identificar productos que cumplen con referentes objetivos normalizados a nivel de la UE.
+* Aumentar la confianza de los usuarios y fomentar una adopción más generalizada de la IA.
+
+Pregunta: ¿Cómo aborda el Libro Blanco los aspectos internacionales de la IA?
+Respuesta: La UE busca asumir el liderazgo mundial en IA promoviendo alianzas basadas en valores compartidos y el uso ético de la tecnología. Las acciones incluyen:
+* Cooperar con países de mentalidad similar y en foros multilaterales (OCDE, G20, ONU, Consejo de Europa, UNESCO, OMC).
+* Promover la convergencia normativa y hacer frente a restricciones indebidas en flujos de datos mediante negociaciones comerciales.
+* Exportar valores europeos como respeto a derechos fundamentales, dignidad humana, no discriminación y protección de datos.
+* Utilizar la IA como motor para alcanzar los Objetivos de Desarrollo Sostenible y avanzar en la Agenda 2030.
+
+Pregunta: ¿Qué papel desempeña la Estrategia Europea de Datos en relación con el Libro Blanco de IA?
+Respuesta: La Estrategia Europea de Datos, presentada junto al Libro Blanco, complementa el enfoque de la IA al:
+* Objetivo: Hacer de Europa la economía más atractiva, segura y dinámica del mundo en el manejo de datos.
+* Medidas: Movilizar inversiones, mejorar el acceso y la gestión de datos, y promover prácticas FAIR (Fáciles de encontrar, Accesibles, Interoperables y Reutilizables).
+* Infraestructuras: Invertir en computación de alto rendimiento, computación cuántica, computación en el borde y infraestructuras de nube y datos.
+* Sinergia: La IA es una parte fundamental de la economía de datos, y la estrategia busca fortalecer la base para el desarrollo y adopción de IA en la UE.
+
+Pregunta: ¿Qué riesgos específicos para los derechos fundamentales identifica el Libro Blanco en el uso de IA?
+Respuesta: Los riesgos incluyen:
+* Discriminación: Sesgos en algoritmos que pueden resultar en discriminación por género, raza, etnia, etc. (ej. sistemas de predicción de reincidencia con prejuicios raciales o de género; programas de análisis facial con menor precisión para mujeres de piel oscura).
+* Privacidad y protección de datos: Uso de IA para vigilancia masiva, seguimiento de comportamientos, desanonimización de datos, y análisis de grandes volúmenes de información que afectan la vida privada.
+* Autonomía y derechos procesales: Dificultad para entender o impugnar decisiones automatizadas; limitaciones al acceso efectivo a la justicia.
+* Libertades civiles: Impacto en libertad de expresión, reunión y asociación, especialmente con tecnologías de identificación biométrica remota.
+
+Pregunta: ¿Cómo se define la inteligencia artificial en el contexto del Libro Blanco?
+Respuesta: El Libro Blanco se basa en definiciones previas de la Comisión y el Grupo de Expertos de Alto Nivel. En esencia, la IA se describe como:
+* Combinación de tecnologías: Agrupa datos, algoritmos y capacidad informática.
+* Comportamiento inteligente: Sistemas que analizan su entorno y actúan con cierto grado de autonomía para alcanzar objetivos específicos.
+* Componentes clave: Datos y algoritmos. En aprendizaje automático, los algoritmos se entrenan con conjuntos de datos para inferir modelos y determinar acciones.
+* Incorporación en hardware: Puede estar integrada en dispositivos como robots, vehículos autónomos, drones o aplicaciones del Internet de las Cosas.
+
+Pregunta: ¿Qué medidas propone la Comisión para apoyar a las pymes en la adopción de IA?
+Respuesta: Las medidas incluyen:
+* Centros de Innovación Digital: Garantizar que al menos un centro por Estado miembro tenga un alto nivel de especialización en IA.
+* Financiación: Poner en marcha un fondo piloto de 100 millones de euros a través de InvestEU para ofrecer financiación mediante fondos propios, con planes de incrementar significativamente estos importes a partir de 2021.
+* Acceso y comprensión: Los centros de innovación digital deben ayudar a las pymes a entender y adoptar la IA, facilitando el acceso a la tecnología y fomentando la cooperación entre ellas.
+
+Pregunta: ¿Cuáles son los siete requisitos esenciales para una IA fiable según las directrices del Grupo de Expertos de Alto Nivel?
+Respuesta: Los siete requisitos son:
+1. Acción y supervisión humanas
+2. Solidez técnica y seguridad
+3. Gestión de la privacidad y de los datos
+4. Transparencia
+5. Diversidad, no discriminación y equidad
+6. Bienestar social y medioambiental
+7. Rendición de cuentas
+
+Pregunta: ¿Qué conclusiones generales presenta el Libro Blanco?
+Respuesta: El Libro Blanco concluye que la IA es una tecnología estratégica con gran potencial para beneficiar a ciudadanos, empresas y sociedad, siempre que sea antropocéntrica, ética, sostenible y respete los derechos y valores fundamentales. Para aprovechar plenamente sus oportunidades, Europa debe:
+* Reforzar sus capacidades industriales y tecnológicas.
+* Promover la innovación y la adopción de una IA fiable.
+* Establecer un marco regulador claro que genere confianza.
+* Desarrollar un ecosistema de excelencia mediante colaboración, inversión y desarrollo de habilidades.
+* Liderar a nivel internacional basándose en los valores europeos.
+La Comisión invita a todas las partes interesadas a participar en una consulta pública para contribuir al desarrollo del enfoque europeo sobre IA.
+

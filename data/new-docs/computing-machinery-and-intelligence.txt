@@ -1,0 +1,99 @@
+
+Pregunta: ¿Qué es el "Juego de la Imitación" y cómo se utiliza para abordar la pregunta "¿Pueden pensar las máquinas?"?
+
+Respuesta: El "Juego de la Imitación" es un método propuesto por A. M. Turing para reemplazar la pregunta filosóficamente problemática "¿Pueden pensar las máquinas?" por una más operativa. El juego involucra a tres participantes: un hombre (A), una mujer (B) y un interrogador (C) de cualquier sexo. El interrogador está en una habitación separada y su objetivo es determinar cuál de los otros dos es el hombre y cuál es la mujer, identificados solo como X e Y. Para evitar pistas por tono de voz, todas las comunicaciones se realizan por escrito, idealmente mediante una máquina de teletipo. El hombre (A) intenta engañar al interrogador para que se equivoque, mientras que la mujer (B) trata de ayudar al interrogador. La pregunta clave que surge es: ¿qué pasaría si una máquina tomara el lugar de A? Si el interrogador se equivoca con la misma frecuencia que cuando juegan un hombre y una mujer, entonces se podría argumentar que la máquina está "pensando". Este nuevo planteamiento reemplaza a la pregunta original, evitando la necesidad de definir términos ambiguos como "máquina" y "pensar".
+
+Pregunta: ¿Cuáles son las ventajas de utilizar el Juego de la Imitación como criterio para evaluar si una máquina puede pensar?
+Respuesta: El Juego de la Imitación presenta varias ventajas:
+
+- Separa las capacidades físicas de las intelectuales: Al impedir que el interrogador vea, toque o escuche a los competidores, el criterio se centra únicamente en la capacidad intelectual, sin verse influenciado por la apariencia física o la capacidad de imitar perfectamente el cuerpo humano.
+
+- Es ampliamente aplicable: El método de preguntas y respuestas permite evaluar casi cualquier campo del esfuerzo humano (como escribir poesía, realizar cálculos aritméticos o jugar al ajedrez) sin penalizar a la máquina por no poder competir en concursos de belleza, ni al hombre por ser más lento en cálculos.
+
+- Permite bravuconadas, pero no demostraciones prácticas: Los competidores pueden jactarse de sus cualidades, pero el interrogador no puede exigir una demostración física de las mismas.
+
+Pregunta: ¿Cómo se define y restringe el término "máquina" en el contexto del Juego de la Imitación?
+Respuesta: Inicialmente, Turing deseaba permitir el uso de cualquier técnica de ingeniería. Sin embargo, para excluir de la categoría de "máquina pensante" a los seres humanos nacidos de forma convencional o creados mediante hazañas de la biología (como criar un individuo completo a partir de una sola célula de la piel), decide restringir la definición. En vista del interés contemporáneo en las "máquinas pensantes", limita la participación en el juego a las "computadoras digitales". Argumenta que esta restricción no es tan drástica debido a la propiedad de universalidad de estas computadoras, y que solo sería insatisfactoria si, en contra de su creencia, las computadoras digitales no pudieran desempeñarse bien en el juego.
+
+Pregunta: ¿Cuáles son los componentes principales de una computadora digital según Turing?
+Respuesta: Una computadora digital puede considerarse compuesta por tres partes:
+
+- Almacenamiento (Store): Corresponde al papel del computista humano, donde se guarda la información y las instrucciones (llamada "tabla de instrucciones").
+
+- Unidad Ejecutiva (Executive Unit): Es la parte que lleva a cabo las operaciones individuales de un cálculo (como sumar o multiplicar).
+
+- Control (Control): Se asegura de que las instrucciones se obedezcan correctamente y en el orden adecuado. La información en el almacenamiento se divide en paquetes (por ejemplo, de 10 dígitos decimales) y se les asignan posiciones. Las instrucciones, codificadas numéricamente, le dicen a la máquina qué operación realizar y en qué posiciones de almacenamiento.
+
+Pregunta: ¿Qué es una "computadora digital con un elemento aleatorio" y cómo se relaciona con el concepto de "libre albedrío"?
+
+Respuesta: Es una variante de una computadora digital que incluye instrucciones que involucran un proceso aleatorio, como lanzar un dado o un proceso electrónico equivalente. Por ejemplo, una instrucción podría ser: "Lanza el dado y coloca el número resultante en la posición de almacenamiento 1000". A veces, a este tipo de máquinas se las describe como que tienen "libre albedrío", aunque Turing aclara que no usaría esa frase personalmente. Señala que no es posible determinar observando una máquina si tiene un elemento aleatorio genuino, ya que un efecto similar puede producirse haciendo que las "elecciones" dependan de los dígitos de un número como ?.
+
+Pregunta: ¿Qué es una "computadora de capacidad infinita" y por qué son teóricamente importantes?
+
+Respuesta: Son computadoras digitales con una capacidad de almacenamiento ilimitada. Turing aclara que, por supuesto, en cualquier momento solo se habrá usado una parte finita, pero podemos imaginar que se añade más almacenamiento según se necesite. Estas computadoras tienen un interés teórico especial y son el modelo al que se hace referencia en algunos argumentos matemáticos sobre las limitaciones de las máquinas.
+
+Pregunta: ¿Qué es la "universalidad" de las computadoras digitales y cuáles son sus consecuencias?
+
+Respuesta: Las computadoras digitales son máquinas universales. Esto significa que, dada una capacidad de almacenamiento adecuada y suficiente velocidad, una computadora digital puede ser programada para imitar el comportamiento de cualquier otra máquina de estado discreto. Una consecuencia crucial de esta propiedad es que, aparte de las consideraciones de velocidad, no es necesario diseñar máquinas nuevas y diferentes para cada proceso computacional. Todos pueden realizarse con una única computadora digital, adecuadamente programada para cada caso. Esto lleva a la conclusión de que, en cierto sentido, todas las computadoras digitales son equivalentes.
+
+Pregunta: ¿Cuál es la creencia personal de Turing sobre la posibilidad de que las máquinas piensen?
+
+Respuesta: Turing cree que en aproximadamente cincuenta años (alrededor del año 2000) será posible programar computadoras con una capacidad de almacenamiento de alrededor de 10^9 para que jueguen al Juego de la Imitación tan bien que un interrogador promedio no tendrá más del 70% de probabilidad de identificar correctamente después de cinco minutos de cuestionamiento. Considera que la pregunta original "¿Pueden pensar las máquinas?" es demasiado carente de sentido para merecer una discusión. No obstante, cree que para finales de siglo el uso del lenguaje y la opinión educada general habrán cambiado tanto que se podrá hablar de máquinas que piensan sin esperar ser contradicho.
+
+Pregunta: ¿En qué consiste la "Objeción Teológica" a la idea de máquinas pensantes y cómo la refuta Turing?
+Respuesta: La objeción afirma que el pensamiento es una función del alma inmortal, que Dios ha dado a cada hombre y mujer, pero no a los animales ni a las máquinas. Por lo tanto, ninguna máquina puede pensar.
+Turing la refuta argumentando:
+
+- Arbitrariedad: La visión ortodoxa es arbitraria. Pregunta cómo considerarían los cristianos la visión musulmana de que las mujeres no tienen alma.
+- Restricción de la omnipotencia divina: La objeción implica una restricción grave de la omnipotencia de Dios. Si Él puede, en su libertad, conferir un alma a un elefante (dotándolo de un cerebro mejorado), también podría conferirla a una máquina si las circunstancias fueran apropiadas.
+- Falta de solidez: Turing no se impresiona con los argumentos teológicos, recordando que en el pasado se usaron para refutar a Copérnico y Galileo.
+
+Pregunta: ¿En qué consiste la "Objeción Matemática" y cuál es la réplica de Turing?
+Respuesta: Esta objeción utiliza resultados de la lógica matemática, como el teorema de Gödel, para mostrar que hay limitaciones a los poderes de cualquier máquina de estado discreto particular. Específicamente, para cualquier máquina suficientemente poderosa, habrá algunas preguntas a las que no podrá responder o dará una respuesta incorrecta.
+La réplica de Turing es:
+
+- Falta de prueba para el intelecto humano: Aunque se establece que las máquinas tienen limitaciones, no se ha demostrado que el intelecto humano no esté sujeto a limitaciones similares.
+- Triunfo ilusorio: Cuando una máquina da una respuesta incorrecta a una pregunta crítica, sentimos superioridad, pero nosotros mismos a menudo damos respuestas incorrectas.
+- Competencia entre máquinas: Podría haber hombres más listos que una máquina dada, pero también podría haber otras máquinas más listas que ese hombre, y así sucesivamente.
+
+Pregunta: ¿Qué es el "Argumento de la Conciencia" y cómo responde Turing a él?
+Respuesta: Este argumento, ejemplificado por la cita del Profesor Jefferson, sostiene que una máquina no es equivalente a un cerebro hasta que no pueda escribir un soneto o componer un concierto debido a pensamientos y emociones sentidos, y no por el azar de los símbolos. La máquina debe ser consciente de sus actos y sentir emociones.
+Turing responde:
+- Conduce al solipsismo: La forma extrema de este argumento es solipsista: la única forma de estar seguro de que algo piensa es ser esa cosa misma. Esto hace imposible la comunicación.
+- El juego como prueba práctica: Turing sugiere que la mayoría de los defensores de este argumento aceptarían el Juego de la Imitación (en forma de un examen viva voce) como prueba. Si una máquina pudiera responder a preguntas sobre un soneto de manera tan satisfactoria y sostenida como un humano, sería difícil seguir describiendo sus respuestas como "señalización artificial".
+- Misterio innecesario: Aunque reconoce que hay misterio en la conciencia, argumenta que no es necesario resolverlo para responder la pregunta del artículo.
+
+Pregunta: ¿Cómo caracteriza Turing los "Argumentos de Varias Discapacidades" y cómo los rebate?
+Respuesta: Estos argumentos toman la forma: "Concedo que puedes hacer que las máquinas hagan todo lo que has mencionado, pero nunca podrás hacer una que haga X", donde X es una lista de características humanas como ser amable, tener sentido del humor, disfrutar de las fresas con crema, etc.
+Turing los caracteriza como fundados principalmente en el principio de inducción científica: las personas han visto miles de máquinas con propósitos limitados y comportamientos poco diversos, y generalizan que estas son propiedades necesarias de todas las máquinas. La principal limitación detrás de esto es la baja capacidad de almacenamiento de la mayoría de las máquinas conocidas.
+Rebate algunos ejemplos específicos:
+- Incapacidad de cometer errores: Distingue entre "errores de funcionamiento" (de los que las máquinas abstractas están libres) y "errores de conclusión" (que sí pueden cometer, especialmente si usan métodos como la inducción científica).
+- Incapacidad de ser sujeto de su propio pensamiento: Argumenta que el "tema de las operaciones de una máquina" sí significa algo (por ejemplo, una ecuación que está intentando resolver) y que las máquinas pueden modificarse a sí mismas basándose en la observación de su propio comportamiento.
+- Poca diversidad de comportamiento: Lo atribuye directamente a una capacidad de almacenamiento insuficiente.
+
+Pregunta: ¿En qué consiste la "Objeción de Lady Lovelace" y cuál es la postura de Turing al respecto?
+Respuesta: Lady Lovelace, en su memoir sobre la Máquina Analítica de Babbage, afirmó: "La Máquina Analítica no tiene pretensiones de originar nada. Puede hacer lo que sea que sepamos ordenarle que realice".
+Turing está de acuerdo con Hartree en que esto no implica que sea imposible construir equipos que "piensen por sí mismos" o que aprendan. Argumenta que la Máquina Analítica era una computadora digital universal, por lo que, con la capacidad de almacenamiento y velocidad adecuadas, podría haber sido programada para imitar a una máquina que sí tuviera la propiedad de originar cosas o aprender. Es probable que este argumento no se le ocurriera a Lovelace o a Babbage.
+Respecto a la variante de que una máquina "nunca puede hacer nada realmente nuevo" o "sorprendernos", Turing responde que las máquinas lo sorprenden con gran frecuencia, a menudo porque no calcula con exactitud lo que deben hacer. Atribuye esta objeción a una falacia filosófica: asumir que tan pronto como un hecho se presenta a una mente, todas sus consecuencias surgen simultáneamente en ella, lo que subestima el valor de deducir consecuencias a partir de datos y principios generales.
+
+
+Pregunta: ¿Cómo aborda Turing la "Objeción de la Continuidad en el Sistema Nervioso"?
+Respuesta: Esta objeción señala que el sistema nervioso no es una máquina de estado discreto, ya que un pequeño error en la información de una señal nerviosa puede causar una gran diferencia en la salida, por lo que no se puede esperar imitar su comportamiento con un sistema de estado discreto.
+Turing reconoce la diferencia, pero argumenta que, bajo las condiciones del Juego de la Imitación, el interrogador no podría aprovechar esta diferencia. Ilustra esto con el ejemplo de un analizador diferencial (una máquina continua). Un computador digital no podría predecir exactamente sus respuestas, pero podría dar el tipo correcto de respuesta, por ejemplo, dando una aproximación de ? con una distribución de probabilidad que hiciera muy difícil para el interrogador distinguirlo del analizador diferencial continuo.
+
+Pregunta: ¿En qué consiste el "Argumento de la Informalidad de la Conducta" y cómo lo refuta Turing?
+Respuesta: El argumento afirma que es imposible producir un conjunto de reglas que describa lo que un hombre debe hacer en todas las circunstancias concebibles. Por lo tanto, los hombres no pueden ser máquinas.
+Turing identifica una falacia de medio no distribuido en el razonamiento: "Si cada hombre tuviera un conjunto definido de reglas de conducta, sería una máquina. No hay tales reglas, por lo tanto los hombres no pueden ser máquinas". Aclara la confusión entre "reglas de conducta" (preceptos conscientes) y "leyes de comportamiento" (leyes naturales que rigen el cuerpo). Si se sustituye "reglas de conducta" por "leyes de comportamiento", el argumento ya no es válido. Además, argumenta que no podemos estar seguros de la ausencia de leyes completas de comportamiento, y demuestra la dificultad de descubrirlas incluso para una máquina simple con un programa de solo 1000 unidades de almacenamiento, cuya conducta sería impredecible a partir de la observación de sus respuestas.
+
+Pregunta: ¿Cómo afecta el Argumento de la Percepción Extrasensorial (ESP) al Juego de la Imitación y cómo sugiere Turing manejarlo?
+Respuesta: Turing considera que el argumento de la ESP es bastante fuerte. Si fenómenos como la telepatía, la clarividencia, la precognición y la psicokinesis son reales, podrían interferir con el juego. Por ejemplo, un humano con habilidades telepáticas podría obtener ventaja sobre una máquina que solo puede adivinar al azar. Incluso un generador de números aleatorios en la máquina podría verse afectado por la psicokinesis del interrogador.
+La solución propuesta por Turing es simple y práctica: poner a los competidores en una "habitación a prueba de telepatía", análogo a evitar que un competidor escuche a través de la pared, para asegurar que el juego se base únicamente en las respuestas a las preguntas.
+
+Pregunta: Según Turing, ¿cómo podrían desarrollarse "Máquinas de Aprendizaje" que superen la Objeción de Lady Lovelace?
+Respuesta: Turing sugiere que, en lugar de intentar programar una mente adulta directamente, deberíamos intentar producir un programa que simule la mente de un niño y luego someterlo a un proceso educativo apropiado para obtener un cerebro adulto. El "cerebro infantil" tendría poca "mecánica" (programa) inicial y muchas "hojas en blanco" (capacidad de almacenamiento para aprender).
+Este proceso se asemeja a la evolución:
+- Estructura de la máquina infantil = material hereditario.
+- Cambios en la máquina infantil = mutación.
+- Selección natural = juicio del experimentador.
+El experimentador puede acelerar la "evolución" usando su inteligencia para introducir "mutaciones" dirigidas en lugar de depender solo de cambios aleatorios.
+El proceso de enseñanza involucraría castigos y recompensas para moldear el comportamiento, pero también requiere canales de comunicación "no emocionales" (como un lenguaje simbólico) para transmitir información de manera más eficiente que solo mediante premios y castigos. Un elemento aleatorio en la máquina de aprendizaje sería útil en la búsqueda de soluciones satisfactorias. Turing también señala que, a medida que la máquina aprenda, su comportamiento se volverá menos predecible para el profesor, desafiando directamente la afirmación de Lovelace de que la máquina solo puede hacer lo que le ordenamos.
