@@ -42,8 +42,8 @@ class RAGManager:
     def __init__(
         self, 
         persist_directory: str = "./data/chroma_db",
-        chunk_size: int = 1500,
-        chunk_overlap: int = 300
+        chunk_size: int = 800,      # en vez de 1500
+        chunk_overlap: int = 150    # en vez de 300
     ):
         """
         Inicializa el gestor de RAG.
@@ -61,8 +61,8 @@ class RAGManager:
         # all-MiniLM-L6-v2 tiene mejor rendimiento en búsqueda semántica general
         # y es más rápido que el modelo anterior manteniendo buena calidad
         self.embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
-            model_kwargs={'device': 'cpu'},
+            model_name="/models/multilingual-e5-large",
+            model_kwargs={'device': 'cpu'},  # En vez de 'cpu'
             encode_kwargs={'normalize_embeddings': True}  # Mejora la similitud coseno
         )
         # Crear la base vectorial directamente (solo lectura en este gestor)
@@ -105,6 +105,7 @@ class RAGManager:
         """
         if self.is_empty():
             return []
+        print(query)
 
         # Paso 1: pedir candidatos a Chroma (scores devueltos son distancias L2, los ignoramos aquí)
         candidates_with_scores = self.vector_store.similarity_search_with_score(
@@ -162,19 +163,33 @@ class RAGManager:
         else:
             return [doc for doc, _ in results]
 
-    def build_context(self, query: str, k: int = 5) -> Tuple[str, List[Tuple[str, float]]]:
+    def build_context(self, query: str, k: int = 5, use_retriever: bool = False) -> Tuple[str, List[Tuple[str, float]]]:
         """Construye contexto formateado y lista de fuentes con scores.
 
         Args:
             query (str): Consulta del usuario.
             k (int): Número de documentos a incluir (default: 5, optimizado para calidad).
+            use_retriever (bool): Si True, usa get_retriever() estándar; si False, usa retrieve_documents() con coseno.
 
         Returns:
             Tuple[str, List[Tuple[str, float]]]: Contexto concatenado y lista (fuente, score).
         """
-        retrieved = self.retrieve_documents(query=query, k=k, include_scores=True)
-        if not retrieved:
-            return "No se encontró información relevante en la base de conocimiento.", []
+        if use_retriever:
+            # Método estándar: usa retriever de LangChain (distancia L2, sin re-ranking)
+            retriever = self.get_retriever(k=k, search_type="similarity")
+            docs = retriever.invoke(query)
+            
+            if not docs:
+                return "No se encontró información relevante en la base de conocimiento.", []
+            
+            # Como retriever no retorna scores, hacemos búsqueda con score por separado
+            docs_with_scores = self.vector_store.similarity_search_with_score(query, k=k)
+            retrieved = [(doc, score) for doc, score in docs_with_scores]
+        else:
+            # Método personalizado: similitud coseno con re-ranking
+            retrieved = self.retrieve_documents(query=query, k=k, include_scores=True)
+            if not retrieved:
+                return "No se encontró información relevante en la base de conocimiento.", []
 
         parts = []
         sources: List[Tuple[str, float]] = []

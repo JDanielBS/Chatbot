@@ -108,19 +108,16 @@ class RAGStorageManager:
             keep_separator=True
         )
 
+        print(f"Dividiendo documentos en chunks (esto puede tardar)...")
         splits = splitter.split_documents(documents)
-        total = len(splits)
-        for idx, doc in enumerate(splits):
-            meta = doc.metadata or {}
-            meta["chunk_index"] = idx
-            meta["total_chunks"] = total
-            meta["chunk_size"] = len(doc.page_content)
-            if "source" in meta:
-                meta["original_filename"] = os.path.basename(meta["source"])
-            meta["embedding_model"] = self.rag.embeddings.model_name
-            doc.metadata = meta
+        print(f"✓ Creados {len(splits)} chunks")
+        print(f"Calculando embeddings y almacenando (puede tardar varios minutos)...")
 
-        self.rag.vector_store.add_documents(splits)
+        batch_size = 100
+        for i in range(0, len(splits), batch_size):
+            batch = splits[i:i + batch_size]
+            self.rag.vector_store.add_documents(batch)
+            print(f"Procesados {min(i + batch_size, len(splits))}/{len(splits)} chunks")
 
     # --------------------------- MANTENIMIENTO ----------------------------- #
     def clear_database(self):
