@@ -7,7 +7,6 @@ from api.platforms.base import PlatformClient
 
 logger = logging.getLogger(__name__)
 
-
 class TelegramClient(PlatformClient):
     
     def __init__(self, bot_token: str = None):

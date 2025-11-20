@@ -24,7 +24,6 @@ async def receive_message(request: Request):
             return {"status": "ok"}
         
         user_id = message_data['user_id']
-        message_id = message_data.get('message_id')
         message_type = message_data.get('message_type', 'text')
         message_text = message_data.get('message_text')
         

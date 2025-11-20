@@ -148,7 +148,6 @@ class RAGManager:
             return False
         
         try:
-            # Determinar el tipo de archivo y usar el loader apropiado
             if file_path.endswith('.pdf'):
                 loader = PyPDFLoader(file_path)
             elif file_path.endswith('.txt'):
@@ -173,14 +172,12 @@ class RAGManager:
         Args:
             documents (List[Document]): Lista de documentos a procesar
         """
-        # Dividir documentos con separadores optimizados para contexto semántico
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=self.chunk_size,
             chunk_overlap=self.chunk_overlap,
             length_function=len,
-            # Separadores priorizados: párrafos > saltos de línea > puntos > espacios
             separators=["\n\n\n", "\n\n", "\n", ". ", " ", ""],
-            keep_separator=True  # Mantiene separadores para mejor contexto
+            keep_separator=True
         )
         
         splits = text_splitter.split_documents(documents)
@@ -198,7 +195,6 @@ class RAGManager:
             
             doc.metadata = meta
 
-        # Insertar documentos enriquecidos
         self.vector_store.add_documents(splits)
 
     def retrieve_documents(

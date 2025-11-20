@@ -24,7 +24,6 @@ async def get_sources_message(session: dict = None) -> str:
     Retorna la lista de todas las fuentes confiables ordenadas alfabéticamente
     """
     try:
-        # Obtener todas las fuentes del JSON
         sources_list = get_all_sources_display()
         
         if not sources_list:

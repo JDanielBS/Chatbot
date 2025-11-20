@@ -3,7 +3,6 @@ Endpoints relacionados con el chat y conversaciones.
 """
 
 from fastapi import APIRouter, HTTPException, status
-from datetime import datetime
 
 from api.models import ChatRequest, ChatResponse, Source
 from api.dependencies import (

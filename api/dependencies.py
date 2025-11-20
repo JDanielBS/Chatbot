@@ -29,11 +29,6 @@ _chain: Optional[IAChain] = None
 _start_time = time.time()
 _query_counter = 0
 
-
-# ============================================================================
-# SINGLETON GETTERS
-# ============================================================================
-
 def get_rag_manager() -> RAGManager:
     """
     Obtiene o crea la instancia singleton del RAGManager.
@@ -55,7 +50,6 @@ def get_rag_manager() -> RAGManager:
                 chunk_overlap=200
             )
             
-            # Verificar si hay documentos cargados
             if _rag_manager.is_empty():
                 print("Advertencia: Base de datos vectorial está vacía")
                 print("Ejecuta el script de indexación de documentos")
@@ -165,7 +159,6 @@ def get_available_models() -> list[str]:
     """
     models = ["gemini"]
     
-    # Verificar si hay API keys para otros modelos
     if os.getenv("OPENAI_API_KEY"):
         models.append("gpt4")
         models.append("gpt3.5")
@@ -185,14 +178,12 @@ def check_component_health() -> dict:
     """
     components = {}
     
-    # Verificar LLM
     try:
         llm = get_llm_gemini()
         components["llm"] = "operational"
     except Exception as e:
         components["llm"] = f"error: {str(e)[:50]}"
     
-    # Verificar RAG
     try:
         rag = get_rag_manager()
         if rag.is_empty():
@@ -202,7 +193,6 @@ def check_component_health() -> dict:
     except Exception as e:
         components["rag"] = f"error: {str(e)[:50]}"
     
-    # Verificar Vector DB
     try:
         rag = get_rag_manager()
         stats = rag.get_stats()
@@ -213,14 +203,12 @@ def check_component_health() -> dict:
     except Exception as e:
         components["vector_db"] = f"error: {str(e)[:50]}"
     
-    # Verificar Chain
     try:
         chain = get_chain()
         components["chain"] = "operational"
     except Exception as e:
         components["chain"] = f"error: {str(e)[:50]}"
     
-    # Verificar sistema de monitoreo
     try:
         from src.metrics.Monitoring import logger
         components["monitoring"] = "operational"
@@ -228,30 +216,6 @@ def check_component_health() -> dict:
         components["monitoring"] = f"error: {str(e)[:50]}"
     
     return components
-
-
-def format_sources_from_docs(docs: list) -> list[dict]:
-    """
-    Formatea documentos del RAG en formato de fuentes para la API.
-    
-    Args:
-        docs: Lista de documentos de LangChain
-        
-    Returns:
-        list[dict]: Lista de fuentes formateadas
-    """
-    sources = []
-    
-    for doc in docs:
-        source_info = {
-            "document": os.path.basename(doc.metadata.get('source', 'Desconocido')),
-            "page": doc.metadata.get('page', None),
-            "relevance_score": None,
-            "excerpt": doc.page_content[:200] + "..." if len(doc.page_content) > 200 else doc.page_content
-        }
-        sources.append(source_info)
-    
-    return sources
 
 
 def get_timestamp() -> str:
@@ -262,32 +226,6 @@ def get_timestamp() -> str:
         str: Timestamp actual en formato ISO
     """
     return datetime.now().isoformat()
-
-
-# ============================================================================
-# FUNCIONES DE LIMPIEZA (Para testing)
-# ============================================================================
-
-def reset_singletons():
-    """
-    Resetea todos los singletons 
-    
-    Solo usar en testing.
-    """
-    global _rag_manager, _llm_gemini, _chain
-    _rag_manager = None
-    _llm_gemini = None
-    _chain = None
-    print("Singletons reseteados")
-
-
-def reset_counter():
-    """
-    Resetea el contador de consultas (útil para testing).
-    """
-    global _query_counter
-    _query_counter = 0
-    print("Contador de consultas reseteado")
 
 
 # ============================================================================
