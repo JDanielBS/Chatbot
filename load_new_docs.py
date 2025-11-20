@@ -5,9 +5,14 @@ from src.llm.RAG_manager import RAGManager
 # Inicializar
 rag = RAGManager()
 
-# Eliminar base existente
-print("Eliminando base anterior...")
-rag.storage_manager.clear_database()
+# Opción: Eliminar base existente antes de cargar nuevos documentos
+# Si quieres AGREGAR documentos a los existentes, comenta las siguientes 2 líneas
+# Si quieres REEMPLAZAR toda la base, déjalas activas
+CLEAR_BEFORE_LOAD = false  # Cambia a False para agregar sin eliminar
+
+if CLEAR_BEFORE_LOAD:
+    print("Eliminando base anterior...")
+    rag.storage_manager.clear_database()
 
 # Cargar nuevos documentos
 print("Cargando documentos desde data/new-docs...")

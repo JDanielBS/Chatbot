@@ -1,5 +1,4 @@
 import os
-import shutil
 from typing import List
 from langchain_community.document_loaders import (
     PyPDFLoader,
@@ -125,18 +124,35 @@ class RAGStorageManager:
 
     # --------------------------- MANTENIMIENTO ----------------------------- #
     def clear_database(self):
-        """Elimina todos los datos persistidos y recrea la colección."""
-        if os.path.exists(self.rag.persist_directory):
-            shutil.rmtree(self.rag.persist_directory)
-            print(f"🗑️ Base vectorial eliminada: {self.rag.persist_directory}")
-        else:
-            print("⚠️ No había base vectorial para eliminar")
-
-        # Recrear vector store limpio
+        """Elimina todos los datos persistidos y recrea la colección como si fuera la primera vez."""
+        # Eliminar la colección usando la API de ChromaDB (evita problemas de locks en Windows)
+        try:
+            if hasattr(self.rag.vector_store, '_collection'):
+                collection_name = self.rag.vector_store._collection.name
+                if hasattr(self.rag.vector_store, '_client'):
+                    client = self.rag.vector_store._client
+                    try:
+                        # Eliminar la colección usando la API de ChromaDB
+                        client.delete_collection(name=collection_name)
+                        print(f"🗑️ Colección '{collection_name}' eliminada")
+                    except Exception as api_error:
+                        print(f"⚠️ No se pudo eliminar colección por API: {api_error}")
+        except Exception as e:
+            print(f"⚠️ Advertencia al eliminar colección: {e}")
+        
+        # Cerrar el vector_store actual para liberar recursos
+        try:
+            del self.rag.vector_store
+        except:
+            pass
+        
+        # Recrear vector store limpio (ChromaDB creará una nueva colección automáticamente)
+        # Esto es como si fuera la primera vez que se usa
         self.rag.vector_store = Chroma(
             persist_directory=self.rag.persist_directory,
             embedding_function=self.rag.embeddings
         )
+        print("✅ Base vectorial reinicializada (lista para nuevos documentos)")
 
     def update_chunk_settings(self, chunk_size: int, chunk_overlap: int):
         """Actualiza parámetros de chunking (afecta futuras ingestas)."""
