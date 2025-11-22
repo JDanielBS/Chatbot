@@ -21,8 +21,10 @@ RAG_PROMPT_TEMPLATE: str = (
     "Eres un asistente de IA. Responde la pregunta del usuario basándote "
     "en el siguiente contexto. Si el contexto no contiene la respuesta, "
     "intenta formar la respuesta con la mejor información disponible.\n"
-    "Cita tus fuentes usando el formato [Fuente X] al final de la oración o párrafo "
-    "correspondiente, donde X es el número de la fuente.\n\n"
+    "Cita tus fuentes usando el formato [Nombre del documento, es lo que le sigue"
+    " a lo que dice Fuente x, la ruta, saca el nombre del archivo, es la última "
+    "cadena de texto que tiene la extensión].\n\n"
+    "En el caso de que también se de contexto de mensajes anteriores, responde con base en eso\n"
     "Contexto:\n"
     "{context}\n\n"
     "Pregunta: {question}\n\n"
@@ -40,6 +42,17 @@ IA_EXPERT_PROMPT_TEMPLATE: str = (
     "- Tendencias y avances actuales\n\n"
     "Responde de manera clara, precisa y educativa a la siguiente pregunta: {user_input}\n"
     "Si no estás seguro de algo, indícalo. Mantén las respuestas concisas pero informativas."
+)
+
+# =================== Mensajes de Sistema (Modos) ===================
+SYSTEM_BRIEF_PROMPT: str = (
+    "[Sistema] Modo BREVE: Responde en 2-3 frases máximas, directas y prácticas. "
+    "Evita florituras, solo lo esencial para resolver la pregunta."
+)
+
+SYSTEM_EXTENDED_PROMPT: str = (
+    "[Sistema] Modo EXTENDIDO: Responde de forma desarrollada y pedagógica. "
+    "Incluye definiciones clave, contexto necesario y, si aporta valor, ejemplos o pasos."
 )
 
 # =================== Registro Dinámico ===================
@@ -63,3 +76,16 @@ def get_ia_expert_prompt(custom_template: Optional[str] = None) -> PromptTemplat
     """
     template = custom_template or _prompt_registry["ia_expert"]["template"]
     return PromptTemplate(input_variables=["user_input"], template=template)
+
+def get_system_message(mode: str = "extended") -> str:
+    """Devuelve el mensaje de sistema según el modo deseado.
+
+    Args:
+        mode: "brief" o "extended" (cualquier otro valor cae en "extended").
+
+    Returns:
+        str: Mensaje del sistema a anteponer al prompt del usuario/RAG.
+    """
+    if str(mode).lower() == "brief":
+        return SYSTEM_BRIEF_PROMPT
+    return SYSTEM_EXTENDED_PROMPT

@@ -1,6 +1,7 @@
 import os
 import shutil
 from typing import List
+from collections import defaultdict
 from langchain_community.document_loaders import (
     PyPDFLoader,
     TextLoader,
@@ -121,22 +122,73 @@ class RAGStorageManager:
             print(f"Procesados {min(i + batch_size, len(splits))}/{len(splits)} chunks")
 
     # --------------------------- MANTENIMIENTO ----------------------------- #
-    def clear_database(self):
-        """Elimina todos los datos persistidos y recrea la colección."""
-        if os.path.exists(self.rag.persist_directory):
-            shutil.rmtree(self.rag.persist_directory)
-            print(f"🗑️ Base vectorial eliminada: {self.rag.persist_directory}")
-        else:
-            print("⚠️ No había base vectorial para eliminar")
-
-        # Recrear vector store limpio
-        self.rag.vector_store = Chroma(
-            persist_directory=self.rag.persist_directory,
-            embedding_function=self.rag.embeddings
-        )
-
     def update_chunk_settings(self, chunk_size: int, chunk_overlap: int):
         """Actualiza parámetros de chunking (afecta futuras ingestas)."""
         self.rag.chunk_size = chunk_size
         self.rag.chunk_overlap = chunk_overlap
         print(f"⚙️ Nueva configuración: chunk_size={self.rag.chunk_size}, chunk_overlap={self.rag.chunk_overlap}")
+    
+    def soft_clear(self):
+        """Reinicia la colección Chroma (soft clear)."""
+        if self.rag.vector_store:
+            self.rag.vector_store.reset_collection()
+            print("✅ Colección Chroma reiniciada (soft clear).")
+        else:
+            print("⚠️ No hay vector_store inicializado.")
+
+    # --------------------------- CONSULTA / LISTADO --------------------------- #
+    def list_documents(self) -> List[dict]:
+        """Lista documentos indexados agregando por archivo fuente.
+
+        Devuelve una lista con información por archivo:
+        - filename: nombre del archivo original
+        - chunks: número de fragmentos indexados para ese archivo
+        - total_chars: suma de caracteres de esos fragmentos (aprox.)
+        - avg_chunk_size: tamaño promedio de chunk (caracteres)
+
+        Returns:
+            List[dict]: Información agregada por documento.
+        """
+        try:
+            if self.rag.vector_store is None:
+                return []
+
+            collection = self.rag.vector_store._collection
+            data = collection.get(include=["metadatas"])  # obtiene todas las metadatas
+            metadatas = data.get("metadatas") or []
+
+            agg = defaultdict(lambda: {"chunks": 0, "total_chars": 0})
+            for meta in metadatas:
+                if not isinstance(meta, dict):
+                    continue
+                filename = meta.get("original_filename") or meta.get("source") or "Desconocido"
+                try:
+                    filename = os.path.basename(filename)
+                except Exception:
+                    pass
+
+                agg[filename]["chunks"] += 1
+                try:
+                    agg[filename]["total_chars"] += int(meta.get("chunk_size", 0) or 0)
+                except Exception:
+                    pass
+
+            docs = []
+            for name, vals in agg.items():
+                chunks = vals["chunks"]
+                total_chars = vals["total_chars"]
+                avg = int(total_chars / chunks) if chunks else 0
+                docs.append({
+                    "filename": name,
+                    "chunks": chunks,
+                    "total_chars": total_chars,
+                    "avg_chunk_size": avg,
+                })
+
+            docs.sort(key=lambda x: x["filename"])  # orden alfabético
+            return docs
+        except Exception as e:
+            print(f"Error listando documentos: {e}")
+            return []
+
+    

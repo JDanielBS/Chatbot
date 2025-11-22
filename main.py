@@ -23,7 +23,9 @@ def main():
         response = chain.invoke(
             inputs=question,      
             thread_id=thread_id,  
-            use_rag=True          
+            use_rag=True,
+            return_metadata=False,
+            mode="extended"
         )
         print(f"\nLLM IA: {response}")
 

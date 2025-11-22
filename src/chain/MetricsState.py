@@ -10,6 +10,7 @@ class MetricsState(TypedDict, total=False):
     context: Optional[str]
     sources_with_scores: Optional[list]
     use_rag: Optional[bool]  # Flag para controlar si se usa RAG
+    mode: Optional[str]  # Modo de respuesta: "brief" o "extended"
     
     # Campos de métricas que se van acumulando
     thread_id: Optional[str]

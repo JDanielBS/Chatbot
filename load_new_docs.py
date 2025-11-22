@@ -7,13 +7,12 @@ rag = RAGManager()
 
 # Eliminar base existente
 print("Eliminando base anterior...")
-rag.storage_manager.clear_database()
+rag.storage_manager.soft_clear()
 
 # Cargar nuevos documentos
 print("Cargando documentos desde data/new-docs...")
 num = rag.storage_manager.load_documents_from_directory(
     "./data/new-docs",
-    file_types=["txt"]
 )
 
 print(f"✅ {num} documentos cargados")

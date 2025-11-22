@@ -61,7 +61,8 @@ async def chat(request: ChatRequest):
             inputs=request.message,
             thread_id=request.thread_id,
             use_rag=request.use_rag,
-            return_metadata=True
+            return_metadata=True,
+            mode=request.mode
         )
         
         sources_list = []

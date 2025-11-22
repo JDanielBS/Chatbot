@@ -9,6 +9,7 @@ import time
 
 from src.chain.MetricsState import MetricsState
 from src.metrics.Monitoring import MetricsCollector, logger
+from src.prompts.Prompts import get_system_message
 
 
 def rag_node(state: MetricsState, rag_manager) -> dict:
@@ -29,9 +30,7 @@ def rag_node(state: MetricsState, rag_manager) -> dict:
         return {}
     
     # Recuperar contexto y fuentes
-    # Cambia use_retriever=True para probar con get_retriever() estándar
-    # Cambia use_retriever=False para usar retrieve_documents() con similitud coseno
-    context, sources_with_scores = rag_manager.build_context(question, k=6, use_retriever=True)
+    context, sources_with_scores = rag_manager.build_context(question, k=8, use_retriever=True)
     
     # Calcular métricas de recuperación
     retrieval_metrics = MetricsCollector.calculate_retrieval_metrics(
@@ -75,8 +74,13 @@ def llm_node(state: MetricsState, llm_instance, rag_prompt, ia_prompt) -> dict:
         # Usar prompt simple
         prompt_text = ia_prompt.format(user_input=question)
     
+    # Anteponer mensaje de sistema según modo (brief/extended)
+    mode = str(state.get("mode", "extended")).lower()
+    system_msg = get_system_message(mode)
+    final_prompt = f"{system_msg}\n\n{prompt_text}"
+    
     # Generar respuesta con métricas
-    response_obj, llm_metrics = llm_instance.process_question(prompt_text, return_metrics=True)
+    response_obj, llm_metrics = llm_instance.process_question(final_prompt, return_metrics=True)
     response_text = response_obj.content if hasattr(response_obj, 'content') else str(response_obj)
     
     # Si usamos RAG, calcular métricas adicionales

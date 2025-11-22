@@ -43,7 +43,7 @@ class IAChain():
         
         return builder.compile(checkpointer=self.memory)
     
-    def invoke(self, inputs, thread_id, use_rag: bool = False, return_metadata: bool = False):
+    def invoke(self, inputs, thread_id, use_rag: bool = False, return_metadata: bool = False, mode: str = "extended"):
         """
         Invoca la cadena con los inputs proporcionados.
 
@@ -63,6 +63,7 @@ class IAChain():
             "messages": message,
             "thread_id": thread_id,
             "use_rag": use_rag,
+            "mode": mode,
             "start_time": time.perf_counter()
         }
         
