@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # Backend FastAPI
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chatbot-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      # Persistir ChromaDB
+      - ./data/chroma_db:/app/data/chroma_db
+      # Persistir modelos de embeddings
+      - ./models:/app/models
+      # Persistir métricas y logs
+      - ./metrics:/app/metrics
+      # Documentos (opcional, para cargar nuevos)
+      - ./data/new-docs:/app/data/new-docs:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - chatbot-network
+
+  # Frontend React
+  frontend:
+    build:
+      context: ./chatbot-react
+      dockerfile: Dockerfile
+      args:
+        # URL del backend desde el navegador del usuario
+        REACT_APP_API_URL: http://localhost:8000
+    container_name: chatbot-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - chatbot-network
+
+networks:
+  chatbot-network:
+    driver: bridge
+
+volumes:
+  chroma-data:
+  models-data:
+

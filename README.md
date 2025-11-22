@@ -5,9 +5,94 @@ Incluye sistema de logging para monitorear el rendimiento, uso de tokens y costo
 
 ## Requisitos
 
+### Para desarrollo local:
 - Python 3.11 o superior
+- Node.js 18+ (para el frontend)
+
+### Para Docker (recomendado):
+- Docker Desktop o Docker Engine 20.10+
+- Docker Compose 2.0+
 
 ## Instalación
+
+## 🐳 Opción 1: Usar Docker (Recomendado)
+
+Esta es la forma más sencilla y reproducible de ejecutar el proyecto.
+
+### Prerrequisitos
+- Docker Desktop instalado y corriendo
+- Archivo `.env` configurado (ver más abajo)
+
+### Pasos rápidos
+
+1. **Configurar variables de entorno**
+   
+   Crea un archivo `.env` en la raíz del proyecto:
+   ```env
+   GEMINI_API_KEY=tu_clave_aqui
+   WHATSAPP_ACCESS_TOKEN=tu_token_si_tienes
+   WHATSAPP_PHONE_NUMBER_ID=tu_phone_id_si_tienes
+   TELEGRAM_BOT_TOKEN=tu_token_si_tienes
+   ```
+
+2. **Construir y levantar los contenedores**
+   ```bash
+   docker-compose up --build
+   ```
+   
+   La primera vez puede tardar varios minutos (descarga de imágenes, instalación de dependencias, etc.)
+
+3. **Acceder a la aplicación**
+   - **Frontend**: http://localhost:3000
+   - **Backend API**: http://localhost:8000
+   - **Documentación Swagger**: http://localhost:8000/docs
+
+### Comandos útiles de Docker
+
+```bash
+# Levantar servicios en segundo plano
+docker-compose up -d
+
+# Ver logs
+docker-compose logs -f
+
+# Ver logs solo del backend
+docker-compose logs -f backend
+
+# Detener servicios
+docker-compose down
+
+# Detener y eliminar volúmenes (borra ChromaDB y modelos)
+docker-compose down -v
+
+# Reconstruir solo el backend
+docker-compose build backend
+
+# Ejecutar comandos dentro del contenedor
+docker-compose exec backend python load_new_docs.py
+```
+
+### Cargar documentos en Docker
+
+Para cargar documentos a la base vectorial dentro del contenedor:
+
+```bash
+# Opción 1: Ejecutar el script dentro del contenedor
+docker-compose exec backend python load_new_docs.py
+
+# Opción 2: Copiar documentos y ejecutar
+# Los documentos en ./data/new-docs/ se montan automáticamente
+docker-compose exec backend python load_new_docs.py
+```
+
+### Notas sobre Docker
+
+- **Persistencia de datos**: Los datos de ChromaDB, modelos y métricas se guardan en tu máquina local (volúmenes montados)
+- **Variables de entorno**: Se cargan desde el archivo `.env` en la raíz del proyecto
+
+---
+
+## 💻 Opción 2: Instalación Local (Desarrollo)
 
 ### 1. Crear y activar un entorno virtual (recomendado)
 
@@ -117,3 +202,28 @@ Si necesitas usar los webhooks de WhatsApp o Telegram, debes exponer tu API loca
 
 - Asegúrate de tener el fichero `.env` con `GEMINI_API_KEY` antes de iniciar la API.
 - Si vas a indexar muchos documentos, considera preparar el modelo localmente y usar GPU (si está disponible) para acelerar el cálculo de embeddings.
+- **Con Docker**: Los datos se persisten automáticamente. Si eliminas los contenedores con `docker-compose down -v`, perderás la base vectorial.
+
+## 🧪 Pruebas
+
+### Verificar que todo funciona
+
+1. **Health Check del Backend**:
+   ```bash
+   curl http://localhost:8000/api/health
+   ```
+   Debe responder con `{"status": "healthy", ...}`
+
+2. **Probar el chat**:
+   - Abre http://localhost:3000 en tu navegador
+   - O usa la API directamente:
+     ```bash
+     curl -X POST http://localhost:8000/api/chat/ \
+       -H "Content-Type: application/json" \
+       -d '{"message": "¿Qué es la inteligencia artificial?", "thread_id": "test"}'
+     ```
+
+3. **Ver logs en tiempo real**:
+   ```bash
+   docker-compose logs -f
+   ```
