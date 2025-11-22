@@ -77,7 +77,7 @@ def llm_node(state: MetricsState, llm_instance, rag_prompt, ia_prompt) -> dict:
     # Anteponer mensaje de sistema según modo (brief/extended)
     mode = str(state.get("mode", "extended")).lower()
     system_msg = get_system_message(mode)
-    final_prompt = f"{system_msg}\n\n{prompt_text}"
+    final_prompt = f"{system_msg}\n\n{prompt_text}\n\n" + "Mensajes anteriores: \n" + str(state.get("messages", []))
     
     # Generar respuesta con métricas
     response_obj, llm_metrics = llm_instance.process_question(final_prompt, return_metrics=True)

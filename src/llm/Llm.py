@@ -61,46 +61,14 @@ class IAExpertLLM:
         end_time = time.perf_counter()
         latency_ms = (end_time - start_time) * 1000
         
-        if return_metrics:
-            # Calcular métricas usando MetricsCollector
-            prompt_text = self.prompt.format(user_input=question)
-            metrics = MetricsCollector.calculate_llm_metrics(
-                llm_instance=self.llm,
-                prompt_text=prompt_text,
-                response_obj=result,
-                latency_ms=latency_ms,
-                question=question
-            )
-            ai_message = AIMessage(content=result.content)
-            return ai_message, metrics
-        else:
-            # Compatibilidad: retorna solo el texto (para uso con decorador)
-            return self._process_with_decorator(question)
-    
-    @monitor_performance
-    def _process_with_decorator(self, question: str) -> AIMessage:
-        """Método interno que usa el decorador para compatibilidad."""
-        inputs = {"user_input": question}
-        result = self.pipeline.invoke(inputs)
-        return AIMessage(content=result.content)
+        # Calcular métricas usando MetricsCollector
+        prompt_text = self.prompt.format(user_input=question)
+        metrics = MetricsCollector.calculate_llm_metrics(
+            llm_instance=self.llm,
+            prompt_text=prompt_text,
+            response_obj=result,
+            latency_ms=latency_ms,
+            question=question
+        )
 
-    def get_prompt_template(self) -> str:
-        """
-        Obtiene el template actual del prompt.
-
-        Returns:
-            str: Template actual usado para formatear las preguntas
-        """
-        return self.prompt.template
-
-    def set_prompt_template(self, new_template: str) -> None:
-        """
-        Actualiza el template del prompt usado para procesar preguntas.
-
-        Args:
-            new_template (str): Nuevo template que reemplazará al actual.
-                              Debe incluir la variable {user_input}
-        """
-        # Reemplazar prompt usando el registro centralizado para mantener consistencia.
-        self.prompt = get_ia_expert_prompt(custom_template=new_template)
-        self.pipeline = self.prompt | self.llm
+        return result, metrics

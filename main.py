@@ -23,7 +23,7 @@ def main():
         response = chain.invoke(
             inputs=question,      
             thread_id=thread_id,  
-            use_rag=True,
+            use_rag=False,
             return_metadata=False,
             mode="extended"
         )

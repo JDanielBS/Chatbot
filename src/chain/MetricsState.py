@@ -1,10 +1,11 @@
 from typing import TypedDict, Annotated, Optional
-import operator
+from langchain_core.messages import AnyMessage
+from langgraph.graph.message import add_messages
 
-class MetricsState(TypedDict, total=False):
+class MetricsState(TypedDict):
     """Estado extendido que incluye campos para acumular métricas durante la ejecución del grafo."""
     # Campos heredados de MessagesState
-    messages: Annotated[list, operator.add]
+    messages: Annotated[list[AnyMessage], add_messages]
     
     # Campos RAG
     context: Optional[str]
