@@ -20,9 +20,15 @@ from langchain_core.prompts import PromptTemplate
 RAG_PROMPT_TEMPLATE: str = (
     "Eres un asistente de IA. Responde la pregunta del usuario basándote "
     "en el siguiente contexto. Si el contexto no contiene la respuesta, "
-    "intenta formar la respuesta con la mejor información disponible.\n"
-    "Cita tus fuentes usando el formato [Fuente X] al final de la oración o párrafo "
-    "correspondiente, donde X es el número de la fuente.\n\n"
+    "intenta formar la respuesta con la mejor información disponible.\n\n"
+    "IMPORTANTE - Cita tus fuentes usando el formato [nombre_archivo.txt] donde "
+    "nombre_archivo.txt es EXACTAMENTE el nombre del documento que aparece después "
+    "de 'Fuente X:' en el contexto. Ejemplo: si ves '[Fuente 1: documento.txt |...]', "
+    "cita como [documento.txt], NUNCA LO PONGAS COMO [Fuente 1].\n\n"
+    r"Si vas a poner la cita, NO lo pongas a formato de ruta, como data\new-docs\politica-nacional-transformacion-digital-ia.txt, "
+    "Pon solo el nombre del archivo, en este caso sería politica-nacional-transformacion-digital-ia.txt.\n\n"
+    "Solo usa nombres de archivos que aparezcan en el contexto.\n\n"
+    "En el caso de que también se dé contexto de mensajes anteriores, responde con base en eso.\n\n"
     "Contexto:\n"
     "{context}\n\n"
     "Pregunta: {question}\n\n"
@@ -40,6 +46,17 @@ IA_EXPERT_PROMPT_TEMPLATE: str = (
     "- Tendencias y avances actuales\n\n"
     "Responde de manera clara, precisa y educativa a la siguiente pregunta: {user_input}\n"
     "Si no estás seguro de algo, indícalo. Mantén las respuestas concisas pero informativas."
+)
+
+# =================== Mensajes de Sistema (Modos) ===================
+SYSTEM_BRIEF_PROMPT: str = (
+    "[Sistema] Modo BREVE: Responde en 2-3 frases máximas, directas y prácticas. "
+    "Evita florituras, solo lo esencial para resolver la pregunta."
+)
+
+SYSTEM_EXTENDED_PROMPT: str = (
+    "[Sistema] Modo EXTENDIDO: Responde de forma desarrollada y pedagógica. "
+    "Incluye definiciones clave, contexto necesario y, si aporta valor, ejemplos o pasos."
 )
 
 # =================== Registro Dinámico ===================
@@ -63,3 +80,16 @@ def get_ia_expert_prompt(custom_template: Optional[str] = None) -> PromptTemplat
     """
     template = custom_template or _prompt_registry["ia_expert"]["template"]
     return PromptTemplate(input_variables=["user_input"], template=template)
+
+def get_system_message(mode: str = "extended") -> str:
+    """Devuelve el mensaje de sistema según el modo deseado.
+
+    Args:
+        mode: "brief" o "extended" (cualquier otro valor cae en "extended").
+
+    Returns:
+        str: Mensaje del sistema a anteponer al prompt del usuario/RAG.
+    """
+    if str(mode).lower() == "brief":
+        return SYSTEM_BRIEF_PROMPT
+    return SYSTEM_EXTENDED_PROMPT

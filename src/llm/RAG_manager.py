@@ -205,17 +205,15 @@ class RAGManager:
             # Formatear con información de relevancia
             relevance = "Alta" if score < 0.5 else "Media" if score < 1.0 else "Baja"
             parts.append(
-                f"[Fuente {i}: {source} | Relevancia: {relevance} (distancia={score:.4f})]\n"
+                f"[Fuente {i}: {source}]\n"
+                f" Relevancia: {relevance} (distancia={score:.4f})]\n"
                 f"{doc.page_content}\n"
             )
             sources.append((source, score))
         
-        # Agregar resumen de diversidad de fuentes
-        diversity_info = f"\n[INFO: Se consultaron {len(seen_sources)} fuentes distintas de {len(retrieved)} fragmentos]\n"
-        
-        return "\n".join(parts) + diversity_info, sources
+        return "\n".join(parts), sources
     
-    def get_retriever(self, k: int = 4, search_type: str = "similarity"):
+    def get_retriever(self, k: int = 8, search_type: str = "similarity"):
         """
         Obtiene un retriever configurado para usar con cadenas de LangChain.
         
@@ -282,5 +280,3 @@ class RAGManager:
         except:
             return True
     
-    # Nota: Operaciones de modificación (carga/eliminación/ajuste de chunks) fueron
-    # movidas a rag_storage_manager.RAGStorageManager para separar responsabilidades.

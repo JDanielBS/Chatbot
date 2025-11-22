@@ -9,6 +9,7 @@ import time
 
 from src.chain.MetricsState import MetricsState
 from src.metrics.Monitoring import MetricsCollector, logger
+from src.prompts.Prompts import get_system_message
 
 
 def rag_node(state: MetricsState, rag_manager) -> dict:
@@ -29,9 +30,7 @@ def rag_node(state: MetricsState, rag_manager) -> dict:
         return {}
     
     # Recuperar contexto y fuentes
-    # Cambia use_retriever=True para probar con get_retriever() estándar
-    # Cambia use_retriever=False para usar retrieve_documents() con similitud coseno
-    context, sources_with_scores = rag_manager.build_context(question, k=6, use_retriever=True)
+    context, sources_with_scores = rag_manager.build_context(question, k=8, use_retriever=True)
     
     # Calcular métricas de recuperación
     retrieval_metrics = MetricsCollector.calculate_retrieval_metrics(
@@ -75,8 +74,13 @@ def llm_node(state: MetricsState, llm_instance, rag_prompt, ia_prompt) -> dict:
         # Usar prompt simple
         prompt_text = ia_prompt.format(user_input=question)
     
+    # Anteponer mensaje de sistema según modo (brief/extended)
+    mode = str(state.get("mode", "extended")).lower()
+    system_msg = get_system_message(mode)
+    final_prompt = f"{system_msg}\n\n{prompt_text}\n\n" + "Mensajes anteriores: \n" + str(state.get("messages", []))
+    
     # Generar respuesta con métricas
-    response_obj, llm_metrics = llm_instance.process_question(prompt_text, return_metrics=True)
+    response_obj, llm_metrics = llm_instance.process_question(final_prompt, return_metrics=True)
     response_text = response_obj.content if hasattr(response_obj, 'content') else str(response_obj)
     
     # Si usamos RAG, calcular métricas adicionales
@@ -94,16 +98,16 @@ def llm_node(state: MetricsState, llm_instance, rag_prompt, ia_prompt) -> dict:
         
         # Agregar metadata de fuentes
         sources_with_scores = state.get("sources_with_scores", [])
-        sources = [s for s, _ in sources_with_scores]
-        scores = [sc for _, sc in sources_with_scores]
         
         metadata = {
             "sources_with_scores": sources_with_scores,
-            "sources": sources,
-            "doc_ids": list(range(len(sources))),
-            "similarity_scores": scores,
             "context_size": len(context),
-            "num_retrieved_docs": len(sources)
+            "num_retrieved_docs": len(sources_with_scores),
+            "latency_ms": llm_metrics.get("latency_ms", 0),
+            "input_tokens": llm_metrics.get("input_tokens", 0),
+            "output_tokens": llm_metrics.get("output_tokens", 0),
+            "estimated_cost_usd": llm_metrics.get("estimated_cost_usd", 0),
+            **rag_metrics
         }
         
         # Actualizar el mensaje con metadata

@@ -166,6 +166,9 @@ class MetricsCollector:
         """
         Calcula métricas relacionadas con RAG (citaciones y alucinaciones).
         
+        Detecta citaciones usando el patrón [cualquier_cadena.txt] en la respuesta
+        y valida que esos archivos existan en el contexto proporcionado.
+        
         Args:
             context: Contexto proporcionado al LLM
             response_text: Respuesta generada por el LLM
@@ -174,17 +177,24 @@ class MetricsCollector:
             Dict con métricas: citations_total, citations_valid, 
                               citation_validity_ratio, hallucination_rate
         """
-        # Detectar citaciones en formato [Fuente X]
-        citation_pattern = r'\[Fuente\s+(\d+)\]'
-        citations_found = re.findall(citation_pattern, response_text)
+        # Detectar citaciones en formato [nombre_archivo.txt] (cualquier extensión)
+        citation_pattern = r'\[([^\[\]]+\.(?:txt|pdf|docx?|md))\]'
+        citations_found = re.findall(citation_pattern, response_text, re.IGNORECASE)
         citations_total = len(citations_found)
         
-        # Determinar fuentes válidas del contexto
-        context_sources = re.findall(r'\[Fuente\s+(\d+):', context)
-        valid_source_ids = set(context_sources)
+        # Extraer rutas completas del contexto (formato [Fuente X: ruta\archivo.txt] ...)
+        context_source_pattern = r'\[Fuente\s+\d+:\s+([^\]]+?\.(?:txt|pdf|docx?|md))\]'
+        context_sources_full_paths = re.findall(context_source_pattern, context, re.IGNORECASE)
         
-        # Contar citaciones válidas
-        citations_valid = sum(1 for cid in citations_found if cid in valid_source_ids)
+        # Extraer solo los nombres de archivo (última parte después de \ o /)
+        valid_source_names = set()
+        for full_path in context_sources_full_paths:
+            # Normalizar separadores y obtener el nombre del archivo
+            filename = full_path.replace('/', '\\').split('\\')[-1].strip()
+            valid_source_names.add(filename)
+        
+        # Contar citaciones válidas (el archivo citado existe en el contexto)
+        citations_valid = sum(1 for cited_file in citations_found if cited_file.strip() in valid_source_names)
         
         # Ratio de validez de citaciones
         citation_validity_ratio = citations_valid / citations_total if citations_total > 0 else 1.0
@@ -236,91 +246,3 @@ def compute_rag_metrics(context: str, response_text: str) -> Dict[str, Any]:
         Dict con métricas RAG
     """
     return MetricsCollector.calculate_rag_metrics(context, response_text)
-
-
-def monitor_performance(func):
-    """
-    Decorador que monitorea y registra el rendimiento de las llamadas al LLM.
-
-    Este decorador captura métricas importantes como:
-    - Latencia de la llamada
-    - Tokens de entrada y salida utilizados
-    - Costo estimado de la operación
-    - Longitud de preguntas y respuestas (anonimizado)
-
-    Args:
-        func (callable): Función a decorar. Debe ser un método de clase que procese
-                        preguntas usando un LLM
-
-    Returns:
-        callable: Función decorada que incluye el monitoreo de rendimiento
-
-    Note:
-        La función decorada debe pertenecer a una clase que tenga los atributos
-        self.llm y self.prompt configurados
-    """
-    @functools.wraps(func)
-    def wrapper(self, question, *args, **kwargs):
-        # 1. Medir Latencia
-        start_time = time.perf_counter()
-        
-        # Ejecuta la función original (process_question)
-        result_obj = func(self, question, *args, **kwargs)
-        
-        end_time = time.perf_counter()
-        latency_ms = (end_time - start_time) * 1000
-
-        try:
-            # 2. Calcular Tokens (requiere acceso a self.llm y self.prompt)
-            # Formatea el prompt completo tal como lo ve el LLM
-            prompt_text = self.prompt.format(user_input=question)
-            print()
-            
-            try:
-                response_text = result_obj.content.strip()
-            except Exception:
-                response_text = str(result_obj).strip()
-
-            usage = getattr(result_obj, "usage_metadata", None)
-            if usage is not None:
-                input_tokens = usage.get("input_tokens", None)
-                output_tokens = usage.get("output_tokens", None)
-                total_tokens = usage.get("total_tokens", None)
-                # Si alguno es None, caemos al conteo manual
-                if input_tokens is None or output_tokens is None or total_tokens is None:
-                    raise ValueError("usage_metadata incompleta, usar método manual")
-            else:
-                raise ValueError("No se encontró usage_metadata, usar conteo manual")
-            
-        except Exception:
-            # Conteo manual como respaldo
-            input_tokens = self.llm.get_num_tokens(prompt_text)
-            output_tokens = self.llm.get_num_tokens(response_text)
-            total_tokens = input_tokens + output_tokens
-            response_text = response_text  # ya lo tenemos
-
-        # 3. Calcular Costo
-        cost = (input_tokens / 1_000_000 * PRICE_INPUT_PER_MILLION) + \
-               (output_tokens / 1_000_000 * PRICE_OUTPUT_PER_MILLION)
-        
-        # 4. Preparar Log Anonimizado
-        log_data = {
-            "timestamp": datetime.now().isoformat(),
-            "latency_ms": f"{latency_ms:.2f}",
-            "input_tokens": input_tokens,
-            "output_tokens": output_tokens,
-            "total_tokens": total_tokens,
-            "estimated_cost_usd": f"{cost:.8f}",
-            "anonymized_question_len": len(question),
-            "anonymized_response_len": len(response_text)
-        }
-        
-        # 5. Escribir en el archivo CSV
-        try:
-            logger.log(log_data)
-        except Exception as e:
-            print(f"Error al registrar métricas en CSV: {e}")
-        
-        # Devuelve al usuario *sólo el texto* de la respuesta
-        return response_text
-    return wrapper
