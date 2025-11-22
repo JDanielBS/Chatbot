@@ -46,8 +46,8 @@ def get_rag_manager() -> RAGManager:
             print("Inicializando RAG Manager...")
             _rag_manager = RAGManager(
                 persist_directory="./data/chroma_db",
-                chunk_size=1000,
-                chunk_overlap=200
+                chunk_size=800,
+                chunk_overlap=150
             )
             
             if _rag_manager.is_empty():
@@ -226,11 +226,6 @@ def get_timestamp() -> str:
         str: Timestamp actual en formato ISO
     """
     return datetime.now().isoformat()
-
-
-# ============================================================================
-# CONFIGURACIÓN
-# ============================================================================
 
 @lru_cache()
 def get_settings():

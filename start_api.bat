@@ -1,8 +1,8 @@
 @echo off
-REM Script para iniciar la API del Chatbot de IA (Windows)
+REM 
 
 echo ========================================
-echo  CHATBOT IA - INICIANDO API
+echo  CHATBOT  - INICIANDO API
 echo ========================================
 echo.
 
