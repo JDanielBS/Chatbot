@@ -98,16 +98,16 @@ def llm_node(state: MetricsState, llm_instance, rag_prompt, ia_prompt) -> dict:
         
         # Agregar metadata de fuentes
         sources_with_scores = state.get("sources_with_scores", [])
-        sources = [s for s, _ in sources_with_scores]
-        scores = [sc for _, sc in sources_with_scores]
         
         metadata = {
             "sources_with_scores": sources_with_scores,
-            "sources": sources,
-            "doc_ids": list(range(len(sources))),
-            "similarity_scores": scores,
             "context_size": len(context),
-            "num_retrieved_docs": len(sources)
+            "num_retrieved_docs": len(sources_with_scores),
+            "latency_ms": llm_metrics.get("latency_ms", 0),
+            "input_tokens": llm_metrics.get("input_tokens", 0),
+            "output_tokens": llm_metrics.get("output_tokens", 0),
+            "estimated_cost_usd": llm_metrics.get("estimated_cost_usd", 0),
+            **rag_metrics
         }
         
         # Actualizar el mensaje con metadata

@@ -6,7 +6,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import AIMessage
 
 from src.prompts.Prompts import get_ia_expert_prompt
-from src.metrics.Monitoring import monitor_performance, MetricsCollector
+from src.metrics.Monitoring import MetricsCollector
 
 load_dotenv()
 

@@ -20,14 +20,16 @@ def main():
             print("LLM IA: ¡Hasta luego!")
             break
 
-        response = chain.invoke(
+        response, metadata = chain.invoke(
             inputs=question,      
             thread_id=thread_id,  
-            use_rag=False,
-            return_metadata=False,
+            use_rag=True,
+            return_metadata=True,
             mode="extended"
         )
         print(f"\nLLM IA: {response}")
+        print("\n--- Métricas registradas ---")
+        print(metadata)
 
 if __name__ == "__main__":
     main()

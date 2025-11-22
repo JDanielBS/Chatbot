@@ -205,7 +205,8 @@ class RAGManager:
             # Formatear con información de relevancia
             relevance = "Alta" if score < 0.5 else "Media" if score < 1.0 else "Baja"
             parts.append(
-                f"[Fuente {i}: {source} | Relevancia: {relevance} (distancia={score:.4f})]\n"
+                f"[Fuente {i}: {source}]\n"
+                f" Relevancia: {relevance} (distancia={score:.4f})]\n"
                 f"{doc.page_content}\n"
             )
             sources.append((source, score))
