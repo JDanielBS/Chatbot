@@ -40,3 +40,6 @@ timestamp,platform,session_hash,message_length,response_length,mode,query_number
 2025-11-21T20:43:46.661352,whatsapp,dc735213b6c7521a,61,812,brief,4,6
 2025-11-21T20:44:30.491365,whatsapp,dc735213b6c7521a,109,918,brief,5,6
 2025-11-22T07:40:25.641984,whatsapp,dc735213b6c7521a,33,1504,extended,1,8
+2025-11-22T14:29:45.144963,whatsapp,dc735213b6c7521a,46,1974,extended,1,8
+2025-11-22T14:33:47.464186,whatsapp,dc735213b6c7521a,86,627,extended,2,8
+2025-11-22T14:35:17.311821,telegram,a975eaf72b95273c,23,1068,extended,3,8
