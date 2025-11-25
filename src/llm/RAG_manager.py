@@ -61,7 +61,7 @@ class RAGManager:
         # all-MiniLM-L6-v2 tiene mejor rendimiento en búsqueda semántica general
         # y es más rápido que el modelo anterior manteniendo buena calidad
         self.embeddings = HuggingFaceEmbeddings(
-            model_name="intfloat/multilingual-e5-large",  
+            model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
             model_kwargs={'device': 'cpu'},
             encode_kwargs={'normalize_embeddings': True}  
         )
