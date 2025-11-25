@@ -61,9 +61,9 @@ class RAGManager:
         # all-MiniLM-L6-v2 tiene mejor rendimiento en búsqueda semántica general
         # y es más rápido que el modelo anterior manteniendo buena calidad
         self.embeddings = HuggingFaceEmbeddings(
-            model_name="models/multilingual-e5-large",
-            model_kwargs={'device': 'cpu'},  # En vez de 'cpu'
-            encode_kwargs={'normalize_embeddings': True}  # Mejora la similitud coseno
+            model_name="intfloat/multilingual-e5-large",  
+            model_kwargs={'device': 'cpu'},
+            encode_kwargs={'normalize_embeddings': True}  
         )
         # Crear la base vectorial directamente (solo lectura en este gestor)
         self.vector_store = Chroma(
