@@ -57,7 +57,7 @@ models/
 
 langchain-academy/
 
-# data/chroma_db/
+data/chroma_db/
 
 # Métricas locales
 metrics/message_logs/

@@ -55,7 +55,28 @@ async def lifespan(app: FastAPI):
         # RAG Manager
         rag = get_rag_manager()
         stats = rag.get_stats()
-        print(f"   RAG Manager: {stats.get('total_chunks', 0)} chunks cargados")
+        chunks_count = stats.get('total_chunks', 0)
+        print(f"   RAG Manager: {chunks_count} chunks cargados")
+        
+        # Auto-cargar documentos si la base está vacía
+        if chunks_count == 0:
+            print("\n📚 Base vectorial vacía. Cargando documentos automáticamente...")
+            docs_dir = "./data/new-docs"
+            import os
+            if os.path.exists(docs_dir):
+                try:
+                    num_docs = rag.storage_manager.load_documents_from_directory(
+                        directory_path=docs_dir,
+                        file_types=["txt", "pdf"]
+                    )
+                    print(f"✅ Cargados {num_docs} documentos automáticamente")
+                    # Actualizar stats
+                    stats = rag.get_stats()
+                    print(f"   RAG Manager: {stats.get('total_chunks', 0)} chunks ahora")
+                except Exception as e:
+                    print(f"⚠️ Error cargando documentos: {e}")
+            else:
+                print(f"⚠️ Directorio {docs_dir} no encontrado")
         
         # LLM
         llm = get_llm_gemini()
