@@ -1,5 +1,7 @@
+import os
 import logging
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Query, HTTPException
+from fastapi.responses import PlainTextResponse
 
 from api.services.message_service import process_message
 from api.services.platform_handlers import get_platform_client
@@ -9,6 +11,26 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/whatsapp", tags=["WhatsApp"])
+
+
+@router.get("/webhook")
+async def verify_webhook(
+    hub_mode: str = Query(None, alias="hub.mode"),
+    hub_verify_token: str = Query(None, alias="hub.verify_token"),
+    hub_challenge: str = Query(None, alias="hub.challenge")
+):
+    """Verificación del webhook de WhatsApp/Meta."""
+    verify_token = os.getenv("WEBHOOK_VERIFY_TOKEN", "mi_token_secreto_123")
+    
+    logger.info(f"🔐 Verificación webhook WhatsApp - mode: {hub_mode}")
+    
+    if hub_mode == "subscribe" and hub_verify_token == verify_token:
+        logger.info("✅ Webhook WhatsApp verificado correctamente")
+        return PlainTextResponse(content=hub_challenge)
+    
+    logger.warning(f"❌ Verificación fallida - token no coincide")
+    raise HTTPException(status_code=403, detail="Verification failed")
+
 
 @router.post("/webhook")
 async def receive_message(request: Request):
