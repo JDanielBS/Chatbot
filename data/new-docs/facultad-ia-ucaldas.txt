@@ -1,83 +1,199 @@
-Pregunta: ¿Qué es el programa de Ingeniería en Inteligencia Artificial de la Universidad de Caldas y cuáles son sus características generales?
-Respuesta: El programa de Ingeniería en Inteligencia Artificial de la Universidad de Caldas es un programa de pregrado de modalidad presencial. Tiene una duración de 8 semestres y se imparte en la ciudad de Manizales. El título que otorga es el de Ingeniero(a) en Inteligencia Artificial. Su enfoque principal es formar profesionales con sólidas bases científicas, técnicas y éticas, combinando conocimientos teóricos y prácticos para diseñar, desarrollar y gestionar sistemas inteligentes. El aprendizaje se basa en proyectos, hace énfasis en la ética en el uso de la IA y prepara a los estudiantes para enfrentar los desafíos de la Cuarta Revolución Industrial, promoviendo la innovación tecnológica y la solución de problemas en diversos sectores.
+Pregunta: Â¿CuÃ¡les son los programas acadÃ©micos que ofrece la Facultad de Inteligencia Artificial e IngenierÃ­as de la Universidad de Caldas?
+Respuesta: Los programas acadÃ©micos que ofrece son los siguientes:
 
-Pregunta: ¿Cuáles son los objetivos principales del programa de Ingeniería en Inteligencia Artificial?
-Respuesta: Los objetivos del programa son tres:
-1. Preparar a los estudiantes para enfrentar los desafíos de la Cuarta Revolución Industrial mediante la adquisición de habilidades técnicas avanzadas en inteligencia artificial, alineadas con las necesidades del mercado laboral.
-2. Formar ingenieros en Inteligencia Artificial con sólidas competencias técnicas y éticas, capaces de diseñar, implementar y liderar soluciones basadas en tecnologías digitales y emergentes.
-3. Fomentar la innovación en productos, servicios y procesos que impulsen el crecimiento económico y la competitividad.
+IngenierÃ­a en Inteligencia Artificial
 
-Pregunta: ¿Cómo está estructurado el plan de estudios del programa, semestre por semestre?
-Respuesta: El plan de estudios está organizado en ocho semestres, con una carga crediticia total de 144 créditos. A continuación, se detalla la distribución:
-* Primer Semestre (16 créditos): Matemáticas Fundamentales, Lógica Matemática, Introducción a la Ingeniería en Inteligencia Artificial, Fundamentos de Programación, Inglés para Ingeniería I, Constitución Política de Colombia.
-* Segundo Semestre (19 créditos): Cálculo I, Matemáticas Discretas, Álgebra Lineal, Sistemas Analógicos y Digitales, Programación Orientada a Objetos, Electivas, Inglés para Ingeniería II, Opcional I.
-* Tercer Semestre (19 créditos): Cálculo II, Probabilidad e Inferencia Estadística, Estructuras de Datos y Algoritmos, Bases de Datos Relacionales, Machine Learning I, Inglés para Ingeniería III, Opcional II.
-* Cuarto Semestre (19 créditos): Cálculo III, Cálculo IV, Seminario de Investigación, Desarrollo e Innovación, Bases de Datos No Relacionales, Machine Learning II, Diseño de Interfaces y Visualización para IA, Opcional III.
-* Quinto Semestre (18 créditos): Procesamiento Digital de Señales e Imágenes, Modelado y Simulación Computacional, Deep Learning, Arquitectura de Software para IA, Computación de Alto Rendimiento, Electiva I.
-* Sexto Semestre (18 créditos): Procesamiento del Lenguaje Natural, Cloud Computing, Computer Vision, Gestión de Proyectos, Big Data, Gestión del Conocimiento Empresarial, Electiva II.
-* Séptimo Semestre (18 créditos): Machine Learning Operations, Internet de las Cosas y Computación en el Borde, Aprendizaje por Refuerzo, IA Generativa, Proyecto Integrador, Electiva III.
-* Octavo Semestre (16 créditos): Trabajo de Grado, Inteligencia de Negocios, Robótica Inteligente, Responsible AI, Electiva IV.
+IngenierÃ­a de Alimentos
 
-Pregunta: ¿Qué materias electivas se ofrecen en el programa?
-Respuesta: El programa incluye un componente de materias electivas que permiten a los estudiantes profundizar en áreas de su interés. La lista de electivas incluye: Mejora y optimización de procesos utilizando IA, Interacción hombre-máquina, Agentes autónomos y sistemas cognitivos, IA en biotecnología y bioinformática, Computación y ML cuántico, Causal AI, IA en videojuegos, Legislación en IA y gobernanza de datos, IA en salud, y Big Data.
+IngenierÃ­a de Sistemas y ComputaciÃ³n
 
-Pregunta: ¿Cuál es la distribución de créditos por núcleos de formación en el programa?
-Respuesta: La estructura académica del programa se divide en cuatro núcleos de formación con la siguiente distribución de créditos:
-* Componente de Formación en Ciencia: 28 créditos.
-* Componente de Formación Profesional: 94 créditos.
-* Formación General: 10 créditos.
-* Componente de Profundización: 12 créditos.
-El total de créditos del programa es de 144.
+IngenierÃ­a en InformÃ¡tica
 
-Pregunta: ¿Qué infraestructura y recursos especializados ofrece la universidad para el programa de IA?
-Respuesta: La universidad cuenta con una infraestructura robusta para apoyar el aprendizaje y la investigación en IA:
-* Actual: Al menos 3 salas con equipos para entrenamiento y procesamiento de datos.
-* Futura (en el nuevo bloque): 4 laboratorios especializados de altas prestaciones:
+IngenierÃ­a Ambiental y Sanitaria
+
+TecnologÃ­a en ProducciÃ³n Agroindustrial
+
+TecnologÃ­a en Procesos de Seguridad y Salud en el Trabajo
+
+TecnologÃ­a en Sistemas InformÃ¡ticos
+
+TecnologÃ­a en GestiÃ³n de la Calidad
+
+TecnologÃ­a en LogÃ­stica
+
+Doctorado en IngenierÃ­a
+
+MaestrÃ­a en BioinformÃ¡tica y BiologÃ­a Computacional
+
+MaestrÃ­a en IngenierÃ­a Computacional
+
+MaestrÃ­a en Agronegocios de CafÃ©
+
+EspecializaciÃ³n en Inteligencia Artificial y AnalÃ­tica de Datos
+
+
+Pregunta: ï¿½Quï¿½ es el programa de Ingenierï¿½a en Inteligencia Artificial de la Universidad de Caldas y cuï¿½les son sus caracterï¿½sticas generales?
+Respuesta:ï¿½El programa de Ingenierï¿½a en Inteligencia Artificial de la Universidad de Caldas es un programa de pregrado de modalidad presencial. Tiene una duraciï¿½n de 8 semestres y se imparte en la ciudad de Manizales. El tï¿½tulo que otorga es el de Ingeniero(a) en Inteligencia Artificial. Su enfoque principal es formar profesionales con sï¿½lidas bases cientï¿½ficas, tï¿½cnicas y ï¿½ticas, combinando conocimientos teï¿½ricos y prï¿½cticos para diseï¿½ar, desarrollar y gestionar sistemas inteligentes. El aprendizaje se basa en proyectos, hace ï¿½nfasis en la ï¿½tica en el uso de la IA y prepara a los estudiantes para enfrentar los desafï¿½os de la Cuarta Revoluciï¿½n Industrial, promoviendo la innovaciï¿½n tecnolï¿½gica y la soluciï¿½n de problemas en diversos sectores.
+
+Pregunta: ï¿½Cuï¿½les son los objetivos principales del programa de Ingenierï¿½a en Inteligencia Artificial?
+Respuesta:ï¿½Los objetivos del programa son tres:
+1. Preparar a los estudiantes para enfrentar los desafï¿½os de la Cuarta Revoluciï¿½n Industrial mediante la adquisiciï¿½n de habilidades tï¿½cnicas avanzadas en inteligencia artificial, alineadas con las necesidades del mercado laboral.
+2. Formar ingenieros en Inteligencia Artificial con sï¿½lidas competencias tï¿½cnicas y ï¿½ticas, capaces de diseï¿½ar, implementar y liderar soluciones basadas en tecnologï¿½as digitales y emergentes.
+3. Fomentar la innovaciï¿½n en productos, servicios y procesos que impulsen el crecimiento econï¿½mico y la competitividad.
+
+Pregunta: ï¿½Cï¿½mo estï¿½ estructurado el plan de estudios del programa, semestre por semestre?
+Respuesta:ï¿½El plan de estudios estï¿½ organizado en ocho semestres, con una carga crediticia total de 144 crï¿½ditos. A continuaciï¿½n, se detalla la distribuciï¿½n:
+* Primer Semestre (16 crï¿½ditos):ï¿½Matemï¿½ticas Fundamentales, Lï¿½gica Matemï¿½tica, Introducciï¿½n a la Ingenierï¿½a en Inteligencia Artificial, Fundamentos de Programaciï¿½n, Inglï¿½s para Ingenierï¿½a I, Constituciï¿½n Polï¿½tica de Colombia.
+* Segundo Semestre (19 crï¿½ditos):ï¿½Cï¿½lculo I, Matemï¿½ticas Discretas, ï¿½lgebra Lineal, Sistemas Analï¿½gicos y Digitales, Programaciï¿½n Orientada a Objetos, Electivas, Inglï¿½s para Ingenierï¿½a II, Opcional I.
+* Tercer Semestre (19 crï¿½ditos):ï¿½Cï¿½lculo II, Probabilidad e Inferencia Estadï¿½stica, Estructuras de Datos y Algoritmos, Bases de Datos Relacionales, Machine Learning I, Inglï¿½s para Ingenierï¿½a III, Opcional II.
+* Cuarto Semestre (19 crï¿½ditos):ï¿½Cï¿½lculo III, Cï¿½lculo IV, Seminario de Investigaciï¿½n, Desarrollo e Innovaciï¿½n, Bases de Datos No Relacionales, Machine Learning II, Diseï¿½o de Interfaces y Visualizaciï¿½n para IA, Opcional III.
+* Quinto Semestre (18 crï¿½ditos):ï¿½Procesamiento Digital de Seï¿½ales e Imï¿½genes, Modelado y Simulaciï¿½n Computacional, Deep Learning, Arquitectura de Software para IA, Computaciï¿½n de Alto Rendimiento, Electiva I.
+* Sexto Semestre (18 crï¿½ditos):ï¿½Procesamiento del Lenguaje Natural, Cloud Computing, Computer Vision, Gestiï¿½n de Proyectos, Big Data, Gestiï¿½n del Conocimiento Empresarial, Electiva II.
+* Sï¿½ptimo Semestre (18 crï¿½ditos):ï¿½Machine Learning Operations, Internet de las Cosas y Computaciï¿½n en el Borde, Aprendizaje por Refuerzo, IA Generativa, Proyecto Integrador, Electiva III.
+* Octavo Semestre (16 crï¿½ditos):ï¿½Trabajo de Grado, Inteligencia de Negocios, Robï¿½tica Inteligente, Responsible AI, Electiva IV.
+
+Pregunta: ï¿½Quï¿½ materias electivas se ofrecen en el programa?
+Respuesta:ï¿½El programa incluye un componente de materias electivas que permiten a los estudiantes profundizar en ï¿½reas de su interï¿½s. La lista de electivas incluye: Mejora y optimizaciï¿½n de procesos utilizando IA, Interacciï¿½n hombre-mï¿½quina, Agentes autï¿½nomos y sistemas cognitivos, IA en biotecnologï¿½a y bioinformï¿½tica, Computaciï¿½n y ML cuï¿½ntico, Causal AI, IA en videojuegos, Legislaciï¿½n en IA y gobernanza de datos, IA en salud, y Big Data.
+
+Pregunta: ï¿½Cuï¿½l es la distribuciï¿½n de crï¿½ditos por nï¿½cleos de formaciï¿½n en el programa?
+Respuesta:ï¿½La estructura acadï¿½mica del programa se divide en cuatro nï¿½cleos de formaciï¿½n con la siguiente distribuciï¿½n de crï¿½ditos:
+* Componente de Formaciï¿½n en Ciencia:ï¿½28 crï¿½ditos.
+* Componente de Formaciï¿½n Profesional:ï¿½94 crï¿½ditos.
+* Formaciï¿½n General:ï¿½10 crï¿½ditos.
+* Componente de Profundizaciï¿½n:ï¿½12 crï¿½ditos.
+Elï¿½total de crï¿½ditosï¿½del programa es deï¿½144.
+
+Pregunta: ï¿½Quï¿½ infraestructura y recursos especializados ofrece la universidad para el programa de IA?
+Respuesta:ï¿½La universidad cuenta con una infraestructura robusta para apoyar el aprendizaje y la investigaciï¿½n en IA:
+* Actual:ï¿½Al menos 3 salas con equipos para entrenamiento y procesamiento de datos.
+* Futura (en el nuevo bloque):ï¿½4 laboratorios especializados de altas prestaciones:
 1. Laboratorio de Inteligencia Artificial.
-2. Laboratorio de Analítica de Datos y Visualización.
-3. Laboratorio de Robótica e IoT.
+2. Laboratorio de Analï¿½tica de Datos y Visualizaciï¿½n.
+3. Laboratorio de Robï¿½tica e IoT.
 4. Laboratorio de Ciberseguridad.
-* Recursos en la Nube: Acceso a servicios OnCloud para Operaciones de Machine Learning (MLOps).
+* Recursos en la Nube:ï¿½Acceso a servicios OnCloud para Operaciones de Machine Learning (MLOps).
 
-Pregunta: ¿Qué grupos y semilleros de investigación están asociados al programa?
-Respuesta: El programa está vinculado a grupos y semilleros de investigación que fomentan la exploración y el desarrollo en el área:
-* Grupos de Investigación:
+Pregunta: ï¿½Quï¿½ grupos y semilleros de investigaciï¿½n estï¿½n asociados al programa?
+Respuesta:ï¿½El programa estï¿½ vinculado a grupos y semilleros de investigaciï¿½n que fomentan la exploraciï¿½n y el desarrollo en el ï¿½rea:
+* Grupos de Investigaciï¿½n:
 o GITIR
 o IA (Inteligencia Artificial)
-* Semilleros de Investigación:
+* Semilleros de Investigaciï¿½n:
 o Semillero de IA
 o Semillero de Seguridad
 
-Pregunta: ¿Cuál es el campo de acción profesional para un graduado de este programa?
-Respuesta: El campo de acción profesional es amplio e incluye áreas como:
+Pregunta: ï¿½Cuï¿½l es el campo de acciï¿½n profesional para un graduado de este programa?
+Respuesta:ï¿½El campo de acciï¿½n profesional es amplio e incluye ï¿½reas como:
 * Desarrollo de soluciones de IA.
-* Ciencia de datos y análisis predictivo.
-* Automatización y robótica.
-* Innovación y emprendimiento.
-* Investigación y desarrollo.
-* Consultoría y asesoría en IA.
+* Ciencia de datos y anï¿½lisis predictivo.
+* Automatizaciï¿½n y robï¿½tica.
+* Innovaciï¿½n y emprendimiento.
+* Investigaciï¿½n y desarrollo.
+* Consultorï¿½a y asesorï¿½a en IA.
 
-Pregunta: ¿Qué oportunidades laborales específicas tiene un Ingeniero en Inteligencia Artificial egresado de la Universidad de Caldas?
-Respuesta: El campo laboral para los egresados es diverso y abarca roles especializados como:
+Pregunta: ï¿½Quï¿½ oportunidades laborales especï¿½ficas tiene un Ingeniero en Inteligencia Artificial egresado de la Universidad de Caldas?
+Respuesta:ï¿½El campo laboral para los egresados es diverso y abarca roles especializados como:
 * Desarrollador de sistemas de IA.
 * Ingeniero de Machine Learning.
-* Desarrollador de robótica inteligente.
+* Desarrollador de robï¿½tica inteligente.
 * Arquitecto de soluciones IA.
-* Científico de datos.
-* Ingeniero de Big Data y Analítica.
-* Ingeniero en Analítica Predictiva.
-* Gerente de innovación y transformación digital.
+* Cientï¿½fico de datos.
+* Ingeniero de Big Data y Analï¿½tica.
+* Ingeniero en Analï¿½tica Predictiva.
+* Gerente de innovaciï¿½n y transformaciï¿½n digital.
 * Especialista en Inteligencia de Negocios (BI) con IA.
 * Ingeniero en procesamiento de lenguaje natural (NLP).
 * Especialista en ciberseguridad basada en IA.
 * Gerente de proyectos en IA.
-* Consultor en ética y gobernanza de la IA.
+* Consultor en ï¿½tica y gobernanza de la IA.
 
-Pregunta: ¿Dónde se puede encontrar más información y contactar al programa?
-Respuesta: Para obtener más información o contactar al programa, se pueden utilizar los siguientes medios:
-* Sitio web: https://www.ingenieras.ucaldas.edu.co/
-* Correo electrónico: facingenieria@ucaldas.edu.co
-* Teléfono: (+57) 6 8871500 Extensión 13415
-* Lugar: Manizales, Caldas, Colombia.
-* Para inscripciones: https://viceacademica.ucaldas.edu.co/admisiones/
+Pregunta: ï¿½Dï¿½nde se puede encontrar mï¿½s informaciï¿½n y contactar al programa?
+Respuesta:ï¿½Para obtener mï¿½s informaciï¿½n o contactar al programa, se pueden utilizar los siguientes medios:
+* Sitio web:ï¿½https://www.ingenieras.ucaldas.edu.co/
+* Correo electrï¿½nico:ï¿½facingenieria@ucaldas.edu.co
+* Telï¿½fono:ï¿½(+57) 6 8871500 Extensiï¿½n 13415
+* Lugar:ï¿½Manizales, Caldas, Colombia.
+* Para inscripciones:ï¿½https://viceacademica.ucaldas.edu.co/admisiones/
+
+Pregunta: Â¿QuÃ© es el programa de IngenierÃ­a de Alimentos de la Universidad de Caldas y cuÃ¡les son sus caracterÃ­sticas generales?ï»¿
+Respuesta: El Programa IngenierÃ­a de Alimentos de la Universidad de Caldas responde a necesidades locales, regionales, nacionales e internacionales, formando Ingenieros de Alimentos con conocimiento en ciencias bÃ¡sicas, ciencias de alimentos y la ingenierÃ­a, capaces de transformar materias primas alimentarias, con responsabilidad Ã©tica y sentido de pertenencia social.ï»¿
+MetodologÃ­a presencial, 176 crÃ©ditos, diurna, en varias sedes (Manizales, Magdalena Centro, Guarinocito, La Dorada, Caldas). TÃ­tulo: Ingeniero(a) de Alimentos.
+Registro SNIES: 2971.
+
+Pregunta: Â¿QuÃ© perfil debe tener el aspirante al programa de IngenierÃ­a de Alimentos?ï»¿
+Respuesta: InterÃ©s por matemÃ¡ticas, quÃ­mica, biologÃ­a, investigaciÃ³n, creatividad, visiÃ³n del impacto social de los alimentos, trabajo en equipo y buena comunicaciÃ³n.ï»¿
+
+Pregunta: Â¿CuÃ¡l es el campo de acciÃ³n para un Ingeniero de Alimentos?ï»¿
+Respuesta: DiagnÃ³stico y desarrollo en la agroindustria, transformaciÃ³n de alimentos, control de calidad, gestiÃ³n de empresas alimentarias, generaciÃ³n de nuevos productos y procesos, bienestar social y ambiental.ï»¿
+
+Pregunta: Â¿DÃ³nde encontrar mÃ¡s informaciÃ³n y contactar al programa?ï»¿
+Respuesta: Director: Andres Chavez Salazar.
+Correo: sede.dorada@ucaldas.edu.co | ingenieriadealimentos@ucaldas.edu.co
+TelÃ©fono: (606) 8781500 Ext. 13436.
+Manizales, edificio del Parque, piso 3.
+
+Pregunta: Â¿QuÃ© es el programa de IngenierÃ­a de Sistemas y ComputaciÃ³n de la Universidad de Caldas y cuÃ¡les son sus caracterÃ­sticas generales?ï»¿
+Respuesta: FormaciÃ³n profesional para planear, diseÃ±ar, desarrollar, implementar y administrar soluciones computacionales para problemas tecnolÃ³gicos y de gestiÃ³n.ï»¿
+Presencial, 175 crÃ©ditos, diurna, sede Manizales. SNIES 11268.
+
+Pregunta: Â¿CuÃ¡l es el perfil profesional del egresado de IngenierÃ­a de Sistemas y ComputaciÃ³n?ï»¿
+Respuesta: Capacidad para identificar, analizar y solucionar problemas con TI, gestiÃ³n y diseÃ±o de sistemas, adaptaciÃ³n de tecnologÃ­as emergentes, trabajo interdisciplinario y Ã©tico.ï»¿
+
+Pregunta: Â¿CÃ³mo es el proceso de admisiÃ³n para IngenierÃ­a de Sistemas y ComputaciÃ³n?ï»¿
+Respuesta: Por ponderaciÃ³n Saber 11. Contacto: programa.ingesistemas@ucaldas.edu.co.
+TelÃ©fono: (606) 8781500 Ext. 13146.
+
+Pregunta: Â¿QuÃ© es el programa de IngenierÃ­a en InformÃ¡tica y cuÃ¡les son sus caracterÃ­sticas generales?ï»¿
+Respuesta: FormaciÃ³n para gestiÃ³n adecuada de tecnologÃ­as y sistemas de informaciÃ³n, para la integraciÃ³n y avance tecnolÃ³gico.ï»¿
+Presencial, nocturna y fines de semana, 149 crÃ©ditos, varias sedes. SNIES 105765.
+
+Pregunta: Â¿CuÃ¡l es el perfil del egresado en IngenierÃ­a en InformÃ¡tica?ï»¿
+Respuesta: Participa en proyectos de TI, lidera grupos, certifica, gestiona procesos de Gobierno TI, administra sistemas virtuales y empresariales.ï»¿
+
+Pregunta: Â¿QuÃ© es el programa de IngenierÃ­a Ambiental y Sanitaria y cuÃ¡les son sus caracterÃ­sticas generales?ï»¿
+Respuesta: Forma profesionales en diseÃ±o e implementaciÃ³n de estrategias de gestiÃ³n ambiental, reducciÃ³n de impactos, optimizaciÃ³n de recursos, alineados a los ODS.ï»¿
+Presencial, diurna, 139 crÃ©ditos, sede Manizales. SNIES 117299.
+
+Pregunta: Â¿QuÃ© competencias desarrolla el egresado de IngenierÃ­a Ambiental y Sanitaria?ï»¿
+Respuesta: DiseÃ±o de sistemas de tratamiento, consultorÃ­a e impacto ambiental, gestiÃ³n de economÃ­a circular, investigaciÃ³n y gestiÃ³n de recursos hÃ­dricos.ï»¿
+
+Pregunta: Â¿QuÃ© es el programa de TecnologÃ­a en ProducciÃ³n Agroindustrial?ï»¿
+Respuesta: FormaciÃ³n de tecnÃ³logos para contribuir al desarrollo sostenible, gestionando el procesamiento y administraciÃ³n de recursos agrÃ­colas y pecuarios.ï»¿
+A distancia, 80 crÃ©ditos, sedes Manizales, Anserma, La Dorada y Riosucio. SNIES 108905.
+
+Pregunta: Â¿QuÃ© es el programa de TecnologÃ­a en Procesos de Seguridad y Salud en el Trabajo?ï»¿
+Respuesta: PreparaciÃ³n para identificaciÃ³n, evaluaciÃ³n y control de factores de riesgo laborales, impactando la competitividad empresarial.ï»¿
+A distancia, 81 crÃ©ditos, sedes Manizales y Magdalena Centro. SNIES 109460.
+
+Pregunta: Â¿QuÃ© es el programa de TecnologÃ­a en Sistemas InformÃ¡ticos?ï»¿
+Respuesta: FormaciÃ³n como tecnÃ³logo en diseÃ±o y soporte de sistemas informÃ¡ticos, redes, bases de datos y desarrollo de software.ï»¿
+A distancia, 92 crÃ©ditos, sedes Manizales y otras. SNIES 20974.
+
+Pregunta: Â¿QuÃ© es el programa de TecnologÃ­a en GestiÃ³n de la Calidad?ï»¿
+Respuesta: PreparaciÃ³n para desempeÃ±arse en sectores organizacionales, ayudando al desarrollo y fortalecimiento de sistemas de gestiÃ³n de calidad.ï»¿
+Presencial/distancia, 80 crÃ©ditos, 6 semestres, varias sedes. SNIES 116486.
+
+Pregunta: Â¿QuÃ© es el programa de TecnologÃ­a en LogÃ­stica?ï»¿
+Respuesta: Forma tecnÃ³logos capaces de administrar y desarrollar la cadena de suministros, optimizando procesos logÃ­sticos.ï»¿
+A distancia, 85 crÃ©ditos, sedes Manizales y otras. SNIES 90809.
+
+Pregunta: Â¿QuÃ© es el Doctorado en IngenierÃ­a?ï»¿
+Respuesta: Busca generar nuevo conocimiento en ingenierÃ­a, aportar a la innovaciÃ³n y soluciÃ³n de problemas de la humanidad a nivel cientÃ­fico.ï»¿
+Presencial, 100 crÃ©ditos, Manizales. SNIES 105174.
+
+Pregunta: Â¿QuÃ© es la MaestrÃ­a en BioinformÃ¡tica y BiologÃ­a Computacional?ï»¿
+Respuesta: Permite la gestiÃ³n e interpretaciÃ³n de datos biolÃ³gicos y avances cientÃ­ficos aplicados a biotecnologÃ­a y biodiversidad.ï»¿
+Presencial, 60 crÃ©ditos, convenio multuniversitario. SNIES 103917.
+
+Pregunta: Â¿QuÃ© es la MaestrÃ­a en IngenierÃ­a Computacional?ï»¿
+Respuesta: Forma en desarrollo e investigaciÃ³n de tecnologÃ­as como analÃ­tica de datos, software, gestiÃ³n tecnolÃ³gica, inteligencia computacional, bioinformÃ¡tica, IoT y computaciÃ³n distribuida.ï»¿
+Presencial, 60 crÃ©ditos, Manizales. SNIES 106028 (Manizales) y 101812 (Pasto).
+
+Pregunta: Â¿QuÃ© es la MaestrÃ­a en Agronegocios de CafÃ©?ï»¿
+Respuesta: Enfocada en procesos de negociaciÃ³n, comercializaciÃ³n e innovaciÃ³n en el sector cafetero, creando oportunidades de negocio y fortaleciendo competencias empresariales.ï»¿
+Presencial, 50 crÃ©ditos, Manizales. SNIES 110339.
+
+Pregunta: Â¿QuÃ© es la EspecializaciÃ³n en Inteligencia Artificial y AnalÃ­tica de Datos?ï»¿
+Respuesta: Forma profesionales para diseÃ±ar e implementar soluciones innovadoras usando IA y anÃ¡lisis avanzado de datos, optimizando procesos y toma de decisiones.ï»¿
+Presencial, 30 crÃ©ditos, Manizales. SNIES 117648.
 

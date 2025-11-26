@@ -2,14 +2,17 @@
 Endpoints para gestión de documentos.
 """
 
+import logging
 from datetime import datetime
 from pathlib import Path
 from typing import List
 
-from fastapi import APIRouter, UploadFile, File, HTTPException, status
+from fastapi import APIRouter, UploadFile, File, HTTPException, status, BackgroundTasks
 from pydantic import BaseModel
 
 from api.dependencies import get_rag_manager
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/documents", tags=["Documents"])
 
@@ -19,7 +22,17 @@ DOCS_FOLDER.mkdir(parents=True, exist_ok=True)
 
 # Extensiones permitidas
 ALLOWED_EXTENSIONS = {".txt", ".pdf"}
-MAX_FILE_SIZE = 10 * 1024 * 1024  
+MAX_FILE_SIZE = 10 * 1024 * 1024
+
+# Estado global de la recarga
+reload_status = {
+    "in_progress": False,
+    "last_result": None,
+    "last_error": None,
+    "started_at": None,
+    "finished_at": None,
+    "docs_count": 0
+}
 
 
 class DocumentInfo(BaseModel):
@@ -157,41 +170,100 @@ async def delete_document(filename: str):
         )
 
 
+def _reload_documents_task():
+    """Tarea en background para recargar documentos."""
+    global reload_status
+    try:
+        logger.info("📚 [BACKGROUND] Iniciando recarga de documentos...")
+        
+        rag = get_rag_manager()
+        
+        logger.info("🗑️ [BACKGROUND] Limpiando base vectorial...")
+        rag.storage_manager.soft_clear()
+        
+        logger.info(f"📂 [BACKGROUND] Cargando documentos desde {DOCS_FOLDER}...")
+        result = rag.storage_manager.load_documents_from_directory(str(DOCS_FOLDER))
+        
+        reload_status["last_result"] = result
+        reload_status["last_error"] = None
+        reload_status["finished_at"] = datetime.now().isoformat()
+        
+        logger.info(f"✅ [BACKGROUND] Recarga completada: {result}")
+        
+    except Exception as e:
+        logger.error(f"❌ [BACKGROUND] Error en recarga: {str(e)}")
+        reload_status["last_error"] = str(e)
+        reload_status["last_result"] = None
+        reload_status["finished_at"] = datetime.now().isoformat()
+    finally:
+        reload_status["in_progress"] = False
+
+
 @router.post(
     "/reload",
     summary="Recargar documentos en el RAG"
 )
-async def reload_documents():
+async def reload_documents(background_tasks: BackgroundTasks):
     """
-    Recarga todos los documentos de new-docs en la base vectorial.
+    Inicia la recarga de documentos en segundo plano.
     
-    Esto limpia la base vectorial y la reconstruye.
+    Responde inmediatamente y procesa en background para evitar timeouts.
     """
-    try:
-        rag = get_rag_manager()
-        
-        # Verificar que hay documentos
-        docs_count = len([f for f in DOCS_FOLDER.iterdir() if f.is_file()])
-        if docs_count == 0:
-            raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="No hay documentos en la carpeta new-docs"
-            )
-        
-        # Recargar documentos
-        rag.storage_manager.soft_clear()
-        result = rag.storage_manager.load_documents_from_directory(str(DOCS_FOLDER))
-        
+    global reload_status
+    
+    # Verificar si ya hay una recarga en progreso
+    if reload_status["in_progress"]:
         return {
-            "success": True,
-            "message": "Documentos recargados correctamente",
-            "details": result
+            "success": False,
+            "message": "Ya hay una recarga en progreso. Espera a que termine.",
+            "status": "in_progress",
+            "started_at": reload_status["started_at"]
         }
-    except HTTPException:
-        raise
-    except Exception as e:
+    
+    # Verificar que hay documentos
+    docs_count = len([f for f in DOCS_FOLDER.iterdir() if f.is_file()])
+    if docs_count == 0:
         raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Error al recargar: {str(e)}"
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="No hay documentos en la carpeta new-docs"
         )
+    
+    # Iniciar tarea en background
+    reload_status["in_progress"] = True
+    reload_status["started_at"] = datetime.now().isoformat()
+    reload_status["finished_at"] = None
+    reload_status["last_result"] = None
+    reload_status["last_error"] = None
+    reload_status["docs_count"] = docs_count
+    
+    background_tasks.add_task(_reload_documents_task)
+    
+    logger.info(f"🚀 Recarga iniciada en background para {docs_count} documentos")
+    
+    return {
+        "success": True,
+        "message": f"Recarga iniciada para {docs_count} documentos. Procesando en segundo plano...",
+        "status": "started",
+        "docs_count": docs_count
+    }
+
+
+@router.get(
+    "/reload/status",
+    summary="Estado de la recarga de documentos"
+)
+async def get_reload_status():
+    """
+    Consulta el estado de la última recarga de documentos.
+    
+    Útil para saber si la recarga en background terminó.
+    """
+    return {
+        "in_progress": reload_status["in_progress"],
+        "started_at": reload_status["started_at"],
+        "finished_at": reload_status["finished_at"],
+        "docs_count": reload_status["docs_count"],
+        "last_result": reload_status["last_result"],
+        "last_error": reload_status["last_error"]
+    }
 
