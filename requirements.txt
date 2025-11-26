@@ -7,23 +7,34 @@ langgraph-cli[inmem]
 
 chromadb>=0.4.22
 
+# Dependencias para LangChain
 langchain-community>=0.0.20
 
+# Dependencias para manejo de archivos
 pypdf>=4.0.0              
 python-docx>=1.1.0        
 
+# Dependencias para manejo de tokens
 tiktoken>=0.5.0           
 
+# Dependencias para RAG
 sentence-transformers
 langchain-huggingface  
 langchain-chroma
 
 icecream
 
+# Dependencias para FastAPI
 fastapi>=0.104.0          
 uvicorn[standard]>=0.24.0 
 pydantic>=2.0.0           
 
+# Dependencias para FastAPI para manejo de archivos y peticiones HTTP
 python-multipart>=0.0.6   
 requests>=2.31.0
 pandas>=2.0.0
+
+# Auth y Base de datos
+sqlmodel>=0.0.14
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4

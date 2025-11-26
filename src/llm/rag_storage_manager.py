@@ -61,7 +61,8 @@ class RAGStorageManager:
                 txt_loader = DirectoryLoader(
                     directory_path,
                     glob="**/*.txt",
-                    loader_cls=TextLoader
+                    loader_cls=TextLoader,
+                    loader_kwargs={"autodetect_encoding": True}
                 )
                 txt_docs = txt_loader.load()
                 documents.extend(txt_docs)

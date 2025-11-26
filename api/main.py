@@ -6,11 +6,8 @@ para interactuar con el chatbot especializado en Inteligencia Artificial.
 
 Características:
 - Chat conversacional con RAG
-- Memoria persistente de conversaciones
 - Citación automática de fuentes
 - Métricas de rendimiento
-- Comparación de múltiples modelos
-
 """
 
 from fastapi import FastAPI, Request, status
@@ -21,7 +18,7 @@ from contextlib import asynccontextmanager
 import time
 
 from api.models import ErrorResponse
-from api.routes import chat, system, whatsapp, telegram, metrics
+from api.routes import chat, system, whatsapp, telegram, metrics, auth, documents
 from api.dependencies import (
     get_settings,
     get_rag_manager,
@@ -29,6 +26,8 @@ from api.dependencies import (
     get_chain,
     get_timestamp
 )
+from api.database.config import create_db_and_tables
+from api.services.auth_service import create_default_admin
 
 
 # ============================================================================
@@ -49,6 +48,17 @@ async def lifespan(app: FastAPI):
     print("="*70)
     
     try:
+        # Inicializar base de datos
+        print("\n📦 Inicializando base de datos...")
+        create_db_and_tables()
+        print("   ✅ Base de datos SQLite lista")
+        
+        # Crear admin por defecto
+        from sqlmodel import Session
+        from api.database.config import engine
+        with Session(engine) as session:
+            create_default_admin(session)
+        
         # Inicializar componentes singleton
         print("\nInicializando componentes...")
         
@@ -78,14 +88,6 @@ async def lifespan(app: FastAPI):
             else:
                 print(f"⚠️ Directorio {docs_dir} no encontrado")
         
-        # LLM
-        llm = get_llm_gemini()
-        print(f"   Gemini LLM: Listo")
-        
-        # Chain
-        chain = get_chain()
-        print(f"   LangGraph Chain: Con memoria persistente")
-        
         print("\n" + "="*70)
         print("API LISTA PARA RECIBIR PETICIONES")
         print("="*70)
@@ -99,16 +101,12 @@ async def lifespan(app: FastAPI):
         print(f"\nERROR AL INICIALIZAR: {e}")
         print("La API iniciará pero puede tener problemas\n")
     
-    yield  # Aquí la app está corriendo
+    yield  
     
-    # SHUTDOWN
     print("\n" + "="*70)
     print("CERRANDO API DEL CHATBOT DE IA")
     print("="*70)
-    print("   Limpiando recursos...")
-    # Aquí se pueden agregar limpiezas si es necesario
-    print("   ✅ Recursos liberados")
-    print("="*70 + "\n")
+
 
 
 # ============================================================================
@@ -155,18 +153,14 @@ async def log_requests(request: Request, call_next):
     Middleware para loggear todas las peticiones.
     """
     start_time = time.time()
-    
-    # Log de entrada
+
     print(f"\n{request.method} {request.url.path}")
     
-    # Procesar request
     response = await call_next(request)
     
-    # Log de salida
     process_time = (time.time() - start_time) * 1000
     print(f"{response.status_code} - {process_time:.2f}ms")
     
-    # Agregar header con tiempo de procesamiento
     response.headers["X-Process-Time"] = f"{process_time:.2f}ms"
     
     return response
@@ -217,7 +211,6 @@ async def general_exception_handler(request: Request, exc: Exception):
 # ROUTES
 # ============================================================================
 
-# Root endpoint
 @app.get("/", tags=["Root"])
 async def root():
     """
@@ -240,16 +233,15 @@ async def root():
             "stats": f"{settings['api_prefix']}/stats",
             "info": f"{settings['api_prefix']}/info"
         },
-        "status": "operational"
     }
 
-
-# Incluir routers
+app.include_router(auth.router, prefix=settings["api_prefix"])  
 app.include_router(chat.router, prefix=settings["api_prefix"])
 app.include_router(system.router, prefix=settings["api_prefix"])
 app.include_router(metrics.router, prefix=settings["api_prefix"])
-app.include_router(whatsapp.router)  # WhatsApp sin prefix para webhook directo
-app.include_router(telegram.router)  # Telegram sin prefix para webhook directo  
+app.include_router(documents.router, prefix=settings["api_prefix"])
+app.include_router(whatsapp.router)  
+app.include_router(telegram.router)  
 
 if __name__ == "__main__":
     import uvicorn

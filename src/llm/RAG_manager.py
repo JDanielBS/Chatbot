@@ -57,11 +57,9 @@ class RAGManager:
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
         
-        # Inicializar embeddings con modelo más potente para mejor semántica
-        # all-MiniLM-L6-v2 tiene mejor rendimiento en búsqueda semántica general
-        # y es más rápido que el modelo anterior manteniendo buena calidad
+        # Inicializar embeddings con modelo de Hugging Face
         self.embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            model_name="intfloat/multilingual-e5-large",
             model_kwargs={'device': 'cpu'},
             encode_kwargs={'normalize_embeddings': True}  
         )

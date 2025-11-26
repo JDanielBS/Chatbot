@@ -1,18 +1,17 @@
 """
 Endpoints para métricas detalladas del CSV de reportes.
+Solo accesible por administradores.
 """
 
 import csv
-import os
 from pathlib import Path
 from typing import List, Dict, Any, Optional
-from datetime import datetime
-from fastapi import APIRouter, HTTPException, status
-from pydantic import BaseModel, Field
+from fastapi import APIRouter, status, Depends
+from pydantic import BaseModel
+
+from api.routes.auth import get_current_admin
 
 router = APIRouter(prefix="/metrics", tags=["Metrics"])
-
-
 class MetricsReportResponse(BaseModel):
     """Respuesta con métricas agregadas del reporte CSV."""
     total_interactions: int
@@ -20,7 +19,6 @@ class MetricsReportResponse(BaseModel):
     averages: Dict[str, float]
     totals: Dict[str, float]
     by_date: List[Dict[str, Any]]
-    top_threads: List[Dict[str, Any]]
 
 
 def read_metrics_csv() -> List[Dict[str, Any]]:
@@ -35,7 +33,6 @@ def read_metrics_csv() -> List[Dict[str, Any]]:
         with open(csv_path, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                # Convertir valores numéricos
                 try:
                     row['latency_ms'] = float(row.get('latency_ms', 0))
                     row['input_tokens'] = int(row.get('input_tokens', 0))
@@ -64,10 +61,10 @@ def read_metrics_csv() -> List[Dict[str, Any]]:
     "/report",
     response_model=MetricsReportResponse,
     status_code=status.HTTP_200_OK,
-    summary="Métricas detalladas del reporte CSV",
-    description="Obtiene métricas agregadas y estadísticas del archivo CSV de reportes."
+    summary="Métricas detalladas del reporte CSV (Admin)",
+    description="Obtiene métricas agregadas y estadísticas del archivo CSV de reportes. Requiere rol de administrador."
 )
-async def get_metrics_report():
+async def get_metrics_report(_admin = Depends(get_current_admin)):
     """
     Lee el CSV de métricas y retorna estadísticas agregadas.
     
@@ -82,8 +79,7 @@ async def get_metrics_report():
             date_range={"start": None, "end": None},
             averages={},
             totals={},
-            by_date=[],
-            top_threads=[]
+            by_date=[]
         )
     
     # Calcular totales
@@ -144,18 +140,6 @@ async def get_metrics_report():
             'total_tokens': data['total_tokens']
         })
     
-    # Top threads (más interacciones)
-    thread_counts = {}
-    for m in metrics:
-        thread_id = m.get('thread_id', '')
-        if thread_id:
-            thread_counts[thread_id] = thread_counts.get(thread_id, 0) + 1
-    
-    top_threads = [
-        {'thread_id': tid, 'interactions': count}
-        for tid, count in sorted(thread_counts.items(), key=lambda x: x[1], reverse=True)[:10]
-    ]
-    
     return MetricsReportResponse(
         total_interactions=total_interactions,
         date_range=date_range,
@@ -176,7 +160,6 @@ async def get_metrics_report():
             "citations": total_citations,
             "valid_citations": total_valid_citations
         },
-        by_date=by_date,
-        top_threads=top_threads
+        by_date=by_date
     )
 
