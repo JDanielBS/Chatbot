@@ -59,6 +59,30 @@ async def lifespan(app: FastAPI):
         with Session(engine) as session:
             create_default_admin(session)
         
+        # Crear archivo de métricas si no existe
+        import os
+        import csv
+        metrics_dir = "./metrics"
+        metrics_file = os.path.join(metrics_dir, "ia_metrics_report.csv")
+        
+        if not os.path.exists(metrics_dir):
+            os.makedirs(metrics_dir)
+            print("   📊 Carpeta de métricas creada")
+        
+        if not os.path.exists(metrics_file):
+            # Headers del CSV de métricas
+            headers = [
+                "timestamp", "thread_id", "platform", "query", "response",
+                "latency_ms", "input_tokens", "output_tokens", "total_tokens",
+                "estimated_cost_usd", "model", "num_retrieved_docs", "context_size",
+                "avg_similarity_score", "citations_total", "citations_valid",
+                "citation_validity_ratio", "hallucination_rate"
+            ]
+            with open(metrics_file, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerow(headers)
+            print("   📊 Archivo de métricas inicializado")
+        
         # Inicializar componentes singleton
         print("\nInicializando componentes...")
         
