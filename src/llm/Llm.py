@@ -34,7 +34,7 @@ class IAExpertLLM:
         """
         # Obtener el PromptTemplate desde el registro. Si se pasa uno personalizado, se aplica.
         self.prompt = get_ia_expert_prompt(custom_template=prompt_template)
-        self.llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", api_key=os.getenv("GEMINI_API_KEY"))
+        self.llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", api_key=os.getenv("GEMINI_API_KEY"))
         self.pipeline = self.prompt | self.llm
 
     def process_question(
